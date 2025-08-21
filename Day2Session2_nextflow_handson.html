@@ -355,7 +355,7 @@ Note
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>While <code>apptainer</code> is sticky loaded on this server, it won’t always be the case for other servers. So, you can add <code>apptainer</code> in the <code>add</code> command</p>
+<p>While <code>apptainer</code> is sticky loaded on this server, it won’t always be the case for other servers. So, if you are running within a Linux environment (and not otherwise), you can add <code>apptainer</code> with the <code>add</code> command.</p>
 </div>
 </div>
 </div>
@@ -364,7 +364,7 @@ Note
 </section>
 <section id="preparing-the-run" class="level2">
 <h2 class="anchored" data-anchor-id="preparing-the-run">Preparing The Run</h2>
-<p>From the nf-core homepage, we can search for pipelines. We are going to demo the <a href="https://nf-co.re/rnaseq/3.18.0/">rnaseq</a> pipeline. You can see that there is a lot going on in this pipeline! We will chat more about these things in class rather than including screenshots of everything.</p>
+<p>From the nf-core homepage, we can search for pipelines. We are going to demo the <a href="https://nf-co.re/rnaseq/3.20.0">rnaseq</a> pipeline. You can see that there is a lot going on in this pipeline! We will chat more about these things in class rather than including screenshots of everything.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/rnaseq_landing_page.png" class="img-fluid figure-img"></p>
@@ -374,7 +374,7 @@ Note
 <p>Under the <code>Usage</code>, you will find a lot of information that describes the pipeline, including input information, the <code>samplesheet.csv</code> (this one we will make together in class).</p>
 <p>Under the <code>Parameters</code> tab you will find information on all of the things that we will set up in the next step.</p>
 <p>Under the <code>Output</code> tab, you will find information on the expected output generated from the pipeline. This is useful to help you interpret what the pipeline produces.</p>
-<p>To set up our own analysis, we will click on the <code>launch version 3.18.0</code> button. (This was the version on the website at the time of writing this session. The version number may change). We are then redirected to a page where we can fill in all of our information about input files, as well as selecting or deselecting certain parts of the pipeline. We will share the things here that you need to input each time, and go through some finer details based on the discussion with you.</p>
+<p>To set up our own analysis, we will click on the <code>launch version 3.20.0</code> button. (This was the version on the website at the time of writing this session. The version number may change). We are then redirected to a page where we can fill in all of our information about input files, as well as selecting or deselecting certain parts of the pipeline. We will share the things here that you need to input each time, and go through some finer details based on the discussion with you.</p>
 <section id="setting-working-and-results-directories" class="level3">
 <h3 class="anchored" data-anchor-id="setting-working-and-results-directories">Setting working and results directories</h3>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -387,7 +387,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We recommend that you use absolute paths rather than relative paths for setting your runs up</p>
+<p>We recommend that you use absolute paths rather than relative paths for setting up your runs.</p>
 </div>
 </div>
 <p>During the first part, you need to set a working and result directory. If you are using a server that has a profile established, you can put the name of the server there. If not, we will create our own configuration profile if we run into memory issues.</p>
@@ -416,9 +416,9 @@ Tip
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To list all fastq files with their absolute path, one per line</p>
+<p>To list all fastq files with their absolute path, one per line use:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-maxdepth</span> 1 <span class="at">-type</span> f <span class="at">-name</span> <span class="st">"*.fastq.gz"</span> <span class="at">-exec</span> realpath {} <span class="dt">\;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can substitute the <code>.</code> that indicates it’s only looking in the directory you’re currently in to any other path on your file system</p>
+<p>You can substitute the <code>.</code> that indicates it’s only looking in the directory you’re currently in to any other path on your file system.</p>
 </div>
 </div>
 </div>
@@ -500,7 +500,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>slurm</code> is a job management tool installed on many servers to distribute resources evenly among users. If you are running this on your own machine later, you can just run it through <code>pixi run</code> as before</p>
+<p><code>slurm</code> is a job management tool installed on many servers to distribute resources evenly among users. If you are running this on your own machine later, you can just run it through <code>pixi run</code> as before.</p>
 </div>
 </div>
 <p>You can check the progress of your job with <code>squeue -u your_username</code></p>

@@ -85,11 +85,14 @@ The use of copyrighted material in training AI, and its legality, is being discu
 
 The Terms of Service (ToS) of different GPTs are important when deciding whether to use a GPT at all. For example, [Deepseek's ToS](https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html) (collected on 15.08.2025) states:
 
+```{.verbatim}
+#| code-overflow: wrap
+Account Personal Data. We collect Personal Data that you provide when you set up an account, such as your date of birth (where applicable), username (where applicable), email address and/or telephone number, and password.
 
-    Account Personal Data. We collect Personal Data that you provide when you set up an account, such as your date of birth (where applicable), username (where applicable), email address and/or telephone number, and password.
-    User Input. When you use our Services, we may collect your text input, prompt, uploaded files, feedback, chat history, or other content that you provide to our model and Services (“Prompts” or "Inputs"). We generate responses (“Outputs”) based on your Inputs.
-    Personal Data When You Contact Us. When you contact us, we collect the Personal Data you send us, such as proof of identity or age, contact details, feedback or inquiries about your use of the Services or Personal Data about possible violations of our Terms of Service (our “Terms”) or other policies.
+User Input. When you use our Services, we may collect your text input, prompt, uploaded files, feedback, chat history, or other content that you provide to our model and Services (“Prompts” or "Inputs"). We generate responses (“Outputs”) based on your Inputs.
 
+Personal Data When You Contact Us. When you contact us, we collect the Personal Data you send us, such as proof of identity or age, contact details, feedback or inquiries about your use of the Services or Personal Data about possible violations of our Terms of Service (our “Terms”) or other policies.
+```
 
 Biological data enjoys a high level of protection, and is often considered as highly sensitive. Too often, users will input sequences, tables, or other data into a GPT to find ways to plot data, perform sequence annotations, or similar tasks. Be wary of doing this. Check the ToS explicitly, and frequently. Try to use GDPR compliant GPT's if you must use a GPT. Try using only a description of your data - such as column names and type of data - instead of the actual data set. 
 
@@ -117,7 +120,7 @@ This course was written by two people, and each person wrote their own sections 
 
 :::
 
-We know that subtle linguistic shifts can change [emotional regulation](https://journals.sagepub.com/doi/10.1177/0963721419861411) within individuals. We also know that [sociolinguistics](https://en.wikipedia.org/wiki/Sociolinguistics), even the slightest linguistic features, serve to bind or divide us.
+We know that subtle linguistic shifts can change [emotional regulation](https://journals.sagepub.com/doi/10.1177/0963721419861411) within individuals. We also know from [sociolinguistics](https://en.wikipedia.org/wiki/Sociolinguistics), that even the slightest linguistic features can serve to bind or divide us.
 
 ### AI on the Internet
 

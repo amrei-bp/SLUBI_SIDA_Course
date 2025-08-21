@@ -127,13 +127,13 @@ A preprint released in February 2025 by [Liang *et al.*](https://arxiv.org/pdf/2
 
 ![AI slop trough by [Yahoo! News!](https://uk.news.yahoo.com/entire-internet-being-polluted-ai-140705958.html)](figures/ai_slop.png)
 
-### Environmnetal Impact
+### Environmental Impact
 
 The facilities to run GenAI require a significant amount of [resources](https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117). These facilities need a huge amount of electricity to power the facility (this places extreme strain on exising infrastructure and increases the grid's carbon footprint) as well as water to cool the hardware. Currently, data centers use more electricity than many independent countries.
 
 Some data centers are being built near poor communities, drain resources from, and add pollution to the community (see [Colossus](https://www.grokmountain.com/p/origin-of-grok-3-the-colossus-data) that has been built in [Memphis](https://tennesseelookout.com/2025/07/07/a-billionaire-an-ai-supercomputer-toxic-emissions-and-a-memphis-community-that-did-nothing-wrong/) to power the X bot, [Grok](https://www.theguardian.com/technology/2025/apr/24/elon-musk-xai-memphis) for an example. Musk is not the only offender.)
 
-While we cannot do anything about where data centers are built, we can make informed decisions about which platforms (if any), we use. We can also be careful with the number of queries we send, and how we use our queries. In April 2025, the CEO of OpenAI [said](https://www.vice.com/en/article/telling-chatgpt-please-and-thank-you-costs-openai-millions-ceo-claims/) that polite requests like "please" and "thank you" have cost tens of millions of dollars due to the cost of electricity.
+While we cannot do anything about where data centers are built, we can make informed decisions about which platforms we use. We can also be careful with the number of queries we send, and how we use our queries. In April 2025, the CEO of OpenAI [said](https://www.vice.com/en/article/telling-chatgpt-please-and-thank-you-costs-openai-millions-ceo-claims/) that polite requests like "please" and "thank you" have cost tens of millions of dollars due to the cost of electricity.
 
 ## How To Decide When To Use AI
 
@@ -141,7 +141,7 @@ If we know the risks and the true cost of what we are doing, we can make informe
 
 Here are some questions that we find useful to ask ourselves before opening a GPT:
 
-1. Am I phrasing my prompt in a good way? [Here](https://www.pointloma.edu/resources/business-leadership/how-optimize-your-chatgpt-experience-prompt-engineering) is a guide to prompt engineering that might be useful
+1. Am I phrasing my prompt in a good way? [Here](https://www.pointloma.edu/resources/business-leadership/how-optimize-your-chatgpt-experience-prompt-engineering) is a guide to prompt engineering that might be useful.
 2. Can I find this information any other way?
 3. How much time am I saving by looking this question up here vs on BioStars, for example?
 4. Do I know enough about the topic to know whether the GPT is lying to me?

@@ -1,10 +1,10 @@
----
+e ---
 title: "Caution: AI in Bioinformatics"
 ---
 
 ::: {.callout-caution}
 
-While the lure of AI is becoming more present in our daily lives, remember that you do not **need** it. You were perfectly able to design a packing list for your upcoming trip. You were able to look at a paper to find answers to your scientific questions. You knew how to query a vignette in R to determine how a function could be implemented.
+While the lure of AI is becoming more present in our daily lives, remember that you do not **need** it. Before AI, you were perfectly able to design a packing list for your upcoming trip. You were able to look at a paper to find answers to your scientific questions. You knew how to query a vignette in R to determine how a function should be used.
 
 Life was a bit slower, but you used your mind and your agency. You made decisions. Please do not confuse convenience with need!
 
@@ -19,7 +19,7 @@ In the past 3 years, AI has become more mainstream. The primary kind of AI peopl
 
 These algorithms are language models trained on incredibly large datasets. They are trained to recognise and generate natural language. The chatbots we are all familiar with are generative pretrained transformers (GPTs). These can be trained for specific tasks, or guided by prompt generation.
 
-This is not an AI theory course, and we really do not have enough knowledge to explain the underlying theory beyond a rudimentary level. We would like to discuss the impact of AI on you as a user, and advocate for responsible use of AI in your current and future work.
+This is not an AI theory course, and we really do not have enough knowledge to explain the underlying theory beyond a rudimentary level. We would, however, like to discuss the impact of AI on you as a user, and advocate for responsible use of AI in your current and future work.
 
 ## Machine Learning in Bioinformatics
 
@@ -31,7 +31,7 @@ Supervised algorithms are used for classification and regression analyses. Unsup
 
 **Classification**: Output is a discrete variable. Linear classifiers, support vector machines, decision trees, random forests. E.g. annotating a new genome based on genome annotations from existing species.
 
-**Regression**: Focus on understanding dependent and indepedent variables 
+**Regression**: Focus on understanding dependent and indepedent variables.
 
 :::
 
@@ -41,23 +41,23 @@ There is no arguing that these algorithms have led to great progress within the 
 
 ## Incorporation of AI in Our Lives
 
-ChatGPT gained 100 million users in the 2 months after its release in 2022, making it the fastest-growing consumr application in [history](https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/). Generative AI (GenAI) models now come in many different flavours, depending on the developer. 
+ChatGPT gained 100 million users in the 2 months after its release in 2022, making it the fastest-growing consumer application in [history](https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/). Generative AI (GenAI) models now come in many different flavours, depending on the developer. 
 
 ![GenAI chatbots by market share in August 2025 from [FirstPageSage](https://firstpagesage.com/reports/top-generative-ai-chatbots/)](figures/genai_marketshare.png)
 
-As with earlier iterations of supervised and unsupervised algorithms, these self-supervised algorithms also need data to be trained.
+
 
 #### Training Data
 
-GenAI has all been trained on existing data. There has always been a bias in whose information gets captured. In a historical context, history was recorded by the party that won the war and destroyed existing knowledge. This also changed as different empires and narratives rose and fell. With digitisation, this information has landed on the internet. In the more modern "Internet Age", everyone with an internet connection can technically post anything they'd like on the internet. There are different biases at play- not everyone has equal access to the internet, some people may not have strong enough opinions to post about something online, some people prefer to read rather than contribute, while others take pleasure in "shit-posting".
+As with earlier iterations of supervised and unsupervised algorithms, GenAI models have all been trained on existing data. And this existing data can be biased: in a historical context, history was recorded by the party that won the war. History changed as different empires and narratives rose and fell. With digitisation, this information has landed on the internet. In the more modern "Internet Age", everyone with an internet connection can technically post anything they'd like on the internet. This can add different types of biases - not everyone has equal access to the internet, some people may not have strong enough opinions to post about something online, some people prefer to read rather than contribute, while others take pleasure in "shit-posting".
 
-The differences in how people use the internet have an effect on how useful the trained models become. In this example, you can clearly see what the effect of bad training data is.
+As the GenAI training data contains large amounts of data from the internet, these differences in how people use the internet have an effect on how useful the trained models become. In this example, you can clearly see what the effect of bad training data is:
 
 ![GenAI answer to a simple question](figures/ai_kill_yourself.png)
 
-GenAI's are not programmed to say that they do not know something, and will happily hallucinate an answer. If you do not know better, or trust the computers, you may take this answer as true and post it elsewhere. As the use of AI's increases, AI generated content is used to train new AI's. Gary Illyes from Google has spoken about ["human curated" vs "human created"](https://www.searchenginejournal.com/google-says-ai-generated-content-should-be-human-reviewed/553486/) data being used as training data. 
+Furthermore, GenAI's are not programmed to say that they do not know something, and will happily hallucinate an answer. If you do not know better, or trust the computers, you may take a made-up answer as true and post it elsewhere. As the use of AI's increases, AI generated content is used to train new AI's. Gary Illyes from Google has spoken about ["human curated" vs "human created"](https://www.searchenginejournal.com/google-says-ai-generated-content-should-be-human-reviewed/553486/) data being used as training data. 
 
-In a perfect world, GenAI would be trained on perfectly curated data, but even with all of the data that we have on the internet at the moment, we do not have nearly enough data for this. We have to make do with what we have.
+In a perfect world, GenAI would be trained on perfectly curated data, but even with all of the data that we have on the internet at the moment, we do not have nearly enough data. We have to make do with what we have.
 
 ## Some Words of Caution 
 
@@ -69,7 +69,7 @@ AI has great potential in the field of education. ChatGPT has been shown to be h
 
 ### Productivity with AI
 
-A recent [study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) by a non-profit group, Model Evaluation and Threat Research [(METR)https://metr.org/] aimed to quantify the difference in productivity when using [AI](https://www.theregister.com/2025/07/11/ai_code_tools_slow_down/). Participants in this study were not new to their field, with at least 5 years of experience prior to this study being conducted.
+A recent [study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) by a non-profit group, [Model Evaluation and Threat Research (METR)](https://metr.org/) aimed to quantify the difference in productivity when using [AI](https://www.theregister.com/2025/07/11/ai_code_tools_slow_down/). Participants in this study were not new to their field, with at least 5 years of experience prior to this study being conducted.
 
 ![AI reducing productivity](figures/metr_ai.png)
 
@@ -77,21 +77,21 @@ The study also found that when AI is allowed, the participants spent less time c
 
 ![Reasons for loss of productivity with AI](figures/metr_reasons.png)
 
-If one combines the effect of passively learning with AI and the loss of productivity with, it becomes clear that AI must be used very carefully.
-
 ### Data Privacy and Legal Concerns
 
-Data privacy has been vital in the development and use of AI. The use of copyrighted material in training AI is being discussed and debated in several courts. The questions around using `text and data mining` are divisive with [some parties](https://informationlabs.org/the-ai-training-debate-why-focusing-on-copyright-is-missing-the-point/) arguing that finding patterns, trends, and insights in existing data being how new research is done by humans and should be extended to AI, while [others](https://www.lawpub.se/artikel/4802), particularly in the European context, disagree to some extent. Understanding the legality of the service you use in different countries falls on you as a user.
+Data privacy has been vital in the development and use of AI. 
 
-The Terms of Service (ToS) of different GPTs are important when deciding whether to use a GPT at all. For example, [Deepseek's ToS](https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html) (collected on 15.08.2025) states
+The use of copyrighted material in training AI is being discussed and debated in several courts. The questions around using `text and data mining` are divisive with [some parties](https://informationlabs.org/the-ai-training-debate-why-focusing-on-copyright-is-missing-the-point/) arguing that finding patterns, trends, and insights in existing data being how new research is done by humans and should be extended to AI, while [others](https://www.lawpub.se/artikel/4802), particularly in the European context, disagree to some extent. Understanding the legality of the service you use in different countries falls on you as a user.
 
-```{.bash}
+The Terms of Service (ToS) of different GPTs are important when deciding whether to use a GPT at all. For example, [Deepseek's ToS](https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html) (collected on 15.08.2025) states:
+
+```{.verbatim}
 Account Personal Data. We collect Personal Data that you provide when you set up an account, such as your date of birth (where applicable), username (where applicable), email address and/or telephone number, and password.
 User Input. When you use our Services, we may collect your text input, prompt, uploaded files, feedback, chat history, or other content that you provide to our model and Services (“Prompts” or "Inputs"). We generate responses (“Outputs”) based on your Inputs.
 Personal Data When You Contact Us. When you contact us, we collect the Personal Data you send us, such as proof of identity or age, contact details, feedback or inquiries about your use of the Services or Personal Data about possible violations of our Terms of Service (our “Terms”) or other policies.
 ```
 
-Biological data enjoys a high level of protection, and is often considered as highly sensitive. Too often, users will input sequences, tables, or other data into a GPT to find ways to plot data, perform sequence annotations, or similar tasks. Be wary of doing this. Check the ToS explicitly, and frequently. Try to use GDPR compliant GPT's if you must use a GPT.
+Biological data enjoys a high level of protection, and is often considered as highly sensitive. Too often, users will input sequences, tables, or other data into a GPT to find ways to plot data, perform sequence annotations, or similar tasks. Be wary of doing this. Check the ToS explicitly, and frequently. Try to use GDPR compliant GPT's if you must use a GPT. Try using only a description of your data - such as column names and type of data - instead of the actual data set. 
 
 AI as browser extensions steal deeply personal information when enabled in a users' [browser](https://arxiv.org/pdf/2503.16586) including financial, education, and medical information, whether an extension is being actively used or not. The authors have also [commented](https://www.euronews.com/next/2025/08/13/ai-browsers-share-sensitive-personal-data-new-study-finds) on how these practices interfere with the company's own ToS as well as privacy legislation.
 
@@ -109,21 +109,21 @@ Even though ChatGPT has only been widely used for 3 years, it has already starte
 
 It has also been shown that different GPT's have different writing styles, also known as idiolects. 
 
-Some projects like [this one](https://aclanthology.org/2024.inlg-main.34.pdf) are trying to match GPT ideolects match that of unique users. This will make detecting AI use more difficult in future.
+Some projects like [this one](https://aclanthology.org/2024.inlg-main.34.pdf) are trying to customize GPT ideolects to match writing styles of unique users. This will make detecting AI use more difficult in future.
 
-::: {.callout collapse="true"}
+::: {.callout-note collapse="true"}
 
 This course was written by two people, and each person wrote their own sections without the use of any AI. Can you tell who wrote which sections based on idiolects?
 
 :::
 
-We know that subtle linguistic shifts can change [emotional regulation](https://journals.sagepub.com/doi/10.1177/0963721419861411) within an individual. We also know that [sociolinguistics](https://en.wikipedia.org/wiki/Sociolinguistics), even the slightest linguistic features, serve to bind or divide us.
+We know that subtle linguistic shifts can change [emotional regulation](https://journals.sagepub.com/doi/10.1177/0963721419861411) within individuals. We also know that [sociolinguistics](https://en.wikipedia.org/wiki/Sociolinguistics), even the slightest linguistic features, serve to bind or divide us.
 
 ### AI on the Internet
 
 Social media platforms are an important aspect in the development, improvement, and implementation of GenAI models. OpenAI, the creators of ChatGPT, have used a subreddit on the social media platform, Reddit, to train their [new algorithm](https://techcrunch.com/2025/01/31/openai-used-this-subreddit-to-test-ai-persuasion/). [Google](https://www.reuters.com/technology/reddit-ai-content-licensing-deal-with-google-sources-say-2024-02-22/) and [OpenAI](https://techcrunch.com/2024/05/16/openai-inks-deal-to-train-ai-on-reddit-data/) have contractual agreements with Reddit to license data from the users on the platform. Earlier in 2025, researchers from the University of Zurich were implicated in an experiment on the same subreddit OpenAI used to train a model. They wanted to test whether an interaction with a bot was more likely to make people change their minds than an interaction with a [real person](https://www.science.org/content/article/unethical-ai-research-reddit-under-fire). This was heavily frowned upon, and posts were all removed as users had no ability to consent to participating in a study. It has also been suggested that interactions observed by the researchers were just bots arguing with each other.
 
-A preprint released in February 2025 by [Liang *et al*](https://arxiv.org/pdf/2502.09747) found that the amount of content generated by AI rose from 2-3% in November 2022 to 24% by the end of 2023.  
+A preprint released in February 2025 by [Liang *et al.*](https://arxiv.org/pdf/2502.09747) found that the amount of content generated by AI rose from 2-3% in November 2022 to 24% by the end of 2023.  
 
 ![AI slop trough by [Yahoo! News!](https://uk.news.yahoo.com/entire-internet-being-polluted-ai-140705958.html)](figures/ai_slop.png)
 

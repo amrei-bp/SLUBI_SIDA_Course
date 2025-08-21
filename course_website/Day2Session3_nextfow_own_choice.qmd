@@ -9,3 +9,11 @@ For this section, we would like you to test out a different pipeline from [nf-co
 1. Is the pipeline maintained?
 2. What do you need as input?
 3. What are some of the constraints you might face during the setup?
+
+::: {.callout-note}
+
+To test the settings of a pipeline it is advisable to run the pipeline on only a few, reduced samples to save on computation time. 
+
+Once you are sure that the pipeline is set up correctly you can then run on the full data set. 
+
+:::

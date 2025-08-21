@@ -85,8 +85,7 @@ The use of copyrighted material in training AI, and its legality, is being discu
 
 The Terms of Service (ToS) of different GPTs are important when deciding whether to use a GPT at all. For example, [Deepseek's ToS](https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html) (collected on 15.08.2025) states:
 
-```{.verbatim}
-#| code-overflow: wrap
+```{.md .code-overflow-wrap}
 Account Personal Data. We collect Personal Data that you provide when you set up an account, such as your date of birth (where applicable), username (where applicable), email address and/or telephone number, and password.
 
 User Input. When you use our Services, we may collect your text input, prompt, uploaded files, feedback, chat history, or other content that you provide to our model and Services (“Prompts” or "Inputs"). We generate responses (“Outputs”) based on your Inputs.

@@ -30,7 +30,7 @@ pixi add nextflow nf-core
 ```
 
 ::: {.callout-note collapse="true"}
-While `apptainer` is sticky loaded on this server, it won't always be the case for other servers. So, you can add `apptainer` in the `add` command
+While `apptainer` is sticky loaded on this server, it won't always be the case for other servers. So, if you are running within a Linux environment (and not otherwise), you can add `apptainer` with the `add` command. 
 :::
 
 And just check that everything worked, summon the help message from nf-core
@@ -41,7 +41,7 @@ pixi run nf-core --help
 
 ## Preparing The Run
 
-From the nf-core homepage, we can search for pipelines. We are going to demo the [rnaseq](https://nf-co.re/rnaseq/3.18.0/) pipeline. You can see that there is a lot going on in this pipeline! We will chat more about these things in class rather than including screenshots of everything.
+From the nf-core homepage, we can search for pipelines. We are going to demo the [rnaseq](https://nf-co.re/rnaseq/3.20.0) pipeline. You can see that there is a lot going on in this pipeline! We will chat more about these things in class rather than including screenshots of everything.
 
 ![rnaseq landing page](figures/rnaseq_landing_page.png)
 
@@ -51,13 +51,13 @@ Under the `Parameters` tab you will find information on all of the things that w
 
 Under the `Output` tab, you will find information on the expected output generated from the pipeline. This is useful to help you interpret what the pipeline produces.
 
-To set up our own analysis, we will click on the `launch version 3.18.0` button. (This was the version on the website at the time of writing this session. The version number may change). We are then redirected to a page where we can fill in all of our information about input files, as well as selecting or deselecting certain parts of the pipeline. We will share the things here that you need to input each time, and go through some finer details based on the discussion with you.
+To set up our own analysis, we will click on the `launch version 3.20.0` button. (This was the version on the website at the time of writing this session. The version number may change). We are then redirected to a page where we can fill in all of our information about input files, as well as selecting or deselecting certain parts of the pipeline. We will share the things here that you need to input each time, and go through some finer details based on the discussion with you.
 
 ### Setting working and results directories
 
 ::: {.callout-important}
 
-We recommend that you use absolute paths rather than relative paths for setting your runs up
+We recommend that you use absolute paths rather than relative paths for setting up your runs.
 
 :::
 
@@ -71,13 +71,13 @@ We will compile the input CSV together in class. This is entirely unique to each
 
 ::: {.callout-tip collapse="true"}
 
-To list all fastq files with their absolute path, one per line
+To list all fastq files with their absolute path, one per line use: 
 
 ```{.bash}
 find . -maxdepth 1 -type f -name "*.fastq.gz" -exec realpath {} \;
 ```
 
-You can substitute the `.` that indicates it's only looking in the directory you're currently in to any other path on your file system
+You can substitute the `.` that indicates it's only looking in the directory you're currently in to any other path on your file system.
 
 :::
 
@@ -154,7 +154,7 @@ sbatch name_submit_rnaseq.sh
 
 ::: {.callout-note}
 
-`slurm` is a job management tool installed on many servers to distribute resources evenly among users. If you are running this on your own machine later, you can just run it through `pixi run` as before
+`slurm` is a job management tool installed on many servers to distribute resources evenly among users. If you are running this on your own machine later, you can just run it through `pixi run` as before.
 
 :::
 

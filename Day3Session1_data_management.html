@@ -255,8 +255,26 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-life-cycle" id="toc-data-life-cycle" class="nav-link active" data-scroll-target="#data-life-cycle">Data Life Cycle</a></li>
+  <li><a href="#fair-principles" id="toc-fair-principles" class="nav-link" data-scroll-target="#fair-principles">FAIR principles</a></li>
+  <li><a href="#reproducible-research" id="toc-reproducible-research" class="nav-link" data-scroll-target="#reproducible-research">Reproducible research</a></li>
+  <li><a href="#what-data-do-we-work-with" id="toc-what-data-do-we-work-with" class="nav-link" data-scroll-target="#what-data-do-we-work-with">What data do we work with?</a></li>
+  <li><a href="#ways-to-work-on-data" id="toc-ways-to-work-on-data" class="nav-link" data-scroll-target="#ways-to-work-on-data">Ways to work on data</a></li>
+  <li><a href="#literate-programming" id="toc-literate-programming" class="nav-link" data-scroll-target="#literate-programming">Literate programming</a></li>
+  <li><a href="#hands-on-quarto" id="toc-hands-on-quarto" class="nav-link" data-scroll-target="#hands-on-quarto">Hands-on: quarto</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version control</a></li>
+  <li><a href="#hands-on-git-and-github" id="toc-hands-on-git-and-github" class="nav-link" data-scroll-target="#hands-on-git-and-github">Hands-on: git and github</a></li>
+  <li><a href="#environment-managers" id="toc-environment-managers" class="nav-link" data-scroll-target="#environment-managers">Environment managers</a></li>
+  <li><a href="#hands-on-managing-environments-with-pixi" id="toc-hands-on-managing-environments-with-pixi" class="nav-link" data-scroll-target="#hands-on-managing-environments-with-pixi">Hands-on: managing environments with pixi</a></li>
+  <li><a href="#containers-in-bioinformatics" id="toc-containers-in-bioinformatics" class="nav-link" data-scroll-target="#containers-in-bioinformatics">Containers in bioinformatics</a></li>
+  <li><a href="#hands-on-containers" id="toc-hands-on-containers" class="nav-link" data-scroll-target="#hands-on-containers">Hands-on: containers</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -280,8 +298,208 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="data-life-cycle" class="level2">
+<h2 class="anchored" data-anchor-id="data-life-cycle">Data Life Cycle</h2>
+<p>When working with any type of data, it makes sense to sit down before the project starts to think through the different life stages of the data in your project. This will help counteract some of the problems that can arise when projects grow more organically, and will help consistency within the research group, ease of collaboration, and mostly your future self that will understand what past-self has been up to in the project.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>More and more funding agencies expect a Data Management Plan at some point of a project application. In there, you need to document that you have thought of, and planned for, the life cycle of your data.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/Data_life_cycle.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption><a href="https://rdmkit.elixir-europe.org/">The Research Data Management toolkit for Life Sciences</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="fair-principles" class="level2">
+<h2 class="anchored" data-anchor-id="fair-principles">FAIR principles</h2>
+<p>In the past, research data was often generated with one question in mind. Often, they would afterwards land in some drawer and be forgoten about. Nowadays researchers acknowledge that data can also be re-used, or combined with other data, to answer different questions.</p>
+<p>The FAIR principles promote efficient data discovery and reuse by providing guidelines to make digital resources:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/fair-data-principles.webp" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption><a href="https://www.tpximpact.com/knowledge-hub/insights/fair-data-guide/">Wilkinson et al.&nbsp;(2016)</a></figcaption>
+</figure>
+</div>
+<p>FAIR principles, in turn, rely on <strong>good data management practices</strong> in all phases of research:</p>
+<ul>
+<li>Research documentation</li>
+<li>Data organisation</li>
+<li>Information security</li>
+<li>Ethics and legislation</li>
+</ul>
+</section>
+<section id="reproducible-research" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-research">Reproducible research</h2>
+<p>Lucky for us, once we implement good data management practices, we will also increase the reproducibility of our analyses. Extensive documentation will increase faith in the outcome of analyses, and will help people (again, future-you) understand what has been done.</p>
+</section>
+<section id="what-data-do-we-work-with" class="level2">
+<h2 class="anchored" data-anchor-id="what-data-do-we-work-with">What data do we work with?</h2>
+<blockquote class="blockquote">
+<p>Bioinformatics is an interdisciplinary field of science that develops methods and software tools for understanding biological data, especially when the data sets are large and complex. (<a href="https://en.wikipedia.org/wiki/Bioinformatics">Wikipedia</a>)</p>
+</blockquote>
+<p>This data can come from a variety of different biological processes:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/bioinformatics_dogma.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>source: Lizel Potgieter</figcaption>
+</figure>
+</div>
+<p>Early on, sequencing data was not readily available, but due to <a href="https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost">decreasing costs</a> and <a href="https://en.wikipedia.org/wiki/Moore%27s_law">increased computational power</a> biological data is now being produced in ever increasing quantities:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/SRA_available_data.jpg" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption><a href="https://academic.oup.com/nar/article/50/D1/D387/6438001">Growth of the Sequence Read Archive, SRA, from 2012 to 2021</a></figcaption>
+</figure>
+</div>
+<p>At the same time, new technologies are being developed, and new tools that might or might not be maintained or benchmarked against existing tools. It’s the wild west out there!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/technologies.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Overview of modern sequencing technologies and where they apply to biological processes</figcaption>
+</figure>
+</div>
+</section>
+<section id="ways-to-work-on-data" class="level2">
+<h2 class="anchored" data-anchor-id="ways-to-work-on-data">Ways to work on data</h2>
+<blockquote class="blockquote">
+<p>The solution is to approach bioinformatics as a bioinformatician does: try stuff, and assess the results. In this way, bioinformatics is just about having the skills to experiment with data using a computer and understanding your results. <a href="https://womengovtcollegevisakha.ac.in/departments/Bioinformatics%20Data%20Skills%20Reproducible%20and%20Robust%20Research%20with%20Open%20Source%20Tools%20by%20Vince%20Buffalo.pdf">source: Vince Buffalo</a></p>
+</blockquote>
+<p>This is a traditional way to work with bioinformatics data, and can still have its merits. However, in this course we would like to introduce you to a more structured way to make sense of your data.</p>
+<p>Let’s have a look at how a beginning PhD student might approach their data:</p>
+<ul>
+<li>They might analyse their data, and get some results.</li>
+<li>After talking with their supervisor they might get a few other samples from a collaborator, or need to drop them from the analyses due to quality concerns.</li>
+<li>They run the analyses again and get a different set of results.</li>
+<li>There might be a few iterations of this process, and then the reviewers require some additional analyses…</li>
+</ul>
+<p>In the “end” we have something like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/data_chaos.png" class="class img-fluid figure-img" style="width:20.0%"></p>
+<figcaption>Which one of these is the latest version?</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Best practices file organization">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Best practices file organization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>There is a folder for the raw data, which <strong>does not get altered</strong>.</li>
+<li>Code is <strong>kept separate</strong> from data.</li>
+<li>Use a <strong>version control</strong> system (at least for code) – e.g.&nbsp;git.</li>
+<li>There should be a <strong>README</strong> in every directory, describing the purpose of the directory and its contents.</li>
+<li>Use <strong>file naming</strong> schemes that makes it easy to find files and understand what they are (for humans and machines) and document them.</li>
+<li>Use <strong>non-proprietary formats</strong> – .csv rather than .xlsx</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="literate-programming" class="level2">
+<h2 class="anchored" data-anchor-id="literate-programming">Literate programming</h2>
+<p>Our hypothetical PhD student, even if taking into account the best practice tips from above, is still likely to run the same analyses over and over whenever the input data changes. Sometimes, this might be months, or even years, after the original analysis was performed.</p>
+<p>Luckily for our student, they can save their code snippets (with intuitive file names) and re-use the code from back then. This is often done with R-scripts, but can just as well be applied to bash scripts, python scripts etc.</p>
+<p>In the past years, the development went even further and one can even combine code and documentation in the same document. The code is wrapped in so called <code>chunks</code>, that are executable from within the document.</p>
+<p>These <strong>notebooks</strong> come in different flavors, for example <code>jupyter notebooks</code>and <code>marimo</code> for Python applications, <code>Rmarkdown</code> for R code. Its successor, <code>quarto</code> can be used to integrate a variety of coding languanges. In this course, we will introduce you to <code>quarto</code>.</p>
+</section>
+<section id="hands-on-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on-quarto">Hands-on: quarto</h2>
+<p>With this, we can turn to the <a href="./Day3Session2_quarto.html">quarto hands-on training</a> to learn more about <code>quarto</code> and its capabilities.</p>
+</section>
+<section id="version-control" class="level2">
+<h2 class="anchored" data-anchor-id="version-control">Version control</h2>
+<p>Now that our student has reproducible documents, with reasonable names, that can execute their analyses reliably over and over again, what happens if they modify their analyses? Will they end up again with different result files and their project sink down in chaos?</p>
+<p>No, because there is <code>version control</code>, the practice of tracking and managing changes to files.</p>
+<p>Version control can be used on the local system, where both the version database and the checked out file - the one that is actively being worked on - are on the local computer. Good, but the local computer can be corrupted and then the data is compromised.</p>
+<p>Version control can also be centralized, where the version database is on a central server, and the active file can be checked out from several different computers. This is useful when working from different systems, or when working with collaborators. However, when the central servers is compromised the historical version are lost.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/Local_version_control_diagram.png" class="class img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Local version control</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/Centralized_version_control.png" class="class img-fluid figure-img" style="width:100.0%"></p>
+<figcaption><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Centralized version control</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>At last, version control can be fully distributed, with all versions of the file being on the server and different computers. Each computer checks out the file from its own version database to work on them. The databases are then synchronized between the different computers and the server. One such distributed version control system is <code>git</code>. It can handle everything from small to very large projects and is simple to use. <code>GitHub</code>is a code hosting platform for version control and collaboration, built on git.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/git_distributed_version_control.png" class="class img-fluid figure-img" style="width:100.0%"></p>
+<figcaption><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Distributed version control</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="hands-on-git-and-github" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on-git-and-github">Hands-on: git and github</h2>
+<p>We have prepared a hands-on training for <a href="./Day3Session3_github.html">git and GitHub</a> for you.</p>
+</section>
+<section id="environment-managers" class="level2">
+<h2 class="anchored" data-anchor-id="environment-managers">Environment managers</h2>
+<p>Using git, our PhD student can now share their reproducible code with their colloaborators, or between systems. They can rest assured that the different versions of the notebook are tracked and can be checked out when necessary. But what about the bioinformatic tools?</p>
+<p>Different computers can run on different operating systems, or can have different versions of databases installed. This can lead to a conflict between tools, or versions and can impact code usability, or reproducibility.</p>
+<p>Fortunately, smart people have developed environment managers such as <code>conda</code>, <code>bioconda</code>, or <code>pixi</code>. These tools find and install packages, so that the same package versions are being run between different computers. However, the code might still give different results on different operating systems.</p>
+</section>
+<section id="hands-on-managing-environments-with-pixi" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on-managing-environments-with-pixi">Hands-on: managing environments with pixi</h2>
+<p>Here is a link to our <a href="./Day1Session3_pixi.html">introduction to pixi</a>.</p>
+</section>
+<section id="containers-in-bioinformatics" class="level2">
+<h2 class="anchored" data-anchor-id="containers-in-bioinformatics">Containers in bioinformatics</h2>
+<p>But what if our PhD student needs to run their code on different operating systems?</p>
+<p>They can use containers, that contain everything needed to run the application, even the operating system. Containers are being exchanged as container images, which makes them lightweight. Containers do not change over time, so the results will be the same today and in a few years. Everyone gets the same container that works in the same way.</p>
+</section>
+<section id="hands-on-containers" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on-containers">Hands-on: containers</h2>
+<p>Here is our tutorial on where to get container images, and how to use - and even build your own - <a href="./Day2Session1_containers.html">containers</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>test</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/data_management/name.jpg" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>text</figcaption>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

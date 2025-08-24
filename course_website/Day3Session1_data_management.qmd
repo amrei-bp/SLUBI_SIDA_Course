@@ -36,6 +36,8 @@ FAIR principles, in turn, rely on **good data management practices** in all phas
 
 Lucky for us, once we implement good data management practices, we will also increase the reproducibility of our analyses. Extensive documentation will increase faith in the outcome of analyses, and will help people (again, future-you) understand what has been done. 
 
+Last, but not least, reproducible research practices make project hand-overs smoother, when the next person already understands the structure of the project, and can rely on good documentation.
+
 
 ## What data do we work with?
 
@@ -92,9 +94,34 @@ Our hypothetical PhD student, even if taking into account the best practice tips
 
 Luckily for our student, they can save their code snippets (with intuitive file names) and re-use the code from back then. This is often done with R-scripts, but can just as well be applied to bash scripts, python scripts etc.
 
+::: {.callout-tip title="Write Code for Humans, Write Data for Computers"}
+> Code should be readable, broken down into small contained components (modular),
+and reusable (so you’re not rewriting code to do the same tasks over and over again).
+These practices are crucial in the software world, and should be applied in your bio‐
+informatics work as well.
+
+> In contrast to code, data should be formatted in a way that facilitates computer read‐
+ability. All too often, we as humans record data in a way that maximizes its readability
+to us, but takes a considerable amount of cleaning and tidying before it can be pro‐
+cessed by a computer. The more data (and metadata) that is computer readable, the
+more we can leverage our computers to work with this data.
+
+[Vince Buffalo](https://womengovtcollegevisakha.ac.in/departments/Bioinformatics%20Data%20Skills%20Reproducible%20and%20Robust%20Research%20with%20Open%20Source%20Tools%20by%20Vince%20Buffalo.pdf)
+:::
+
 In the past years, the development went even further and one can even combine code and documentation in the same document. The code is wrapped in so called `chunks`, that are executable from within the document. 
 
 These **notebooks** come in different flavors, for example `jupyter notebooks`and `marimo` for Python applications, `Rmarkdown` for R code. Its successor, `quarto` can be used to integrate a variety of coding languanges. In this course, we will introduce you to `quarto`.
+
+::: {.callout-tip title="Make Figures and Statistics the Results of Scripts"}
+> Writing scripts to produce images and tables may seem like a more time-consuming
+process than generating these interactively in Excel or R. However, if you’ve ever had
+to regenerate multiple figures by hand after changing an earlier step, you know the
+merit of this approach. Scripts that generate tables and images can easily be rerun,
+save you time, and lead your research to be more reproducible. 
+
+[Vince Buffalo](https://womengovtcollegevisakha.ac.in/departments/Bioinformatics%20Data%20Skills%20Reproducible%20and%20Robust%20Research%20with%20Open%20Source%20Tools%20by%20Vince%20Buffalo.pdf)
+:::
 
 ## Hands-on: quarto
 
@@ -105,7 +132,7 @@ With this, we can turn to the [quarto hands-on training](Day3Session2_quarto.qmd
 
 Now that our student has reproducible documents, with reasonable names, that can execute their analyses reliably over and over again, what happens if they modify their analyses? Will they end up again with different result files and their project sink down in chaos?
 
-No, because there is `version control`, the practice of tracking and managing changes to files. 
+No, because there is **version control**, the practice of tracking and managing changes to files. 
 
 Version control can be used on the local system, where both the version database and the checked out file - the one that is actively being worked on - are on the local computer. Good, but the local computer can be corrupted and then the data is compromised.
 
@@ -119,6 +146,10 @@ At last, version control can be fully distributed, with all versions of the file
 
 ![[Distributed version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)](figures/data_management/git_distributed_version_control.png){.class width=50%}
 
+Distributed version control **facilitates collaboration** with others. Software like `git` automatically tracks differences in files, and flags conflicts between versions. 
+
+Additionally, GitHub, the code hosting platform based on git that we are using in this course, can be used to **maintain uniformity** within a working group. The group can develop their own project template that people can use and populate for their own projects.
+
 ## Hands-on: git and github
 
 We have prepared a hands-on training for [git and GitHub](Day3Session3_github.qmd) for you. 
@@ -127,9 +158,9 @@ We have prepared a hands-on training for [git and GitHub](Day3Session3_github.qm
 
 Using git, our PhD student can now share their reproducible code with their colloaborators, or between systems. They can rest assured that the different versions of the notebook are tracked and can be checked out when necessary. But what about the bioinformatic tools? 
 
-Different computers can run on different operating systems, or can have different versions of databases installed. This can lead to a conflict between tools, or versions and can impact code usability, or reproducibility. 
+Different computers can run on different operating systems, or can have different versions of databases installed. This can lead to conflicts between tools, or software versions and can impact code usability, or reproducibility. 
 
-Fortunately, smart people have developed environment managers such as `conda`, `bioconda`, or `pixi`. These tools find and install packages, so that the same package versions are being run between different computers. However, the code might still give different results on different operating systems.
+Fortunately, smart people have developed environment managers such as `conda`, `bioconda`, or `pixi`. These tools **find and install packages**, so that the same package versions are being run between different computers. However, the code might still give different results on different operating systems.
 
 ## Hands-on: managing environments with pixi
 
@@ -146,11 +177,24 @@ They can use containers, that contain everything needed to run the application, 
 Here is our tutorial on where to get container images, and how to use - and even build your own - [containers](Day2Session1_containers.qmd).
 
 
-::: {.callout-note}
+## Workflow manager - Nextflow
 
-test
+Now our PhD student can use containers, or environments, to provide a uniform environment for their version controlled, wonderfully documented and reproducible code. Fantastic! But they still have to deploy, or at least monitor, their scripts manually. 
 
+Fortunately there are workflow managers that can integrate all of the above, submit your jobs for you, and even monitor and re-submit scripts after failure. They will automatically submit jobs for you, decreasing downtime and increasing efficiency.
+
+::: {.callout-tip title="Let Your Computer Do the Work For You"}
+> Humans doing rote activities tend to make many mistakes. One of the easiest ways to
+make your work more robust is to have your computer do as much of this rote work
+as possible. This approach of automating tasks is more robust because it decreases the
+odds you’ll make a trivial mistake such as accidentally omitting a file or naming out‐
+put incorrectly.
+
+[Vince Buffalo](https://womengovtcollegevisakha.ac.in/departments/Bioinformatics%20Data%20Skills%20Reproducible%20and%20Robust%20Research%20with%20Open%20Source%20Tools%20by%20Vince%20Buffalo.pdf)
 :::
 
+## Hands-on: Nextflow
 
-![text](figures/data_management/name.jpg){.class width=70%}
+Follow this [link](Day1Session1_nfcore.qmd) for a more detailed introduction to nextflow. 
+
+

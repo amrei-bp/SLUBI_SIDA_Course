@@ -1,3 +1,57 @@
 ---
 title: "Nextflow and nf-core"
 ---
+
+When developing your code in bioinformatics, you will likely use different tool for different parts of your analyses. Traditionally, you would have about one script per tool, all of which you deploy by hand, one after the other. This can be quite tedious, especially if you have analyses with many steps, or many samples of different sizes that might need a varying amount of computational power. Luckily for you, other bioinformaticians and software developers have developed somthing to make your life much easier: 
+
+## Workflow managers
+
+>Workflow managers provide a framework for the creation, execution, and monitoring of pipeline. <...> 
+They simplify pipeline development, optimize resource usage, handle software installation and versions, and run on different compute platforms, enabling workflow portability and sharing.
+Wratten et al. (2021) Nature Methods
+
+With workflow managers you can develop an automated pipeline from your scripts that can then be run on a variety of systems. Once it is developed, execute a single command to start the pipeline. The manager then coordinates the deployment of the scripts in the appropriate sequence, monitors the jobs, handles the file transfers between scripts, gathers the output, and handles re-execution of failed jobs for you. Workflow managed pipelines can run containers, which eliminates software installation and version conflicts. 
+
+That means that by design the pipelines are: 
+
+- portable
+- more time efficient (no more downtime between pipeline steps)
+- more resource efficient (mostly, but this might vary depending how skilled a developer you yourself are)
+- easier to install (especially when combined with containers, or environment managers)
+- more reproducible
+
+There are in principle two different flavors of workflow managers: [snakemake](https://www.snakemake.io), and [nextflow](https://www.nextflow.io). In this course we will be introducing you to `nexflow`. 
+
+## Nextflow
+
+In nextflow, your scripts are turned into `processes`, connected by `channels` that contain the data - input, output etc. The order of the processes is specfied in the `process scope`. 
+
+::: {.callout-note}
+
+In this course, we will not write our own processes, or pipeline. However, if you are interested, there are a lot of very good training materials available online.
+
+:::
+
+
+The executable part of the processes, the so called `script`, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know). 
+
+
+![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nextflow_overview.png){.class width=70%}
+
+
+## nf-core
+
+![source: James Fellows Yates (Leibniz-HKI / MPI-EVA)](figures/nextflow_nf-core/nf-core-logo.png){.class width=70%}
+
+
+![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core.png){.class width=70%}
+
+![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core_components.png){.class width=70%}
+
+![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core_community.png){.class width=70%}
+
+
+nf-core: 
+- development and maintenance done by the community (!! always check, don't use it as a black box!)
+
+automation, codifying, do not re-invent the wheel

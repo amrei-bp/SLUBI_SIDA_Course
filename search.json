@@ -52,7 +52,7 @@
     "href": "Day1Session1_nfcore.html#nf-core",
     "title": "Nextflow and nf-core",
     "section": "nf-core",
-    "text": "nf-core\n\n\n\nsource: James Fellows Yates (Leibniz-HKI / MPI-EVA)\n\n\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\nnf-core: - development and maintenance done by the community (!! always check, don’t use it as a black box!)\nautomation, codifying, do not re-invent the wheel",
+    "text": "nf-core\n\n\n\nsource: nf-core\n\n\nNf-core is a very active community around nextflow. People develop pipelines, optimize processes to make them re-usable modules, work on training material, develop best practices for documentation, templates for development, and generally help each other out.\nThere is a weekly online helpdesk, and even a podcast.\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\nThere are currently 137 pipelines, released, in development or archived. However, very helpful are also their modules and the test data that they provide.\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhile nf-core is fantastic, please be aware that their pipelines are developed and maintained (or not maintained) by the community. You should not use the pipelines as a black box, but as a tool you need to understand. The responsibility for the end results is still yours, so you need to see if your data is suited for the analysis (good enough quality?), and if the analysis is suitable for your data!",
     "crumbs": [
       "Home",
       "Background knowledge with a bit of hands-on",

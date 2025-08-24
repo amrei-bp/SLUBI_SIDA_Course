@@ -58,17 +58,22 @@ One reason why we are using, and promoting, nexflow is the community project, `n
 
 ## nf-core
 
-![source: James Fellows Yates (Leibniz-HKI / MPI-EVA)](figures/nextflow_nf-core/nf-core-logo.png){.class width=70%}
+![source: [nf-core](https://nf-co.re/)](figures/nextflow_nf-core/nf-core_logo.png){.class width=70%}
 
+Nf-core is a very active community around nextflow. People develop pipelines, optimize processes to make them re-usable modules, work on training material, develop best practices for documentation, templates for development, and generally help each other out. 
 
-![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core.png){.class width=70%}
-
-![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core_components.png){.class width=70%}
+There is a weekly online helpdesk, and even a podcast. 
 
 ![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core_community.png){.class width=70%}
 
+There are currently 137 pipelines, released, in development or archived. However, very helpful are also their modules and the test data that they provide. 
 
-nf-core: 
-- development and maintenance done by the community (!! always check, don't use it as a black box!)
 
-automation, codifying, do not re-invent the wheel
+![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core_components.png){.class width=70%}
+
+
+::: {.callout-note}
+
+While nf-core is fantastic, please be aware that their pipelines are developed and maintained (or not maintained) by the community. You should not use the pipelines as a black box, but as a tool you need to understand. The responsibility for the end results is still yours, so you need to see if your data is suited for the analysis (good enough quality?), and if the analysis is suitable for your data!
+
+:::

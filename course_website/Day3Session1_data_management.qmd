@@ -13,7 +13,7 @@ More and more funding agencies expect a Data Management Plan at some point of a 
 :::
 
 
-![[The Research Data Management toolkit for Life Sciences](https://rdmkit.elixir-europe.org/)](figures/data_management/Data_life_cycle.png){.class width=70%}
+![[The Research Data Management toolkit for Life Sciences](https://rdmkit.elixir-europe.org/)](figures/data_management/Data_life_cycle.png){.class width=50%}
 
 
 ## FAIR principles
@@ -23,7 +23,7 @@ In the past, research data was often generated with one question in mind. Often,
 The FAIR principles promote efficient data discovery and reuse by providing guidelines to make digital resources:
 
 ![[Wilkinson et al. (2016)](https://www.tpximpact.com/knowledge-hub/insights/fair-data-guide/
-)](figures/data_management/fair-data-principles.webp){.class width=70%}
+)](figures/data_management/fair-data-principles.webp){.class width=50%}
 
 FAIR principles, in turn, rely on **good data management practices** in all phases of research:
 
@@ -109,17 +109,15 @@ No, because there is `version control`, the practice of tracking and managing ch
 
 Version control can be used on the local system, where both the version database and the checked out file - the one that is actively being worked on - are on the local computer. Good, but the local computer can be corrupted and then the data is compromised.
 
+![[Local version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)](figures/data_management/Local_version_control_diagram.png){.class width=50%}
+
 Version control can also be centralized, where the version database is on a central server, and the active file can be checked out from several different computers. This is useful when working from different systems, or when working with collaborators. However, when the central servers is compromised the historical version are lost. 
 
-::: {layout-ncol=2}
-![[Local version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)](figures/data_management/Local_version_control_diagram.png){.class width=80%}
-
-![[Centralized version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)](figures/data_management/Centralized_version_control.png){.class width=100%}
-:::
+![[Centralized version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)](figures/data_management/Centralized_version_control.png){.class width=50%}
 
 At last, version control can be fully distributed, with all versions of the file being on the server and different computers. Each computer checks out the file from its own version database to work on them. The databases are then synchronized between the different computers and the server. One such distributed version control system is `git`. It can handle everything from small to very large projects and is simple to use. `GitHub`is a code hosting platform for version control and collaboration, built on git.
 
-![[Distributed version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)](figures/data_management/git_distributed_version_control.png){.class width=100%}
+![[Distributed version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)](figures/data_management/git_distributed_version_control.png){.class width=50%}
 
 ## Hands-on: git and github
 

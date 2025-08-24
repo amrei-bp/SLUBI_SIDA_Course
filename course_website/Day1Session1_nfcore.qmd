@@ -1,3 +1,95 @@
 ---
 title: "Nextflow and nf-core"
 ---
+
+When developing your code in bioinformatics, you will likely use different tool for different parts of your analyses. Traditionally, you would have about one script per tool, all of which you deploy by hand, one after the other. Together, this is called a `workflow`or `pipeline`.
+
+Manual deployment of pipelines can be tedious, especially if you have analyses with many steps, or many samples of different sizes that might need a varying amount of computational power. Luckily for you, other bioinformaticians and software developers have developed something to make your life much easier: 
+
+## Workflow managers
+
+>Workflow managers provide a framework for the creation, execution, and monitoring of pipeline. <...> 
+They simplify pipeline development, optimize resource usage, handle software installation and versions, and run on different compute platforms, enabling workflow portability and sharing.
+Wratten et al. (2021) Nature Methods
+
+With workflow managers you can develop an automated pipeline from your scripts that can then be run on a variety of systems. Once it is developed, execute a single command to start the pipeline. The manager then coordinates the deployment of the scripts in the appropriate sequence, monitors the jobs, handles the file transfers between scripts, gathers the output, and handles re-execution of failed jobs for you. Workflow managed pipelines can run containers, which eliminates software installation and version conflicts. 
+
+That means that by design the pipelines are: 
+
+- portable
+- more time efficient (no more downtime between pipeline steps)
+- more resource efficient (mostly, but this might vary depending how skilled a developer you yourself are)
+- easier to install (especially when combined with containers, or environment managers)
+- more reproducible
+
+There are in principle two different flavors of workflow managers: [snakemake](https://www.snakemake.io), and [nextflow](https://www.nextflow.io). In this course we will be introducing you to `nexflow`. 
+
+## Nextflow
+
+In nextflow, your scripts are turned into `processes`, connected by `channels` that contain the data - input, output etc. The order of the processes, and their interaction with each other, is specfied in the `workflow scope`. 
+
+![source: [Software carpentries](https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html)](figures/nextflow_nf-core/channel-process_fqc.png){.class width=80%}
+
+::: {.callout-note}
+
+In this course, we will not write our own processes, or pipeline. However, if you are interested, there are a lot of very good training materials available online.
+
+:::
+
+
+The executable part of the processes, the so called `script`, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know). However, the **modularity** of the processes allows for easy re-use of existing scripts and processes.
+
+When moving the pipeline from one system to another, the `script` stays the same and does not change, the same containers are used. The only thing that changes are the parameters that pertain to the environment and available resources. In other words, with nextflow, the functional logic, the processes, are separated from the executive (how the workflow runs). This makes the nextflow pipelines highly **interoperable and portable**. They can be run on various platforms, such as HPC clusters, local computers, cloud systems etc..
+
+The pipelines can be integrated with version control tools, such as git or bitbucket, and containers technologies, such as apptainer or docker. This makes the pipeline very **reproducible**.
+
+The nextflow pipelines are extremely **scalable**, can be developed on a few samples and easily be run on hundreds or thousands of samples. When possible, processes are run in parallel automatically.
+
+Nexflow performs automatic checks on the processes and their in- and output. It can automatically **resume execution** at a point of failure without having to re-compute successfully completed parts.  
+
+Nextflow is open source. 
+
+Here is a more visual summary of some of the points above: 
+
+![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nextflow_overview.png){.class width=70%}
+
+One reason why we are using, and promoting, nexflow is the community project, `nf-core` 
+
+
+## nf-core
+
+![source: [nf-core](https://nf-co.re/)](figures/nextflow_nf-core/nf-core_logo.png){.class width=70%}
+
+Nf-core is a very active community around nextflow. Volunteers develop nextflow pipelines around a variety of bioinformatic data. 
+
+Here are some flagship pipelines that have been developed by the nf-core community (we will have a look at the entire list on the nf-core homepage in a bit): 
+
+![source: [nf-core](https://nf-co.re/)](figures/nextflow_nf-core/nf-core_popular_pipelines.png){.class width=80%}
+
+All nf-core pipelines are open source and the source code is available on github. The pipelines are developed by volunteers, who can have a very varied background. 
+
+::: {.callout-note}
+
+While nf-core is fantastic, please be aware that their pipelines are developed and maintained (or not maintained) by the community. **You should not use the pipelines as a black box**, but as a tool you need to understand. The **responsibility for the end results is still yours**, so you need to see if your data is suited for the analysis (good enough quality?), and if the analysis is suitable for your data!
+
+:::
+
+However, nf-core does not only develop pipelines. 
+
+The community also develops: 
+- processes that they make available as `modules` (and optimizes then too). 
+- training material for all user classes.
+- best practices for documentation.
+- templates for development.
+
+There is a weekly online helpdesk, and even a podcast. 
+
+### What makes nf-core pipelines interesting for you?
+
+Nf-core provides already developed pipelines for many different data sets. Likely, a pipelines exists that you can use on your data. The **documentation of the pipelines follows nf-core guidelines** and is extensive and informative - it is easy to understand what the pipeline does and how it works. All **output is explained in detail**, with links to more extensive documentation. 
+
+Once you have understood how to run a nf-core pipeline their **consistency and standardization** means you will know most about running a different one. 
+
+Using the nf-core launcher, will **check your input**, and automatically **generate commands and configuration** files.
+
+And this is on top of all nextflow functionality such as portability, reproducibility and the resume-at-fault option!

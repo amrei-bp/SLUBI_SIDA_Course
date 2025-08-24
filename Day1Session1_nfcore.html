@@ -288,7 +288,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>When developing your code in bioinformatics, you will likely use different tool for different parts of your analyses. Traditionally, you would have about one script per tool, all of which you deploy by hand, one after the other. This can be quite tedious, especially if you have analyses with many steps, or many samples of different sizes that might need a varying amount of computational power. Luckily for you, other bioinformaticians and software developers have developed somthing to make your life much easier:</p>
+<p>When developing your code in bioinformatics, you will likely use different tool for different parts of your analyses. Traditionally, you would have about one script per tool, all of which you deploy by hand, one after the other. Together, this is called a <code>workflow</code>or <code>pipeline</code>.</p>
+<p>Manual deployment of pipelines can be tedious, especially if you have analyses with many steps, or many samples of different sizes that might need a varying amount of computational power. Luckily for you, other bioinformaticians and software developers have developed something to make your life much easier:</p>
 <section id="workflow-managers" class="level2">
 <h2 class="anchored" data-anchor-id="workflow-managers">Workflow managers</h2>
 <blockquote class="blockquote">
@@ -307,7 +308,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="nextflow" class="level2">
 <h2 class="anchored" data-anchor-id="nextflow">Nextflow</h2>
-<p>In nextflow, your scripts are turned into <code>processes</code>, connected by <code>channels</code> that contain the data - input, output etc. The order of the processes is specfied in the <code>process scope</code>.</p>
+<p>In nextflow, your scripts are turned into <code>processes</code>, connected by <code>channels</code> that contain the data - input, output etc. The order of the processes, and their interaction with each other, is specfied in the <code>workflow scope</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/nextflow_nf-core/channel-process_fqc.png" class="class img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>source: <a href="https://carpentries-incubator.github.io/workflows-nextflow/01-getting-started-with-nextflow.html">Software carpentries</a></figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -321,13 +328,20 @@ Note
 <p>In this course, we will not write our own processes, or pipeline. However, if you are interested, there are a lot of very good training materials available online.</p>
 </div>
 </div>
-<p>The executable part of the processes, the so called <code>script</code>, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know).</p>
+<p>The executable part of the processes, the so called <code>script</code>, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know). However, the <code>modularity</code> of the processes allows for easy re-use of existing scripts and processes.</p>
+<p>When moving the pipeline from one system to another, the <code>script</code> stays the same and does not change, the same containers are used. The only thing that changes are the parameters that pertain to the environment and available resources. In other words, with nextflow, the functional logic, the processes, are separated from the executive (how the workflow runs). This makes the nextflow pipelines highly <code>interoperable</code> and <code>portable</code>. They can be run on various platforms, such as HPC clusters, local computers, cloud systems etc..</p>
+<p>The pipelines can be integrated with version control tools, such as git or bitbucket, and containers technologies, such as apptainer or docker. This makes the pipeline very <code>reproducible</code>.</p>
+<p>The nextflow pipelines are extremely <code>scalable</code>, can be developed on a few samples and easily be run on hundreds or thousands of samples. When possible, processes are run in parallel automatically.</p>
+<p>Nexflow performs automatic checks on the processes and their in- and output. It can automatically <code>resume execution</code> at a point of failure without having to re-compute successfully completed parts.</p>
+<p>Nextflow is open source.</p>
+<p>Here is a more visual summary of some of the points above:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/nextflow_nf-core/nextflow_overview.png" class="class img-fluid figure-img" style="width:70.0%"></p>
 <figcaption>source: Maxime U Garcia, Seqera labs</figcaption>
 </figure>
 </div>
+<p>One reason why we are using, and promoting, nexflow is the community project, <code>nf-core</code></p>
 </section>
 <section id="nf-core" class="level2">
 <h2 class="anchored" data-anchor-id="nf-core">nf-core</h2>

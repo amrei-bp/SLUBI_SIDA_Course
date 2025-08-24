@@ -255,8 +255,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#workflow-managers" id="toc-workflow-managers" class="nav-link active" data-scroll-target="#workflow-managers">Workflow managers</a></li>
+  <li><a href="#nextflow" id="toc-nextflow" class="nav-link" data-scroll-target="#nextflow">Nextflow</a></li>
+  <li><a href="#nf-core" id="toc-nf-core" class="nav-link" data-scroll-target="#nf-core">nf-core</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -280,8 +288,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>When developing your code in bioinformatics, you will likely use different tool for different parts of your analyses. Traditionally, you would have about one script per tool, all of which you deploy by hand, one after the other. This can be quite tedious, especially if you have analyses with many steps, or many samples of different sizes that might need a varying amount of computational power. Luckily for you, other bioinformaticians and software developers have developed somthing to make your life much easier:</p>
+<section id="workflow-managers" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-managers">Workflow managers</h2>
+<blockquote class="blockquote">
+<p>Workflow managers provide a framework for the creation, execution, and monitoring of pipeline. &lt;…&gt; They simplify pipeline development, optimize resource usage, handle software installation and versions, and run on different compute platforms, enabling workflow portability and sharing. Wratten et al.&nbsp;(2021) Nature Methods</p>
+</blockquote>
+<p>With workflow managers you can develop an automated pipeline from your scripts that can then be run on a variety of systems. Once it is developed, execute a single command to start the pipeline. The manager then coordinates the deployment of the scripts in the appropriate sequence, monitors the jobs, handles the file transfers between scripts, gathers the output, and handles re-execution of failed jobs for you. Workflow managed pipelines can run containers, which eliminates software installation and version conflicts.</p>
+<p>That means that by design the pipelines are:</p>
+<ul>
+<li>portable</li>
+<li>more time efficient (no more downtime between pipeline steps)</li>
+<li>more resource efficient (mostly, but this might vary depending how skilled a developer you yourself are)</li>
+<li>easier to install (especially when combined with containers, or environment managers)</li>
+<li>more reproducible</li>
+</ul>
+<p>There are in principle two different flavors of workflow managers: <a href="https://www.snakemake.io">snakemake</a>, and <a href="https://www.nextflow.io">nextflow</a>. In this course we will be introducing you to <code>nexflow</code>.</p>
+</section>
+<section id="nextflow" class="level2">
+<h2 class="anchored" data-anchor-id="nextflow">Nextflow</h2>
+<p>In nextflow, your scripts are turned into <code>processes</code>, connected by <code>channels</code> that contain the data - input, output etc. The order of the processes is specfied in the <code>process scope</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this course, we will not write our own processes, or pipeline. However, if you are interested, there are a lot of very good training materials available online.</p>
+</div>
+</div>
+<p>The executable part of the processes, the so called <code>script</code>, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/nextflow_nf-core/nextflow_overview.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>source: Maxime U Garcia, Seqera labs</figcaption>
+</figure>
+</div>
+</section>
+<section id="nf-core" class="level2">
+<h2 class="anchored" data-anchor-id="nf-core">nf-core</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/nextflow_nf-core/nf-core-logo.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>source: James Fellows Yates (Leibniz-HKI / MPI-EVA)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/nextflow_nf-core/nf-core.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>source: Maxime U Garcia, Seqera labs</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/nextflow_nf-core/nf-core_components.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>source: Maxime U Garcia, Seqera labs</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/nextflow_nf-core/nf-core_community.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>source: Maxime U Garcia, Seqera labs</figcaption>
+</figure>
+</div>
+<p>nf-core: - development and maintenance done by the community (!! always check, don’t use it as a black box!)</p>
+<p>automation, codifying, do not re-invent the wheel</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -12,6 +12,54 @@
     ]
   },
   {
+    "objectID": "Day1Session1_nfcore.html",
+    "href": "Day1Session1_nfcore.html",
+    "title": "Nextflow and nf-core",
+    "section": "",
+    "text": "When developing your code in bioinformatics, you will likely use different tool for different parts of your analyses. Traditionally, you would have about one script per tool, all of which you deploy by hand, one after the other. This can be quite tedious, especially if you have analyses with many steps, or many samples of different sizes that might need a varying amount of computational power. Luckily for you, other bioinformaticians and software developers have developed somthing to make your life much easier:",
+    "crumbs": [
+      "Home",
+      "Background knowledge with a bit of hands-on",
+      "Nextflow and nf-core"
+    ]
+  },
+  {
+    "objectID": "Day1Session1_nfcore.html#workflow-managers",
+    "href": "Day1Session1_nfcore.html#workflow-managers",
+    "title": "Nextflow and nf-core",
+    "section": "Workflow managers",
+    "text": "Workflow managers\n\nWorkflow managers provide a framework for the creation, execution, and monitoring of pipeline. &lt;…&gt; They simplify pipeline development, optimize resource usage, handle software installation and versions, and run on different compute platforms, enabling workflow portability and sharing. Wratten et al. (2021) Nature Methods\n\nWith workflow managers you can develop an automated pipeline from your scripts that can then be run on a variety of systems. Once it is developed, execute a single command to start the pipeline. The manager then coordinates the deployment of the scripts in the appropriate sequence, monitors the jobs, handles the file transfers between scripts, gathers the output, and handles re-execution of failed jobs for you. Workflow managed pipelines can run containers, which eliminates software installation and version conflicts.\nThat means that by design the pipelines are:\n\nportable\nmore time efficient (no more downtime between pipeline steps)\nmore resource efficient (mostly, but this might vary depending how skilled a developer you yourself are)\neasier to install (especially when combined with containers, or environment managers)\nmore reproducible\n\nThere are in principle two different flavors of workflow managers: snakemake, and nextflow. In this course we will be introducing you to nexflow.",
+    "crumbs": [
+      "Home",
+      "Background knowledge with a bit of hands-on",
+      "Nextflow and nf-core"
+    ]
+  },
+  {
+    "objectID": "Day1Session1_nfcore.html#nextflow",
+    "href": "Day1Session1_nfcore.html#nextflow",
+    "title": "Nextflow and nf-core",
+    "section": "Nextflow",
+    "text": "Nextflow\nIn nextflow, your scripts are turned into processes, connected by channels that contain the data - input, output etc. The order of the processes is specfied in the process scope.\n\n\n\n\n\n\nNote\n\n\n\nIn this course, we will not write our own processes, or pipeline. However, if you are interested, there are a lot of very good training materials available online.\n\n\nThe executable part of the processes, the so called script, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know).\n\n\n\nsource: Maxime U Garcia, Seqera labs",
+    "crumbs": [
+      "Home",
+      "Background knowledge with a bit of hands-on",
+      "Nextflow and nf-core"
+    ]
+  },
+  {
+    "objectID": "Day1Session1_nfcore.html#nf-core",
+    "href": "Day1Session1_nfcore.html#nf-core",
+    "title": "Nextflow and nf-core",
+    "section": "nf-core",
+    "text": "nf-core\n\n\n\nsource: James Fellows Yates (Leibniz-HKI / MPI-EVA)\n\n\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\nnf-core: - development and maintenance done by the community (!! always check, don’t use it as a black box!)\nautomation, codifying, do not re-invent the wheel",
+    "crumbs": [
+      "Home",
+      "Background knowledge with a bit of hands-on",
+      "Nextflow and nf-core"
+    ]
+  },
+  {
     "objectID": "Day2Session2_nextflow_handson.html",
     "href": "Day2Session2_nextflow_handson.html",
     "title": "nfcore RNASeq Pipeline",
@@ -527,7 +575,7 @@
     "href": "Day3Session1_data_management.html#version-control",
     "title": "Data Management for Reproducible Research",
     "section": "Version control",
-    "text": "Version control\nNow that our student has reproducible documents, with reasonable names, that can execute their analyses reliably over and over again, what happens if they modify their analyses? Will they end up again with different result files and their project sink down in chaos?\nNo, because there is version control, the practice of tracking and managing changes to files.\nVersion control can be used on the local system, where both the version database and the checked out file - the one that is actively being worked on - are on the local computer. Good, but the local computer can be corrupted and then the data is compromised.\nVersion control can also be centralized, where the version database is on a central server, and the active file can be checked out from several different computers. This is useful when working from different systems, or when working with collaborators. However, when the central servers is compromised the historical version are lost.\n\n\n\n\n\n\nLocal version control\n\n\n\n\n\n\n\nCentralized version control\n\n\n\n\n\nAt last, version control can be fully distributed, with all versions of the file being on the server and different computers. Each computer checks out the file from its own version database to work on them. The databases are then synchronized between the different computers and the server. One such distributed version control system is git. It can handle everything from small to very large projects and is simple to use. GitHubis a code hosting platform for version control and collaboration, built on git.\n\n\n\nDistributed version control",
+    "text": "Version control\nNow that our student has reproducible documents, with reasonable names, that can execute their analyses reliably over and over again, what happens if they modify their analyses? Will they end up again with different result files and their project sink down in chaos?\nNo, because there is version control, the practice of tracking and managing changes to files.\nVersion control can be used on the local system, where both the version database and the checked out file - the one that is actively being worked on - are on the local computer. Good, but the local computer can be corrupted and then the data is compromised.\n\n\n\nLocal version control\n\n\nVersion control can also be centralized, where the version database is on a central server, and the active file can be checked out from several different computers. This is useful when working from different systems, or when working with collaborators. However, when the central servers is compromised the historical version are lost.\n\n\n\nCentralized version control\n\n\nAt last, version control can be fully distributed, with all versions of the file being on the server and different computers. Each computer checks out the file from its own version database to work on them. The databases are then synchronized between the different computers and the server. One such distributed version control system is git. It can handle everything from small to very large projects and is simple to use. GitHubis a code hosting platform for version control and collaboration, built on git.\n\n\n\nDistributed version control",
     "crumbs": [
       "Home",
       "Data management",

@@ -316,7 +316,7 @@ Note
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/data_management/Data_life_cycle.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="figures/data_management/Data_life_cycle.png" class="class img-fluid figure-img" style="width:50.0%"></p>
 <figcaption><a href="https://rdmkit.elixir-europe.org/">The Research Data Management toolkit for Life Sciences</a></figcaption>
 </figure>
 </div>
@@ -327,7 +327,7 @@ Note
 <p>The FAIR principles promote efficient data discovery and reuse by providing guidelines to make digital resources:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/data_management/fair-data-principles.webp" class="class img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="figures/data_management/fair-data-principles.webp" class="class img-fluid figure-img" style="width:50.0%"></p>
 <figcaption><a href="https://www.tpximpact.com/knowledge-hub/insights/fair-data-guide/">Wilkinson et al.&nbsp;(2016)</a></figcaption>
 </figure>
 </div>
@@ -427,31 +427,23 @@ Best practices file organization
 <p>Now that our student has reproducible documents, with reasonable names, that can execute their analyses reliably over and over again, what happens if they modify their analyses? Will they end up again with different result files and their project sink down in chaos?</p>
 <p>No, because there is <code>version control</code>, the practice of tracking and managing changes to files.</p>
 <p>Version control can be used on the local system, where both the version database and the checked out file - the one that is actively being worked on - are on the local computer. Good, but the local computer can be corrupted and then the data is compromised.</p>
-<p>Version control can also be centralized, where the version database is on a central server, and the active file can be checked out from several different computers. This is useful when working from different systems, or when working with collaborators. However, when the central servers is compromised the historical version are lost.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/data_management/Local_version_control_diagram.png" class="class img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="figures/data_management/Local_version_control_diagram.png" class="class img-fluid figure-img" style="width:50.0%"></p>
 <figcaption><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Local version control</a></figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Version control can also be centralized, where the version database is on a central server, and the active file can be checked out from several different computers. This is useful when working from different systems, or when working with collaborators. However, when the central servers is compromised the historical version are lost.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/data_management/Centralized_version_control.png" class="class img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/data_management/Centralized_version_control.png" class="class img-fluid figure-img" style="width:50.0%"></p>
 <figcaption><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Centralized version control</a></figcaption>
 </figure>
-</div>
-</div>
-</div>
 </div>
 <p>At last, version control can be fully distributed, with all versions of the file being on the server and different computers. Each computer checks out the file from its own version database to work on them. The databases are then synchronized between the different computers and the server. One such distributed version control system is <code>git</code>. It can handle everything from small to very large projects and is simple to use. <code>GitHub</code>is a code hosting platform for version control and collaboration, built on git.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/data_management/git_distributed_version_control.png" class="class img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/data_management/git_distributed_version_control.png" class="class img-fluid figure-img" style="width:50.0%"></p>
 <figcaption><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Distributed version control</a></figcaption>
 </figure>
 </div>

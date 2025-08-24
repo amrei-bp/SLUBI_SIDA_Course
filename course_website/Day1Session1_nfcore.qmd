@@ -37,15 +37,15 @@ In this course, we will not write our own processes, or pipeline. However, if yo
 :::
 
 
-The executable part of the processes, the so called `script`, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know). However, the `modularity` of the processes allows for easy re-use of existing scripts and processes.
+The executable part of the processes, the so called `script`, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know). However, the **modularity** of the processes allows for easy re-use of existing scripts and processes.
 
-When moving the pipeline from one system to another, the `script` stays the same and does not change, the same containers are used. The only thing that changes are the parameters that pertain to the environment and available resources. In other words, with nextflow, the functional logic, the processes, are separated from the executive (how the workflow runs). This makes the nextflow pipelines highly `interoperable` and `portable`. They can be run on various platforms, such as HPC clusters, local computers, cloud systems etc..
+When moving the pipeline from one system to another, the `script` stays the same and does not change, the same containers are used. The only thing that changes are the parameters that pertain to the environment and available resources. In other words, with nextflow, the functional logic, the processes, are separated from the executive (how the workflow runs). This makes the nextflow pipelines highly **interoperable and portable**. They can be run on various platforms, such as HPC clusters, local computers, cloud systems etc..
 
-The pipelines can be integrated with version control tools, such as git or bitbucket, and containers technologies, such as apptainer or docker. This makes the pipeline very `reproducible`.
+The pipelines can be integrated with version control tools, such as git or bitbucket, and containers technologies, such as apptainer or docker. This makes the pipeline very **reproducible**.
 
-The nextflow pipelines are extremely `scalable`, can be developed on a few samples and easily be run on hundreds or thousands of samples. When possible, processes are run in parallel automatically.
+The nextflow pipelines are extremely **scalable**, can be developed on a few samples and easily be run on hundreds or thousands of samples. When possible, processes are run in parallel automatically.
 
-Nexflow performs automatic checks on the processes and their in- and output. It can automatically `resume execution` at a point of failure without having to re-compute successfully completed parts.  
+Nexflow performs automatic checks on the processes and their in- and output. It can automatically **resume execution** at a point of failure without having to re-compute successfully completed parts.  
 
 Nextflow is open source. 
 
@@ -70,7 +70,7 @@ All nf-core pipelines are open source and the source code is available on github
 
 ::: {.callout-note}
 
-While nf-core is fantastic, please be aware that their pipelines are developed and maintained (or not maintained) by the community. You should not use the pipelines as a black box, but as a tool you need to understand. The responsibility for the end results is still yours, so you need to see if your data is suited for the analysis (good enough quality?), and if the analysis is suitable for your data!
+While nf-core is fantastic, please be aware that their pipelines are developed and maintained (or not maintained) by the community. **You should not use the pipelines as a black box**, but as a tool you need to understand. The **responsibility for the end results is still yours**, so you need to see if your data is suited for the analysis (good enough quality?), and if the analysis is suitable for your data!
 
 :::
 
@@ -86,10 +86,10 @@ There is a weekly online helpdesk, and even a podcast.
 
 ### What makes nf-core pipelines interesting for you?
 
-Nf-core provides already developed pipelines for many different data sets. Likely, a pipelines exists that you can use on your data. The `documentation of the pipelines follows nf-core guidelines` and is extensive and informative - it is easy to understand what the pipeline does and how it works. All `output is explained in detail`, with links to more extensive documentation. 
+Nf-core provides already developed pipelines for many different data sets. Likely, a pipelines exists that you can use on your data. The **documentation of the pipelines follows nf-core guidelines** and is extensive and informative - it is easy to understand what the pipeline does and how it works. All **output is explained in detail**, with links to more extensive documentation. 
 
-Once you have understood how to run a nf-core pipeline their `consistency and standardization` means you will know most about running a different one. 
+Once you have understood how to run a nf-core pipeline their **consistency and standardization** means you will know most about running a different one. 
 
-Using the nf-core launcher, will `check your input`, and automatically `generate commands and configuration` files.
+Using the nf-core launcher, will **check your input**, and automatically **generate commands and configuration** files.
 
 And this is on top of all nextflow functionality such as portability, reproducibility and the resume-at-fault option!

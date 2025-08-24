@@ -60,20 +60,36 @@ One reason why we are using, and promoting, nexflow is the community project, `n
 
 ![source: [nf-core](https://nf-co.re/)](figures/nextflow_nf-core/nf-core_logo.png){.class width=70%}
 
-Nf-core is a very active community around nextflow. People develop pipelines, optimize processes to make them re-usable modules, work on training material, develop best practices for documentation, templates for development, and generally help each other out. 
+Nf-core is a very active community around nextflow. Volunteers develop nextflow pipelines around a variety of bioinformatic data. 
 
-There is a weekly online helpdesk, and even a podcast. 
+Here are some flagship pipelines that have been developed by the nf-core community (we will have a look at the entire list on the nf-core homepage in a bit): 
 
-![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core_community.png){.class width=70%}
+![source: [nf-core](https://nf-co.re/)](figures/nextflow_nf-core/nf-core_popular_pipelines.png){.class width=80%}
 
-There are currently 137 pipelines, released, in development or archived. However, very helpful are also their modules and the test data that they provide. 
-
-
-![source: Maxime U Garcia, Seqera labs](figures/nextflow_nf-core/nf-core_components.png){.class width=70%}
-
+All nf-core pipelines are open source and the source code is available on github. The pipelines are developed by volunteers, who can have a very varied background. 
 
 ::: {.callout-note}
 
 While nf-core is fantastic, please be aware that their pipelines are developed and maintained (or not maintained) by the community. You should not use the pipelines as a black box, but as a tool you need to understand. The responsibility for the end results is still yours, so you need to see if your data is suited for the analysis (good enough quality?), and if the analysis is suitable for your data!
 
 :::
+
+However, nf-core does not only develop pipelines. 
+
+The community also develops: 
+- processes that they make available as `modules` (and optimizes then too). 
+- training material for all user classes.
+- best practices for documentation.
+- templates for development.
+
+There is a weekly online helpdesk, and even a podcast. 
+
+### What makes nf-core pipelines interesting for you?
+
+Nf-core provides already developed pipelines for many different data sets. Likely, a pipelines exists that you can use on your data. The `documentation of the pipelines follows nf-core guidelines` and is extensive and informative - it is easy to understand what the pipeline does and how it works. All `output is explained in detail`, with links to more extensive documentation. 
+
+Once you have understood how to run a nf-core pipeline their `consistency and standardization` means you will know most about running a different one. 
+
+Using the nf-core launcher, will `check your input`, and automatically `generate commands and configuration` files.
+
+And this is on top of all nextflow functionality such as portability, reproducibility and the resume-at-fault option!

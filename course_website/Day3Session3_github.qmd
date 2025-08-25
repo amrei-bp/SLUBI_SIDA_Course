@@ -110,4 +110,18 @@ In the terminal of VScode, check the status of your project with `git status`.
 
 There are a few files that are already tracked by git, but that have untracked changes, and a few files that are not tracked. (There is also one commit that is not yet pushed to the remote repository.) At the bottom it even says which commands to use to stage and commit changes.
 
-Now, I can stage the files with `git add <filename>`. 
+Now, I can stage the files with `git add <filename>`: 
+
+![git add example](figures/git_and_github/git_add.png){.class width=70%}
+
+Now we can see in green the changes that are to be committed. I can commit them with `git commit -m ">commit message>":
+
+![git commit example](figures/git_and_github/git_commit.png){.class width=70%}
+
+The commit is then incorporated into the repository, and briefly summarized in the command line. I can now use `git push` to push the changes to the remote repository on Github and publish them. 
+
+### via VScode
+
+Clicking on the git shortcut button in VScode opens a pane that shows which changes have been made. 
+
+![VScode status example](figures/git_and_github/vscode_status.png){.class width=70%}

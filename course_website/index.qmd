@@ -18,8 +18,8 @@ The website will remain active after the course so that you have access to the m
 | | [Setting up and running a Nextflow Pipeline (with us)](Day2Session2_nextflow_handson.qmd)  |
 | | [Setting up and running a Nextflow Pipeline (by yourself)](Day2Session3_nextfow_own_choice.qmd)  |
 | Wednesday  | [Data Management and Reproducible Research](Day3Session1_data_management.qmd)  |
-|   | [GitHub](Day3Session3_github.qmd)  |
 |   | [Introduction to Markdown and Quarto](Day3Session2_quarto.qmd)  |
+|   | [GitHub](Day3Session3_github.qmd)  |
 |   | [How do Nextflow Pipelines Work?](Day3Session4_nfcore_main.qmd)  |
 | Thursday  | [Nextflow Results](Day4Session1_results.qmd)  |
 |   | [Using Containers Outside of Nextflow](Day4Session2_use_containers.qmd)  |

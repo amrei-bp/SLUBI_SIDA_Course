@@ -1,18 +1,19 @@
 ---
-title: "Project Management with GitHub"
+title: "Version control: git and Github"
 ---
+<br>
 
-To get started with GitHub in VS Code, you'll need to install [Git](https://git-scm.com/downloads), [create a GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) and install the [GitHub Pull Requests and Issues extension](vscode:extension/GitHub.vscode-pull-request-github).
+**Git** is a **version control software** that is fully distributed - meaning that each project folder contains the full history of the project. These project folders are also called `repositories` and can be on several computers, or servers. 
 
-::: { .callout-note}
-As of March 2023, GitHub required all users who contribute code on GitHub.com to enable one or more forms of two-factor authentication (2FA). [Here](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication) is the step by step how-to enable two factor authentication. 
-
-[Here](https://swcarpentry.github.io/git-novice/#multi-factor-authentication) is another summary, plus suggestions which software to use.
-:::
+**Github** is a **code hosting platform** that is **based on git**. Here you can store, track and publish code (and code only, do NOT use github for data!). On Github you can collaborate with colleagues and work on projects together. 
 
 ::: {.callout-note}
-A **repository** in GitHub is where you can store your code, your files, together with their revision history. Repositories can be public or private, and might have several collaborators.
+A **repository in git** is the .git/ folder inside of your directory. This repository tracks all changes made to files in your project and contains your project history. Usually we refer to the git repository as the **local repository**. 
+
+A **repository in GitHub** is where you can store your code, your files, together with their revision history. Repositories can be public or private, and might have several collaborators. Usually we refer to the Github repository as the **remote repository**. 
 :::
+
+Let's have a closer look at how git works:
 
 ## git
 
@@ -36,6 +37,17 @@ And the basic commands of git:
 ::: {.callout-note}
 These basic operations are all done on your local system. You have the entire history of the project on your local disk, and do not need an internet connection to work on your data with git. You can do all your commits on your local computer and later push them to a remote repostitory, like Github.
 :::
+
+## Use git with Github
+
+To get started with GitHub in VS Code, you'll need to install [Git](https://git-scm.com/downloads), [create a GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) and install the [GitHub Pull Requests and Issues extension](vscode:extension/GitHub.vscode-pull-request-github).
+
+::: { .callout-note}
+As of March 2023, GitHub required all users who contribute code on GitHub.com to enable one or more forms of two-factor authentication (2FA). [Here](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication) is the step by step how-to enable two factor authentication. 
+
+[Here](https://swcarpentry.github.io/git-novice/#multi-factor-authentication) is another summary, plus suggestions which software to use.
+:::
+
 
 
 ## Create a new repository on Github
@@ -79,7 +91,7 @@ To change the content of the repository on your local computer you need to copy 
 
 ![Interface to clone a repository](figures/git_and_github/clone_repo.png)
 
-- Click on the green `Code` button and select `SSH` on the `Local` tab. 
+- Click on the green `Code` button and select `HTTPS` on the `Local` tab. 
 - Copy the URL to the clipboard. 
 - **Open VScode** and type ``> Git: Clone` into the search bar. 
 - **Copy in the URL you just copied from Github**. 
@@ -125,3 +137,25 @@ The commit is then incorporated into the repository, and briefly summarized in t
 Clicking on the git shortcut button in VScode opens a pane that shows which changes have been made. 
 
 ![VScode status example](figures/git_and_github/vscode_status.png){.class width=70%}
+
+By clicking on the plus to the right of the file you can stage the file, and then commit them with the blue commit button and a commit message. You can also commit and push at the same time (by selecting that option in the drop down menu of the blue commit button). 
+
+![VScode staging example](figures/git_and_github/vscode_stage.png){.class width=70%}
+
+::: {.callout-note}
+A **commit message** should always be informative. They will be the identifiers if you want to "go back in time" and revert to an earlier version of your repository. 
+:::
+
+## using git collaboratively
+
+We have now introduced how you can use git and github by yourself. However, it is a very poweful tool for working together with others. Unfortunately, getting into the details of that would exceed the time we have in this course. 
+
+Here are some resources for you to look into for further reading and training: 
+
+[Getting started with git](https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git).
+
+The [git book](https://git-scm.com/book/en/v2). 
+
+[Version control with git from the software carpentries](https://swcarpentry.github.io/git-novice/).
+
+[Working with GitHub in VScode](https://code.visualstudio.com/docs/sourcecontrol/github).

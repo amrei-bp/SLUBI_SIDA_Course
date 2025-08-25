@@ -667,6 +667,18 @@
     ]
   },
   {
+    "objectID": "Day3Session1_data_management.html#things-to-take-home",
+    "href": "Day3Session1_data_management.html#things-to-take-home",
+    "title": "Data Management for Reproducible Research",
+    "section": "Things to take home",
+    "text": "Things to take home\nWe have now talked about many different aspects of data management, and tools and guidelines to make your life, and managing a research group, easier. Instilling best practices on students early on in their life will mean that routines will become second nature. We believen that making projects more FAIR and reproducible might initially take a bit more time, but will ultimately boost productivity.\nIf you cannot implement all of the above, choose some things that you can implement this time, and aim to implement another aspect the next time.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Data Management for Reproducible Research"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "SLUBI SIDA Course",

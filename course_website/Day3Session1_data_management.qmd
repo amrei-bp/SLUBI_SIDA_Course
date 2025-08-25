@@ -114,11 +114,7 @@ In the past years, the development went even further and one can even combine co
 These **notebooks** come in different flavors, for example `jupyter notebooks`and `marimo` for Python applications, `Rmarkdown` for R code. Its successor, `quarto` can be used to integrate a variety of coding languanges. In this course, we will introduce you to `quarto`.
 
 ::: {.callout-tip title="Make Figures and Statistics the Results of Scripts"}
-> Writing scripts to produce images and tables may seem like a more time-consuming
-process than generating these interactively in Excel or R. However, if you’ve ever had
-to regenerate multiple figures by hand after changing an earlier step, you know the
-merit of this approach. Scripts that generate tables and images can easily be rerun,
-save you time, and lead your research to be more reproducible. 
+> Writing scripts to produce images and tables may seem like a more time-consuming process than generating these interactively in Excel or R. However, if you’ve ever had to regenerate multiple figures by hand after changing an earlier step, you know the merit of this approach. Scripts that generate tables and images can easily be rerun, save you time, and lead your research to be more reproducible. 
 
 [Vince Buffalo](https://womengovtcollegevisakha.ac.in/departments/Bioinformatics%20Data%20Skills%20Reproducible%20and%20Robust%20Research%20with%20Open%20Source%20Tools%20by%20Vince%20Buffalo.pdf)
 :::
@@ -146,7 +142,7 @@ At last, version control can be fully distributed, with all versions of the file
 
 ![[Distributed version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)](figures/data_management/git_distributed_version_control.png){.class width=50%}
 
-Distributed version control **facilitates collaboration** with others. Software like `git` automatically tracks differences in files, and flags conflicts between versions. 
+Distributed version control **facilitates collaboration** with others. Software like `git` automatically tracks differences in files, and flags conflicts between files. 
 
 Additionally, GitHub, the code hosting platform based on git that we are using in this course, can be used to **maintain uniformity** within a working group. The group can develop their own project template that people can use and populate for their own projects.
 

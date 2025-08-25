@@ -22,13 +22,13 @@ There are many different platforms that use Markdown syntax in text editing. At 
 
 To access to Extensions, either navigate with shortcuts (these are operating system depdenent and can be set by users, so we won't go into that, but feel free to explore), from the `View` dropdown menu, or from the `Extensions` tab on the left.
 
-![Extensions from `View`](figures/markdown_view.png)
+![Extensions from `View`](figures/markdown_view.png){.class width=50%}
 
 ![Extensions from the shortcut](figures/markdown_ext_short.png)
 
 In the search bar, you can search for general Markdown viewers and install them. For this course, we will use Quarto. Install that extension. Please also note the verified tick.
 
-![Quarto extension to install](figures/markdown_ext_search.png)
+![Quarto extension to install](figures/markdown_ext_search.png){.class width=70%}
 
 The `Markdown All in One` extension is also an interesting case to look at. It has a lot of downloads despite not being verified by an organisation. In general, be wary when installing extensions. Opt for ones that are installed often, as this one is. If possible, try to use verified extensions. In the age of information security we live in, it is becoming more important to use trusted content than whatever you find on the internet.
 
@@ -50,11 +50,11 @@ All instructions for creating, editing, previewing, and rendering projects will 
 
 Under the previously shown `View` option, navigate to the `Command Palette`. A dropdown menu at the top will start with a >. Type `quarto` and a list of functions will be shown. The order will be different based on what you've used and what you've used most recently.
 
-![Quarto functions](figures/quarto_funct.png)
+![Quarto functions](figures/quarto_funct.png){.class width=70%}
 
 We will `Create a project` and create a `Website` for the purpose of this course.
 
-![Creating a Project](figures/quarto_proj_type.png)
+![Creating a Project](figures/quarto_proj_type.png){.class width=70%}
 
 #### Structure of a Project
 

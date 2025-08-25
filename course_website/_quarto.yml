@@ -15,6 +15,7 @@ website:
   sidebar:
     style: "docked"
     search: true
+    logo: figures/logos/SLUBI_logo.png
     contents:
       - text: "Home"
         href: index.qmd

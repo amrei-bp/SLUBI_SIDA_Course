@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Day3Session3_github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project Management with GitHub</span></a>
+ <span class="menu-text">Version control: git and Github</span></a>
   </div>
 </li>
       </ul>
@@ -532,6 +532,19 @@ Note
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> name_submit_rnaseq.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can check the progress of your job with <code>squeue -u your_username</code></p>
 <p>And now we wait until the run is done!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nextflow is notoriously bad at cleaning after itself. You can check previous runs with <code>pixi run nextflow log</code>. And then clean up with for example <code>pixi run nextflow clean -f -before &lt;run_name&gt;</code>. <a href="https://fig.io/manual/nextflow/clean">Here</a> is an explanation of the command.</p>
+</div>
+</div>
 
 
 </section>

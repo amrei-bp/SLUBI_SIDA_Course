@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project Management with GitHub – SLUBI SIDA Course</title>
+<title>Version control: git and Github – SLUBI SIDA Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Day3Session1_data_management.html">Data management</a></li><li class="breadcrumb-item"><a href="./Day3Session3_github.html">Project Management with GitHub</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Day3Session1_data_management.html">Data management</a></li><li class="breadcrumb-item"><a href="./Day3Session3_github.html">Version control: git and Github</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -250,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Day3Session3_github.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Project Management with GitHub</span></a>
+ <span class="menu-text">Version control: git and Github</span></a>
   </div>
 </li>
       </ul>
@@ -260,15 +260,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#git" id="toc-git" class="nav-link active" data-scroll-target="#git">git</a></li>
+  <li><a href="#use-git-with-github" id="toc-use-git-with-github" class="nav-link" data-scroll-target="#use-git-with-github">Use git with Github</a></li>
+  <li><a href="#create-a-new-repository-on-github" id="toc-create-a-new-repository-on-github" class="nav-link" data-scroll-target="#create-a-new-repository-on-github">Create a new repository on Github</a></li>
+  <li><a href="#add-files-to-repository-on-github" id="toc-add-files-to-repository-on-github" class="nav-link" data-scroll-target="#add-files-to-repository-on-github">Add files to repository on Github</a></li>
+  <li><a href="#add-files-on-your-local-computer" id="toc-add-files-on-your-local-computer" class="nav-link" data-scroll-target="#add-files-on-your-local-computer">Add files on your local computer</a></li>
+  <li><a href="#stage-commit-and-push" id="toc-stage-commit-and-push" class="nav-link" data-scroll-target="#stage-commit-and-push">Stage, commit, and push</a>
+  <ul class="collapse">
+  <li><a href="#via-the-command-line" id="toc-via-the-command-line" class="nav-link" data-scroll-target="#via-the-command-line">via the command line</a></li>
+  <li><a href="#via-vscode" id="toc-via-vscode" class="nav-link" data-scroll-target="#via-vscode">via VScode</a></li>
+  </ul></li>
+  <li><a href="#using-git-collaboratively" id="toc-using-git-collaboratively" class="nav-link" data-scroll-target="#using-git-collaboratively">using git collaboratively</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Day3Session1_data_management.html">Data management</a></li><li class="breadcrumb-item"><a href="./Day3Session3_github.html">Project Management with GitHub</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Day3Session1_data_management.html">Data management</a></li><li class="breadcrumb-item"><a href="./Day3Session3_github.html">Version control: git and Github</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Project Management with GitHub</h1>
+<h1 class="title">Version control: git and Github</h1>
 </div>
 
 
@@ -285,8 +301,256 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><br></p>
+<p><strong>Git</strong> is a <strong>version control software</strong> that is fully distributed - meaning that each project folder contains the full history of the project. These project folders are also called <code>repositories</code> and can be on several computers, or servers.</p>
+<p><strong>Github</strong> is a <strong>code hosting platform</strong> that is <strong>based on git</strong>. Here you can store, track and publish code (and code only, do NOT use github for data!). On Github you can collaborate with colleagues and work on projects together.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>repository in git</strong> is the .git/ folder inside of your directory. This repository tracks all changes made to files in your project and contains your project history. Usually we refer to the git repository as the <strong>local repository</strong>.</p>
+<p>A <strong>repository in GitHub</strong> is where you can store your code, your files, together with their revision history. Repositories can be public or private, and might have several collaborators. Usually we refer to the Github repository as the <strong>remote repository</strong>.</p>
+</div>
+</div>
+<p>Let’s have a closer look at how git works:</p>
+<section id="git" class="level2">
+<h2 class="anchored" data-anchor-id="git">git</h2>
+<blockquote class="blockquote">
+<p>Git has three main states that your files can reside in: modified, staged, and committed:</p>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li>Modified means that you have changed the file but have not committed it to your database yet.</li>
+<li>Staged means that you have marked a modified file in its current version to go into your next commit snapshot.</li>
+<li>Committed means that the data is safely stored in your local database.</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">source: git documentation</a></p>
+</blockquote>
+<p>This leads to the three main sections of a Git project: the working directory, the staging area, and the Git directory (or repository).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/git_diagram.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Working directory, staging area, and Git directory</a></figcaption>
+</figure>
+</div>
+<p>And the basic commands of git:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/git_commands.png" class="class img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Basic git commands</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These basic operations are all done on your local system. You have the entire history of the project on your local disk, and do not need an internet connection to work on your data with git. You can do all your commits on your local computer and later push them to a remote repostitory, like Github.</p>
+</div>
+</div>
+</section>
+<section id="use-git-with-github" class="level2">
+<h2 class="anchored" data-anchor-id="use-git-with-github">Use git with Github</h2>
+<p>To get started with GitHub in VS Code, you’ll need to install <a href="https://git-scm.com/downloads">Git</a>, <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">create a GitHub account</a> and install the <a href="vscode:extension/GitHub.vscode-pull-request-github">GitHub Pull Requests and Issues extension</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As of March 2023, GitHub required all users who contribute code on GitHub.com to enable one or more forms of two-factor authentication (2FA). <a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication">Here</a> is the step by step how-to enable two factor authentication.</p>
+<p><a href="https://swcarpentry.github.io/git-novice/#multi-factor-authentication">Here</a> is another summary, plus suggestions which software to use.</p>
+</div>
+</div>
+</section>
+<section id="create-a-new-repository-on-github" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-new-repository-on-github">Create a new repository on Github</h2>
+<p>Go to <a href="https://github.com/">www.github.com</a>, and sign in if you haven’t done so yet. On your profile page klick on the tab <code>Repositories</code> (if you are not on your profile you can navigate there by clicking on the icon in the top right corner).</p>
+<p>Then create a new repository by clicking on the green button <code>New</code>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/github_new_repo.png" class="img-fluid figure-img"></p>
+<figcaption>new repository</figcaption>
+</figure>
+</div>
+<ul>
+<li>Choose a repository name - there will be a green checkmark if the name is available.</li>
+<li>(optional) Add a short description of the repository contents.</li>
+<li>Choose if the repository should be public or private.</li>
+<li>Add a README (remember, good data management practices?)</li>
+</ul>
+<p>Click on the green button <code>Create repository</code> to create repository.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>public repository</strong> is visible to anybody. People can also copy <code>clone</code> the repository and then change code in their copy. However, they cannot change the code in your repository unless you give them permission or make them collaborators.</p>
+<p>A <strong>private repository</strong> is only visible by you and people you gave permission to.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/empty_repository.png" class="img-fluid figure-img"></p>
+<figcaption>empty git repository</figcaption>
+</figure>
+</div>
+</section>
+<section id="add-files-to-repository-on-github" class="level2">
+<h2 class="anchored" data-anchor-id="add-files-to-repository-on-github">Add files to repository on Github</h2>
+<p>You can add files to the repository by clicking on the button with the plus, <code>+</code>. You can either click <code>Create new file</code> and edit it on the Github page directly, or <code>Upload files</code> from your computer.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Whenever you save a file on Github, it automatically creates a commit that will be part of the repository history.</p>
+</div>
+</div>
+</section>
+<section id="add-files-on-your-local-computer" class="level2">
+<h2 class="anchored" data-anchor-id="add-files-on-your-local-computer">Add files on your local computer</h2>
+<p>To change the content of the repository on your local computer you need to copy the repository content to your local computer. This is called <code>cloning</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/clone_repo.png" class="img-fluid figure-img"></p>
+<figcaption>Interface to clone a repository</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on the green <code>Code</code> button and select <code>HTTPS</code> on the <code>Local</code> tab.</li>
+<li>Copy the URL to the clipboard.</li>
+<li><strong>Open VScode</strong> and type `<code>&gt; Git: Clone</code> into the search bar.</li>
+<li><strong>Copy in the URL you just copied from Github</strong>.</li>
+<li>Follow the prompts to <strong>select a location</strong> for the directory on your computer.</li>
+<li><strong>Open the repository</strong> with VScode.</li>
+</ul>
+<p>Now you can add files, edit and execute your code. Once you are satisfied with the changes you can <code>stage</code>, <code>commit</code> and <code>push</code> them.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can now for example add a quarto homepage to your repository, so you have an interactive document to run and publish your analyses. Have a look at the <a href="./Day3Session2_quarto.html">quarto section, <code>Creating a Project</code></a> of this course to see how.</p>
+</div>
+</div>
+</section>
+<section id="stage-commit-and-push" class="level2">
+<h2 class="anchored" data-anchor-id="stage-commit-and-push">Stage, commit, and push</h2>
+<p>To add your changes to the repository history you can either use the command line in the terminal of VScode, or the shortcut on the side panel on the left of the VScode window that looks like three circles that are connected by two wiggly lines:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/sidebar_git.png" class="class img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>The source control button in the sidebar</figcaption>
+</figure>
+</div>
+<p>Here is a little reminder of what we are trying to achieve:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/git_commands.png" class="class img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Basic git commands</figcaption>
+</figure>
+</div>
+<section id="via-the-command-line" class="level3">
+<h3 class="anchored" data-anchor-id="via-the-command-line">via the command line</h3>
+<p>In the terminal of VScode, check the status of your project with <code>git status</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/git_status.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>git status example</figcaption>
+</figure>
+</div>
+<p>There are a few files that are already tracked by git, but that have untracked changes, and a few files that are not tracked. (There is also one commit that is not yet pushed to the remote repository.) At the bottom it even says which commands to use to stage and commit changes.</p>
+<p>Now, I can stage the files with <code>git add &lt;filename&gt;</code>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/git_add.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>git add example</figcaption>
+</figure>
+</div>
+<p>Now we can see in green the changes that are to be committed. I can commit them with `git commit -m “&gt;commit message&gt;”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/git_commit.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>git commit example</figcaption>
+</figure>
+</div>
+<p>The commit is then incorporated into the repository, and briefly summarized in the command line. I can now use <code>git push</code> to push the changes to the remote repository on Github and publish them.</p>
+</section>
+<section id="via-vscode" class="level3">
+<h3 class="anchored" data-anchor-id="via-vscode">via VScode</h3>
+<p>Clicking on the git shortcut button in VScode opens a pane that shows which changes have been made.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/vscode_status.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>VScode status example</figcaption>
+</figure>
+</div>
+<p>By clicking on the plus to the right of the file you can stage the file, and then commit them with the blue commit button and a commit message. You can also commit and push at the same time (by selecting that option in the drop down menu of the blue commit button).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/git_and_github/vscode_stage.png" class="class img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>VScode staging example</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>commit message</strong> should always be informative. They will be the identifiers if you want to “go back in time” and revert to an earlier version of your repository.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="using-git-collaboratively" class="level2">
+<h2 class="anchored" data-anchor-id="using-git-collaboratively">using git collaboratively</h2>
+<p>We have now introduced how you can use git and github by yourself. However, it is a very poweful tool for working together with others. Unfortunately, getting into the details of that would exceed the time we have in this course.</p>
+<p>Here are some resources for you to look into for further reading and training:</p>
+<p><a href="https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git">Getting started with git</a>.</p>
+<p>The <a href="https://git-scm.com/book/en/v2">git book</a>.</p>
+<p><a href="https://swcarpentry.github.io/git-novice/">Version control with git from the software carpentries</a>.</p>
+<p><a href="https://code.visualstudio.com/docs/sourcecontrol/github">Working with GitHub in VScode</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

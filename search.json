@@ -112,7 +112,7 @@
     "href": "Day2Session2_nextflow_handson.html#starting-the-run",
     "title": "nfcore RNASeq Pipeline",
     "section": "Starting The Run",
-    "text": "Starting The Run\n\nsubmit directly via pixi\nNow you can run the pipeline with the following command:\npixi run nextflow run nf-core/rnaseq -r 3.19.0 -resume -params-file nf-params.json -c hpc2n.config\nThere are several layers to this command:\nFirst we invoke Pixi and tell it to run the following commands.\nThen we say which program we want to run, namely Nextflow.\nThe following commands are Nextflow/ nf-core commands:\n\nwe want to run the nf-core/rnaseq pipeline, version 3.19.0\nwe want to use the parameter file called nf-params.json\nwe want to use the hpc configuration file called hpc2n.config\n\n\n\nsubmit via sbatch\nAlternatively, you can run nextflow via pixi using a batch script and slurm: copy the following text to file called name_submit_rnaseq.sh where name is your name.\n#!/bin/bash -l\n#SBATCH -A our_proj_allocation\n#SBATCH -n 5\n#SBATCH -t 24:00:00\n\n/your_home_directory/.pixi/bin/pixi run nextflow run nf-core/rnaseq -r 3.19.0 -params-file /your_path/nf-params.json\nAnd then submit it to slurm with\nsbatch name_submit_rnaseq.sh\nYou can check the progress of your job with squeue -u your_username\nAnd now we wait until the run is done!",
+    "text": "Starting The Run\n\nsubmit directly via pixi\nNow you can run the pipeline with the following command:\npixi run nextflow run nf-core/rnaseq -r 3.19.0 -resume -params-file nf-params.json -c hpc2n.config\nThere are several layers to this command:\nFirst we invoke Pixi and tell it to run the following commands.\nThen we say which program we want to run, namely Nextflow.\nThe following commands are Nextflow/ nf-core commands:\n\nwe want to run the nf-core/rnaseq pipeline, version 3.19.0\nwe want to use the parameter file called nf-params.json\nwe want to use the hpc configuration file called hpc2n.config\n\n\n\nsubmit via sbatch\nAlternatively, you can run nextflow via pixi using a batch script and slurm: copy the following text to file called name_submit_rnaseq.sh where name is your name.\n#!/bin/bash -l\n#SBATCH -A our_proj_allocation\n#SBATCH -n 5\n#SBATCH -t 24:00:00\n\n/your_home_directory/.pixi/bin/pixi run nextflow run nf-core/rnaseq -r 3.19.0 -params-file /your_path/nf-params.json\nAnd then submit it to slurm with\nsbatch name_submit_rnaseq.sh\nYou can check the progress of your job with squeue -u your_username\nAnd now we wait until the run is done!\n\n\n\n\n\n\nTip\n\n\n\nNextflow is notoriously bad at cleaning after itself. You can check previous runs with pixi run nextflow log. And then clean up with for example pixi run nextflow clean -f -before &lt;run_name&gt;. Here is an explanation of the command.",
     "crumbs": [
       "Home",
       "Hands-on training",
@@ -575,7 +575,7 @@
     "href": "Day3Session1_data_management.html#version-control",
     "title": "Data Management for Reproducible Research",
     "section": "Version control",
-    "text": "Version control\nNow that our student has reproducible documents, with reasonable names, that can execute their analyses reliably over and over again, what happens if they modify their analyses? Will they end up again with different result files and their project sink down in chaos?\nNo, because there is version control, the practice of tracking and managing changes to files.\nVersion control can be used on the local system, where both the version database and the checked out file - the one that is actively being worked on - are on the local computer. Good, but the local computer can be corrupted and then the data is compromised.\n\n\n\nLocal version control\n\n\nVersion control can also be centralized, where the version database is on a central server, and the active file can be checked out from several different computers. This is useful when working from different systems, or when working with collaborators. However, when the central servers is compromised the historical version are lost.\n\n\n\nCentralized version control\n\n\nAt last, version control can be fully distributed, with all versions of the file being on the server and different computers. Each computer checks out the file from its own version database to work on them. The databases are then synchronized between the different computers and the server. One such distributed version control system is git. It can handle everything from small to very large projects and is simple to use. GitHubis a code hosting platform for version control and collaboration, built on git.\n\n\n\nDistributed version control\n\n\nDistributed version control facilitates collaboration with others. Software like git automatically tracks differences in files, and flags conflicts between versions.\nAdditionally, GitHub, the code hosting platform based on git that we are using in this course, can be used to maintain uniformity within a working group. The group can develop their own project template that people can use and populate for their own projects.",
+    "text": "Version control\nNow that our student has reproducible documents, with reasonable names, that can execute their analyses reliably over and over again, what happens if they modify their analyses? Will they end up again with different result files and their project sink down in chaos?\nNo, because there is version control, the practice of tracking and managing changes to files.\nVersion control can be used on the local system, where both the version database and the checked out file - the one that is actively being worked on - are on the local computer. Good, but the local computer can be corrupted and then the data is compromised.\n\n\n\nLocal version control\n\n\nVersion control can also be centralized, where the version database is on a central server, and the active file can be checked out from several different computers. This is useful when working from different systems, or when working with collaborators. However, when the central servers is compromised the historical version are lost.\n\n\n\nCentralized version control\n\n\nAt last, version control can be fully distributed, with all versions of the file being on the server and different computers. Each computer checks out the file from its own version database to work on them. The databases are then synchronized between the different computers and the server. One such distributed version control system is git. It can handle everything from small to very large projects and is simple to use. GitHubis a code hosting platform for version control and collaboration, built on git.\n\n\n\nDistributed version control\n\n\nDistributed version control facilitates collaboration with others. Software like git automatically tracks differences in files, and flags conflicts between files.\nAdditionally, GitHub, the code hosting platform based on git that we are using in this course, can be used to maintain uniformity within a working group. The group can develop their own project template that people can use and populate for their own projects.",
     "crumbs": [
       "Home",
       "Data management",
@@ -710,6 +710,102 @@
       "Home",
       "Hands-on training",
       "Setting up a different nfcore pipeline"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html",
+    "href": "Day3Session3_github.html",
+    "title": "Version control: git and Github",
+    "section": "",
+    "text": "Git is a version control software that is fully distributed - meaning that each project folder contains the full history of the project. These project folders are also called repositories and can be on several computers, or servers.\nGithub is a code hosting platform that is based on git. Here you can store, track and publish code (and code only, do NOT use github for data!). On Github you can collaborate with colleagues and work on projects together.\nLet’s have a closer look at how git works:",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#git",
+    "href": "Day3Session3_github.html#git",
+    "title": "Version control: git and Github",
+    "section": "git",
+    "text": "git\n\nGit has three main states that your files can reside in: modified, staged, and committed:\n\n\n\nModified means that you have changed the file but have not committed it to your database yet.\nStaged means that you have marked a modified file in its current version to go into your next commit snapshot.\nCommitted means that the data is safely stored in your local database.\n\n\n\nsource: git documentation\n\nThis leads to the three main sections of a Git project: the working directory, the staging area, and the Git directory (or repository).\n\n\n\nWorking directory, staging area, and Git directory\n\n\nAnd the basic commands of git:\n\n\n\nBasic git commands\n\n\n\n\n\n\n\n\nNote\n\n\n\nThese basic operations are all done on your local system. You have the entire history of the project on your local disk, and do not need an internet connection to work on your data with git. You can do all your commits on your local computer and later push them to a remote repostitory, like Github.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#use-git-with-github",
+    "href": "Day3Session3_github.html#use-git-with-github",
+    "title": "Version control: git and Github",
+    "section": "Use git with Github",
+    "text": "Use git with Github\nTo get started with GitHub in VS Code, you’ll need to install Git, create a GitHub account and install the GitHub Pull Requests and Issues extension.\n\n\n\n\n\n\nNote\n\n\n\nAs of March 2023, GitHub required all users who contribute code on GitHub.com to enable one or more forms of two-factor authentication (2FA). Here is the step by step how-to enable two factor authentication.\nHere is another summary, plus suggestions which software to use.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#create-a-new-repository-on-github",
+    "href": "Day3Session3_github.html#create-a-new-repository-on-github",
+    "title": "Version control: git and Github",
+    "section": "Create a new repository on Github",
+    "text": "Create a new repository on Github\nGo to www.github.com, and sign in if you haven’t done so yet. On your profile page klick on the tab Repositories (if you are not on your profile you can navigate there by clicking on the icon in the top right corner).\nThen create a new repository by clicking on the green button New:\n\n\n\nnew repository\n\n\n\nChoose a repository name - there will be a green checkmark if the name is available.\n(optional) Add a short description of the repository contents.\nChoose if the repository should be public or private.\nAdd a README (remember, good data management practices?)\n\nClick on the green button Create repository to create repository.\n\n\n\n\n\n\nNote\n\n\n\nA public repository is visible to anybody. People can also copy clone the repository and then change code in their copy. However, they cannot change the code in your repository unless you give them permission or make them collaborators.\nA private repository is only visible by you and people you gave permission to.\n\n\n\n\n\nempty git repository",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#add-files-to-repository-on-github",
+    "href": "Day3Session3_github.html#add-files-to-repository-on-github",
+    "title": "Version control: git and Github",
+    "section": "Add files to repository on Github",
+    "text": "Add files to repository on Github\nYou can add files to the repository by clicking on the button with the plus, +. You can either click Create new file and edit it on the Github page directly, or Upload files from your computer.\n\n\n\n\n\n\nNote\n\n\n\nWhenever you save a file on Github, it automatically creates a commit that will be part of the repository history.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#add-files-on-your-local-computer",
+    "href": "Day3Session3_github.html#add-files-on-your-local-computer",
+    "title": "Version control: git and Github",
+    "section": "Add files on your local computer",
+    "text": "Add files on your local computer\nTo change the content of the repository on your local computer you need to copy the repository content to your local computer. This is called cloning.\n\n\n\nInterface to clone a repository\n\n\n\nClick on the green Code button and select HTTPS on the Local tab.\nCopy the URL to the clipboard.\nOpen VScode and type `&gt; Git: Clone into the search bar.\nCopy in the URL you just copied from Github.\nFollow the prompts to select a location for the directory on your computer.\nOpen the repository with VScode.\n\nNow you can add files, edit and execute your code. Once you are satisfied with the changes you can stage, commit and push them.\n\n\n\n\n\n\nTip\n\n\n\nYou can now for example add a quarto homepage to your repository, so you have an interactive document to run and publish your analyses. Have a look at the quarto section, Creating a Project of this course to see how.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#stage-commit-and-push",
+    "href": "Day3Session3_github.html#stage-commit-and-push",
+    "title": "Version control: git and Github",
+    "section": "Stage, commit, and push",
+    "text": "Stage, commit, and push\nTo add your changes to the repository history you can either use the command line in the terminal of VScode, or the shortcut on the side panel on the left of the VScode window that looks like three circles that are connected by two wiggly lines:\n\n\n\nThe source control button in the sidebar\n\n\nHere is a little reminder of what we are trying to achieve:\n\n\n\nBasic git commands\n\n\n\nvia the command line\nIn the terminal of VScode, check the status of your project with git status.\n\n\n\ngit status example\n\n\nThere are a few files that are already tracked by git, but that have untracked changes, and a few files that are not tracked. (There is also one commit that is not yet pushed to the remote repository.) At the bottom it even says which commands to use to stage and commit changes.\nNow, I can stage the files with git add &lt;filename&gt;:\n\n\n\ngit add example\n\n\nNow we can see in green the changes that are to be committed. I can commit them with `git commit -m “&gt;commit message&gt;”:\n\n\n\ngit commit example\n\n\nThe commit is then incorporated into the repository, and briefly summarized in the command line. I can now use git push to push the changes to the remote repository on Github and publish them.\n\n\nvia VScode\nClicking on the git shortcut button in VScode opens a pane that shows which changes have been made.\n\n\n\nVScode status example\n\n\nBy clicking on the plus to the right of the file you can stage the file, and then commit them with the blue commit button and a commit message. You can also commit and push at the same time (by selecting that option in the drop down menu of the blue commit button).\n\n\n\nVScode staging example\n\n\n\n\n\n\n\n\nNote\n\n\n\nA commit message should always be informative. They will be the identifiers if you want to “go back in time” and revert to an earlier version of your repository.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#using-git-collaboratively",
+    "href": "Day3Session3_github.html#using-git-collaboratively",
+    "title": "Version control: git and Github",
+    "section": "using git collaboratively",
+    "text": "using git collaboratively\nWe have now introduced how you can use git and github by yourself. However, it is a very poweful tool for working together with others. Unfortunately, getting into the details of that would exceed the time we have in this course.\nHere are some resources for you to look into for further reading and training:\nGetting started with git.\nThe git book.\nVersion control with git from the software carpentries.\nWorking with GitHub in VScode.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
     ]
   },
   {

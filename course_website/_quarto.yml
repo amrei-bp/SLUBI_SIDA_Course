@@ -38,8 +38,9 @@ website:
       - section: "Data management"
         contents: 
           - Day3Session1_data_management.qmd
-          - Day3Session2_quarto.qmd
           - Day3Session3_github.qmd
+          - Day3Session2_quarto.qmd
+          
 
 format:
   html:

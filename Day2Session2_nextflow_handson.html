@@ -308,7 +308,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#setting-all-other-inputs-that-are-required" id="toc-setting-all-other-inputs-that-are-required" class="nav-link" data-scroll-target="#setting-all-other-inputs-that-are-required">Setting all other inputs that are required</a></li>
   <li><a href="#obtaining-your-json-file" id="toc-obtaining-your-json-file" class="nav-link" data-scroll-target="#obtaining-your-json-file">Obtaining your JSON file</a></li>
   </ul></li>
-  <li><a href="#starting-the-run" id="toc-starting-the-run" class="nav-link" data-scroll-target="#starting-the-run">Starting The Run</a></li>
+  <li><a href="#starting-the-run" id="toc-starting-the-run" class="nav-link" data-scroll-target="#starting-the-run">Starting The Run</a>
+  <ul class="collapse">
+  <li><a href="#submit-directly-via-pixi" id="toc-submit-directly-via-pixi" class="nav-link" data-scroll-target="#submit-directly-via-pixi">submit directly via pixi</a></li>
+  <li><a href="#submit-via-sbatch" id="toc-submit-via-sbatch" class="nav-link" data-scroll-target="#submit-via-sbatch">submit via sbatch</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -463,6 +467,19 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p><code>slurm</code> is a job management tool installed on many servers to distribute resources evenly among users.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If you copy this config file for yourself, you need to remove the <code>process</code> section, unless you have a <code>slurm</code> job manager installed on your cluster. If you have this, you will defiinitely have a system administrator who can help you write this block to suit your system!</p>
 </div>
 </div>
@@ -482,36 +499,42 @@ Note
 <section id="obtaining-your-json-file" class="level3">
 <h3 class="anchored" data-anchor-id="obtaining-your-json-file">Obtaining your JSON file</h3>
 <p>Once everything is filled in, click on <code>Launch</code> and you will be redirected to another page containing your JSON file that has information on your run. You can either run the analyses by copying the command at the top of the page (BUT DON’T PRESS ENTER JUST YET) or by copying the JSON file a bit lower on the screen and saving it as <code>nf-params.json</code> in your folder on HPC2N.</p>
+<p>You then have to add one more row to the file, specifying the projects compute project, so the computation time can be debited from the correct account.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="st">"project"</span><span class="ex">:</span> <span class="st">"account_name"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="starting-the-run" class="level2">
 <h2 class="anchored" data-anchor-id="starting-the-run">Starting The Run</h2>
-<p>Since we are running this through Pixi to show you the versatility of environments, we need to submit this through a batch script to slurm. Copy the following text to file called <code>name_submit_rnaseq.sh</code> where <code>name</code> is your name.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -l</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -A our_proj_allocation</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -n 5</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -t 24:00:00</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">/your_home_directory/.pixi/bin/pixi</span> run nextflow run nf-core/rnaseq <span class="at">-r</span> 3.18.0 <span class="at">-params-file</span> /your_path/nf-params.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="submit-directly-via-pixi" class="level3">
+<h3 class="anchored" data-anchor-id="submit-directly-via-pixi">submit directly via pixi</h3>
+<p>Now you can run the pipeline with the following command:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> run nextflow run nf-core/rnaseq <span class="at">-r</span> 3.19.0 <span class="at">-resume</span> <span class="at">-params-file</span> nf-params.json <span class="at">-c</span> hpc2n.config</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There are several layers to this command:</p>
+<p>First we invoke <code>Pixi</code> and tell it to <code>run</code> the following commands.</p>
+<p>Then we say which program we want to run, namely <code>Nextflow</code>.</p>
+<p>The following commands are Nextflow/ nf-core commands:</p>
+<ul>
+<li>we want to <code>run</code> the <code>nf-core/rnaseq</code> pipeline, version <code>3.19.0</code></li>
+<li>we want to use the parameter file called <code>nf-params.json</code></li>
+<li>we want to use the hpc configuration file called <code>hpc2n.config</code></li>
+</ul>
+</section>
+<section id="submit-via-sbatch" class="level3">
+<h3 class="anchored" data-anchor-id="submit-via-sbatch">submit via sbatch</h3>
+<p>Alternatively, you can run nextflow via pixi using a batch script and slurm: copy the following text to file called <code>name_submit_rnaseq.sh</code> where <code>name</code> is your name.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -l</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -A our_proj_allocation</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -n 5</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -t 24:00:00</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">/your_home_directory/.pixi/bin/pixi</span> run nextflow run nf-core/rnaseq <span class="at">-r</span> 3.19.0 <span class="at">-params-file</span> /your_path/nf-params.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And then submit it to slurm with</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> name_submit_rnaseq.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>slurm</code> is a job management tool installed on many servers to distribute resources evenly among users. If you are running this on your own machine later, you can just run it through <code>pixi run</code> as before.</p>
-</div>
-</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> name_submit_rnaseq.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can check the progress of your job with <code>squeue -u your_username</code></p>
 <p>And now we wait until the run is done!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

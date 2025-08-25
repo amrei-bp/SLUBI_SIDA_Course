@@ -117,6 +117,12 @@ process {
 
 ::: {.callout-note}
 
+`slurm` is a job management tool installed on many servers to distribute resources evenly among users.
+
+:::
+
+::: {.callout-note}
+
 If you copy this config file for yourself, you need to remove the `process` section, unless you have a `slurm` job manager installed on your cluster. If you have this, you will defiinitely have a system administrator who can help you write this block to suit your system!
 
 :::
@@ -133,9 +139,37 @@ Depending on your strategy, you might need to input a corresponding gff as well.
 
 Once everything is filled in, click on `Launch` and you will be redirected to another page containing your JSON file that has information on your run. You can either run the analyses by copying the command at the top of the page (BUT DON'T PRESS ENTER JUST YET) or by copying the JSON file a bit lower on the screen and saving it as `nf-params.json` in your folder on HPC2N.
 
+You then have to add one more row to the file, specifying the projects compute project, so the computation time can be debited from the correct account. 
+
+```{.bash}
+    "project": "account_name"
+```
+
 ## Starting The Run
 
-Since we are running this through Pixi to show you the versatility of environments, we need to submit this through a batch script to slurm. Copy the following text to file called `name_submit_rnaseq.sh` where `name` is your name. 
+### submit directly via pixi
+
+Now you can run the pipeline with the following command:
+
+```{.bash}
+pixi run nextflow run nf-core/rnaseq -r 3.19.0 -resume -params-file nf-params.json -c hpc2n.config
+```
+
+There are several layers to this command: 
+
+First we invoke `Pixi` and tell it to `run` the following commands.
+
+Then we say which program we want to run, namely `Nextflow`. 
+
+The following commands are Nextflow/ nf-core commands:
+
+- we want to `run` the `nf-core/rnaseq` pipeline, version `3.19.0`
+- we want to use the parameter file called `nf-params.json`
+- we want to use the hpc configuration file called `hpc2n.config`
+
+### submit via sbatch
+
+Alternatively, you can run nextflow via pixi using a batch script and slurm: copy the following text to file called `name_submit_rnaseq.sh` where `name` is your name. 
 
 ```{.bash}
 #!/bin/bash -l
@@ -143,7 +177,7 @@ Since we are running this through Pixi to show you the versatility of environmen
 #SBATCH -n 5
 #SBATCH -t 24:00:00
 
-/your_home_directory/.pixi/bin/pixi run nextflow run nf-core/rnaseq -r 3.18.0 -params-file /your_path/nf-params.json
+/your_home_directory/.pixi/bin/pixi run nextflow run nf-core/rnaseq -r 3.19.0 -params-file /your_path/nf-params.json
 ```
 
 And then submit it to slurm with 
@@ -151,12 +185,6 @@ And then submit it to slurm with
 ```{.bash}
 sbatch name_submit_rnaseq.sh
 ```
-
-::: {.callout-note}
-
-`slurm` is a job management tool installed on many servers to distribute resources evenly among users. If you are running this on your own machine later, you can just run it through `pixi run` as before.
-
-:::
 
 You can check the progress of your job with `squeue -u your_username`
 

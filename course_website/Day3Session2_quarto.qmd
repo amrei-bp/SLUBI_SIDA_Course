@@ -84,7 +84,7 @@ It is good practice to have your images in a folder inside of your Quarto projec
 Quarto is really good at implementing other programming languages within it. You can use R within it seamlessly. There is support for a large number of other programming languages within Quarto, but this course is only going to showcase the use of R.
 
 ::: {.callout-important}
-You will have to install the `R` and `R syntax` extensions for this to work in VSCode
+You will have to install the `R` and `R syntax` extensions for this to work in VSCode. When you execute the R chunk for the first time VScode will prompt you and point you towards what you need to install.
 :::
 
 ```{r}

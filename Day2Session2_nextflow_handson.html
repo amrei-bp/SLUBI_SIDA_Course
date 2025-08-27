@@ -433,7 +433,7 @@ Tip
 </div>
 <section id="configuration-profiles" class="level4">
 <h4 class="anchored" data-anchor-id="configuration-profiles">Configuration profiles</h4>
-<p>Since we are working on a server with a configuration profile established, we have downloaded it and put it in the course folder. If you want to fetch it for yourself</p>
+<p>Since we are working on a server with a configuration profile established, but not available via nf-core, we have downloaded it and put it in the course folder. If you want to fetch it for yourself</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/hpc2n/intro-course/master/exercises/NEXTFLOW/INTERACTIVE/hpc2n.config</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Here is the configuration profile on HPC2N from the above link. The most important things we need to pay attention to are the <code>max_memory</code>, <code>max_cpus</code>, and <code>max_time</code> settings. If you want to create your own profile, you can adjust these to suit your system requirements.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">//</span> Config profile for HPC2N</span>
@@ -480,7 +480,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you copy this config file for yourself, you need to remove the <code>process</code> section, unless you have a <code>slurm</code> job manager installed on your cluster. If you have this, you will defiinitely have a system administrator who can help you write this block to suit your system!</p>
+<p>If you copy this config file to use for your own server, you need to remove the <code>process</code> section, unless you have a <code>slurm</code> job manager installed on your cluster. If you have slurm, you will defiinitely have a system administrator who can help you write this block to suit your system!</p>
 </div>
 </div>
 </section>

@@ -152,8 +152,15 @@ You then have to add one more row to the file, specifying the projects compute p
 Now you can run the pipeline with the following command:
 
 ```{.bash}
+pixi run nextflow run nf-core/rnaseq -r 3.19.0 -resume -params-file nf-params.json -c /proj/nobackup/slubi_sida/nextflow_input/hpc2n.config
+```
+
+If the config file is within your project directory you can start the run with: 
+
+```{.bash}
 pixi run nextflow run nf-core/rnaseq -r 3.19.0 -resume -params-file nf-params.json -c hpc2n.config
 ```
+
 
 There are several layers to this command: 
 

@@ -83,7 +83,7 @@ You can substitute the `.` that indicates it's only looking in the directory you
 
 #### Configuration profiles 
 
-Since we are working on a server with a configuration profile established, we have downloaded it and put it in the course folder. If you want to fetch it for yourself
+Since we are working on a server with a configuration profile established, but not available via nf-core, we have downloaded it and put it in the course folder. If you want to fetch it for yourself
 
 ```{.bash}
 wget https://raw.githubusercontent.com/hpc2n/intro-course/master/exercises/NEXTFLOW/INTERACTIVE/hpc2n.config
@@ -123,7 +123,7 @@ process {
 
 ::: {.callout-note}
 
-If you copy this config file for yourself, you need to remove the `process` section, unless you have a `slurm` job manager installed on your cluster. If you have this, you will defiinitely have a system administrator who can help you write this block to suit your system!
+If you copy this config file to use for your own server, you need to remove the `process` section, unless you have a `slurm` job manager installed on your cluster. If you have slurm, you will defiinitely have a system administrator who can help you write this block to suit your system!
 
 :::
 

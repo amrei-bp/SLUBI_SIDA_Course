@@ -6,7 +6,7 @@ date: "2025-08-28"
 format: 
  revealjs:
    slide-number: c/t
-   logo: assets/logo.png
+   logo: figures/ggplot/logo.png
    width: 1600
    height: 900
    theme: simple
@@ -41,11 +41,11 @@ pacman::p_load(dplyr, tidyr, ggplot2, kableExtra, patchwork, palmerpenguins, plo
 
 ::: columns
 ::: {.column width="40%"}
-![](assets/anscombe.jpg)
+![](figures/ggplot/anscombe.jpg)
 :::
 
 ::: {.column width="50%"}
-![](assets/datasaurus.jpg)
+![](figures/ggplot/datasaurus.jpg)
 :::
 :::   
 [Anscombe's quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet), [Datasaurus](https://cran.r-project.org/web/packages/datasauRus/vignettes/Datasaurus.html)
@@ -164,8 +164,8 @@ For anything beyond extremely basic plots, base plotting quickly become complex.
 
 ::: columns
 ::: {.column width="25%"}
-![](assets/gogv1.png)\
-![](assets/gog.jpg)
+![](figures/ggplot/gogv1.png)\
+![](figures/ggplot/gog.jpg)
 :::
 
 ::: {.column width="75%" .incremental}
@@ -196,11 +196,11 @@ Grammar of graphics (GOG) tries to unify all graphs under a common umbrella. GOG
 
 ::: columns
 ::: {.column width="25%"}
-![](assets/gogv1.png)
+![](figures/ggplot/gogv1.png)
 :::
 
 ::: {.column width="75%"}
-![](assets/syntax.png){width="100%"}
+![](figures/ggplot/syntax.png){width="100%"}
 :::
 :::
 
@@ -404,7 +404,7 @@ geom_point(mapping = aes(x = flipper_length_mm,
 
 ::: {.column width="40%"}
 
-![](assets/syntax.png)
+![](figures/ggplot/syntax.png)
 
 :::
 :::
@@ -451,7 +451,7 @@ R `data.frame` is a tabular format with rows and columns just like a spreadsheet
 
 ::: columns
 ::: {.column width="40%"}
-![](assets/tidy.png){width="100%"}
+![](figures/ggplot/tidy.png){width="100%"}
 :::
 
 ::: {.column width="70%"}
@@ -480,7 +480,7 @@ The data must be cleaned up and prepared for plotting. The data must be 'tidy'. 
 
 ## Geoms • `types`
 
-![](assets/geoms.png)
+![](figures/ggplot/geoms.png)
 
 . . .
 
@@ -876,7 +876,7 @@ Each geom takes input from `ggplot()` inputs. If extra input is required to a ge
 
 Just because you can doesn't mean you should!
 
-![](assets/complicated-graphs.jpg)
+![](figures/ggplot/complicated-graphs.jpg)
 
 ## Packages {visibility="hidden"}
 
@@ -927,7 +927,7 @@ p + scale_color_manual(
 ::: notes
 Scales are used to control the aesthetics. For example the aesthetic color is mapped to a variable `x`. The palette of colors used, the mapping of which color to which value, the upper and lower limit of the data and colors etc is controlled by scales.
 
-![](assets/scales.png){width="50%"}
+![](figures/ggplot/scales.png){width="50%"}
 :::
 
 ## Scales • `Continuous Colors`
@@ -1118,7 +1118,7 @@ p + facet_grid(island~year)
 `facet_grid` is also used to split a plot into subplots based on the categories in one or more variables. `facet_grid` can be used to create a matrix-like grid of two variables.
 :::
 ## Coordinate Systems
-![](assets/coordinate.png)
+![](figures/ggplot/coordinate.png)
 
 -   `coord_cartesian(xlim=c(2,8))` for zooming in
 -   `coord_map` for controlling limits on maps
@@ -1423,7 +1423,7 @@ p + newtheme
 
 ## Professional themes
 
-![](assets/bbc.png){width="95%"}
+![](figures/ggplot/bbc.png){width="95%"}
 
 ::: smaller
 [How BBC works with R graphics](https://medium.com/bbc-visual-and-data-journalism/how-the-bbc-visual-and-data-journalism-team-works-with-graphics-in-r-ed0b35693535)
@@ -1596,12 +1596,12 @@ Curated list of ggplot2 links: <https://github.com/erikgahner/awesome-ggplot2>.
 :::
 
 
-##  {background-image="../../assets/images/cover.jpg"}
+##  {background-image="../../figures/ggplot/images/cover.jpg"}
 
 ### Thank you! Questions?
 ::: columns
 ::: {.column width="70%"}
-![](assets/ggplot2_masterpiece_v1.png)
+![](figures/ggplot/ggplot2_masterpiece_v1.png)
 :::
 :::
 

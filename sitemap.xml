@@ -1,67 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day4Session1_results.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day1Session1_nfcore.html</loc>
-    <lastmod>2025-08-27T06:49:37.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day2Session2_nextflow_handson.html</loc>
-    <lastmod>2025-08-27T06:49:37.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day4Session3_r_in_quarto.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day5Session1_AI.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day2Session3_nextfow_own_choice.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
   </url>
   <url>
     <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day1Session2_linux.html</loc>
-    <lastmod>2025-08-27T06:49:37.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day1Session3_pixi.html</loc>
-    <lastmod>2025-08-27T06:49:37.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day3Session2_quarto.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day2Session1_containers.html</loc>
-    <lastmod>2025-08-27T06:49:37.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/about.html</loc>
-    <lastmod>2025-08-27T06:49:37.151Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day4Session2_use_containers.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day3Session1_data_management.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/index.html</loc>
-    <lastmod>2025-08-27T06:49:37.227Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day2Session3_nextfow_own_choice.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
+    <lastmod>2025-08-28T05:38:03.446Z</lastmod>
   </url>
   <url>
     <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day3Session3_github.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day4Session2_use_containers.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/index.html</loc>
+    <lastmod>2025-08-28T05:38:03.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day5Session1_AI.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day3Session2_quarto.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
   </url>
   <url>
     <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day3Session4_nfcore_main.html</loc>
-    <lastmod>2025-08-27T06:49:37.148Z</lastmod>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day4Session3_r_in_quarto.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day1Session3_pixi.html</loc>
+    <lastmod>2025-08-28T05:38:03.446Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day1Session1_nfcore.html</loc>
+    <lastmod>2025-08-28T05:38:03.446Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day3Session1_data_management.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/about.html</loc>
+    <lastmod>2025-08-28T05:38:03.524Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day2Session1_containers.html</loc>
+    <lastmod>2025-08-28T05:38:03.446Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day4Session4_ggplot.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day4Session1_results.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amrei-bp.github.io/SLUBI_SIDA_Course/Day2Session2_nextflow_handson.html</loc>
+    <lastmod>2025-08-28T05:38:03.447Z</lastmod>
   </url>
 </urlset>

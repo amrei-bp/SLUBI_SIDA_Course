@@ -1,170 +1,204 @@
 [
   {
-    "objectID": "Day4Session1_results.html",
-    "href": "Day4Session1_results.html",
-    "title": "RNASeq Results",
+    "objectID": "Day2Session3_nextfow_own_choice.html",
+    "href": "Day2Session3_nextfow_own_choice.html",
+    "title": "Setting up a different nfcore pipeline",
     "section": "",
-    "text": "In this session, we will have a look at some of the results that were produced with the nf core pipelines we ran. It’s all good and well running analyses, but you need to be able to do something with the output.",
+    "text": "For this section, we would like you to test out a different pipeline from nf-core that might be appropriate for your research. We are here to support you in this session.",
     "crumbs": [
       "Home",
       "Hands-on training",
-      "RNASeq Results"
+      "Setting up a different nfcore pipeline"
     ]
   },
   {
-    "objectID": "Day1Session1_nfcore.html",
-    "href": "Day1Session1_nfcore.html",
-    "title": "Nextflow and nf-core",
+    "objectID": "Day2Session3_nextfow_own_choice.html#things-to-think-about",
+    "href": "Day2Session3_nextfow_own_choice.html#things-to-think-about",
+    "title": "Setting up a different nfcore pipeline",
+    "section": "Things to think about",
+    "text": "Things to think about\n\nIs the pipeline maintained?\nWhat do you need as input?\nWhat are some of the constraints you might face during the setup?\n\n\n\n\n\n\n\nNote\n\n\n\nTo test the settings of a pipeline it is advisable to run the pipeline on only a few, reduced samples to save on computation time.\nOnce you are sure that the pipeline is set up correctly you can then run on the full data set.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "Setting up a different nfcore pipeline"
+    ]
+  },
+  {
+    "objectID": "Day1Session2_linux.html",
+    "href": "Day1Session2_linux.html",
+    "title": "A Brief Introduction to Linux",
     "section": "",
-    "text": "When developing your code in bioinformatics, you will likely use different tool for different parts of your analyses. Traditionally, you would have about one script per tool, all of which you deploy by hand, one after the other. Together, this is called a workflowor pipeline.\nManual deployment of pipelines can be tedious, especially if you have analyses with many steps, or many samples of different sizes that might need a varying amount of computational power. Luckily for you, other bioinformaticians and software developers have developed something to make your life much easier:",
+    "text": "Unix-like operating systems are built under the model of free and open-source development and distribution. They often come with a graphical user interface (GUI) and can be run from the command line (CLI) or terminal. The CLI is a text-based interface that works exactly the same way as you would use your mouse, but you use words. It can be intimidating at first, but once you have mastered the basics, it’s really not different than using your mouse!\nIt is important to know how to use the terminal as all servers, and most bioinformatics tools do not have a GUI and rely on the use of the terminal.\n\n\n\n\n\n\nWarning\n\n\n\nMacOS and Linux, and Windows have significant differences in their syntax. Where we do things locally, we will point out some of the differences, but for the most part, we will provide Windows users with a local Linux platform so that this course can run as smoothly as possible\n\n\nFor this course, we do not expect you to be masters of Linux, but we will need some knowledge of how to find files, and some other basic Linux commands.",
     "crumbs": [
       "Home",
       "Background knowledge with a bit of hands-on",
-      "Nextflow and nf-core"
+      "A Brief Introduction to Linux"
     ]
   },
   {
-    "objectID": "Day1Session1_nfcore.html#workflow-managers",
-    "href": "Day1Session1_nfcore.html#workflow-managers",
-    "title": "Nextflow and nf-core",
-    "section": "Workflow managers",
-    "text": "Workflow managers\n\nWorkflow managers provide a framework for the creation, execution, and monitoring of pipeline. &lt;…&gt; They simplify pipeline development, optimize resource usage, handle software installation and versions, and run on different compute platforms, enabling workflow portability and sharing. Wratten et al. (2021) Nature Methods\n\nWith workflow managers you can develop an automated pipeline from your scripts that can then be run on a variety of systems. Once it is developed, execute a single command to start the pipeline. The manager then coordinates the deployment of the scripts in the appropriate sequence, monitors the jobs, handles the file transfers between scripts, gathers the output, and handles re-execution of failed jobs for you. Workflow managed pipelines can run containers, which eliminates software installation and version conflicts.\nThat means that by design the pipelines are:\n\nportable\nmore time efficient (no more downtime between pipeline steps)\nmore resource efficient (mostly, but this might vary depending how skilled a developer you yourself are)\neasier to install (especially when combined with containers, or environment managers)\nmore reproducible\n\nThere are in principle two different flavors of workflow managers: snakemake, and nextflow. In this course we will be introducing you to nexflow.",
+    "objectID": "Day1Session2_linux.html#introduction",
+    "href": "Day1Session2_linux.html#introduction",
+    "title": "A Brief Introduction to Linux",
+    "section": "",
+    "text": "Unix-like operating systems are built under the model of free and open-source development and distribution. They often come with a graphical user interface (GUI) and can be run from the command line (CLI) or terminal. The CLI is a text-based interface that works exactly the same way as you would use your mouse, but you use words. It can be intimidating at first, but once you have mastered the basics, it’s really not different than using your mouse!\nIt is important to know how to use the terminal as all servers, and most bioinformatics tools do not have a GUI and rely on the use of the terminal.\n\n\n\n\n\n\nWarning\n\n\n\nMacOS and Linux, and Windows have significant differences in their syntax. Where we do things locally, we will point out some of the differences, but for the most part, we will provide Windows users with a local Linux platform so that this course can run as smoothly as possible\n\n\nFor this course, we do not expect you to be masters of Linux, but we will need some knowledge of how to find files, and some other basic Linux commands.",
     "crumbs": [
       "Home",
       "Background knowledge with a bit of hands-on",
-      "Nextflow and nf-core"
+      "A Brief Introduction to Linux"
     ]
   },
   {
-    "objectID": "Day1Session1_nfcore.html#nextflow",
-    "href": "Day1Session1_nfcore.html#nextflow",
-    "title": "Nextflow and nf-core",
-    "section": "Nextflow",
-    "text": "Nextflow\nIn nextflow, your scripts are turned into processes, connected by channels that contain the data - input, output etc. The order of the processes, and their interaction with each other, is specfied in the workflow scope.\n\n\n\nsource: Software carpentries\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn this course, we will not write our own processes, or pipeline. However, if you are interested, there are a lot of very good training materials available online.\n\n\nThe executable part of the processes, the so called script, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know). However, the modularity of the processes allows for easy re-use of existing scripts and processes.\nWhen moving the pipeline from one system to another, the script stays the same and does not change, the same containers are used. The only thing that changes are the parameters that pertain to the environment and available resources. In other words, with nextflow, the functional logic, the processes, are separated from the executive (how the workflow runs). This makes the nextflow pipelines highly interoperable and portable. They can be run on various platforms, such as HPC clusters, local computers, cloud systems etc..\nThe pipelines can be integrated with version control tools, such as git or bitbucket, and containers technologies, such as apptainer or docker. This makes the pipeline very reproducible.\nThe nextflow pipelines are extremely scalable, can be developed on a few samples and easily be run on hundreds or thousands of samples. When possible, processes are run in parallel automatically.\nNexflow performs automatic checks on the processes and their in- and output. It can automatically resume execution at a point of failure without having to re-compute successfully completed parts.\nNextflow is open source.\nHere is a more visual summary of some of the points above:\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\nOne reason why we are using, and promoting, nexflow is the community project, nf-core",
+    "objectID": "Day1Session2_linux.html#filesystem-architecture",
+    "href": "Day1Session2_linux.html#filesystem-architecture",
+    "title": "A Brief Introduction to Linux",
+    "section": "Filesystem Architecture",
+    "text": "Filesystem Architecture\nLinux uses a hierarchical filesystem, similar to Windows and Mac. In this figure from TecAdmin, there is a representation of this.\n\n\n\nFilesystem\n\n\nWe can see here that the root or / folder is at the top of the hierarchy, with all other folders, like home/ and var/ inside of it.\n\n\n\n\n\n\nNote\n\n\n\n\n\nWe use / at the end of a folder name to show that it is a folder.\n\n\n\nThere are two different ways for us to know where our file is within the operating system. The first is the absolute path and the second is the relative path. The absolute path gives us information that is true anywhere on your operating system. Whether your terminal is open in /usr/bin/something/ or /var/tmp/, a file will always be located at /usr/Documents/sequence.fasta as it is the true or absolute location. The relative path, as the name suggests, is relative to where you currently are on the file tree. If your terminal is open in /usr/Documents/paper/figures/, the file from before, sequence.fasta will be two folders up from where you are. If you were in /var/bin/something/ it would three folder up, one to the side, and two folders down.\n\n\n\n\n\n\nTip\n\n\n\n\n\nIt is often good practice to use absolute paths when you set pipelines up to run- this way, your programs know where to go looking for the files they’re supposed to work on",
     "crumbs": [
       "Home",
       "Background knowledge with a bit of hands-on",
-      "Nextflow and nf-core"
+      "A Brief Introduction to Linux"
     ]
   },
   {
-    "objectID": "Day1Session1_nfcore.html#nf-core",
-    "href": "Day1Session1_nfcore.html#nf-core",
-    "title": "Nextflow and nf-core",
-    "section": "nf-core",
-    "text": "nf-core\n\n\n\nsource: nf-core\n\n\nNf-core is a very active community around nextflow. Volunteers develop nextflow pipelines around a variety of bioinformatic data.\nHere are some flagship pipelines that have been developed by the nf-core community (we will have a look at the entire list on the nf-core homepage in a bit):\n\n\n\nsource: nf-core\n\n\nAll nf-core pipelines are open source and the source code is available on github. The pipelines are developed by volunteers, who can have a very varied background.\n\n\n\n\n\n\nNote\n\n\n\nWhile nf-core is fantastic, please be aware that their pipelines are developed and maintained (or not maintained) by the community. You should not use the pipelines as a black box, but as a tool you need to understand. The responsibility for the end results is still yours, so you need to see if your data is suited for the analysis (good enough quality?), and if the analysis is suitable for your data!\n\n\nHowever, nf-core does not only develop pipelines.\nThe community also develops: - processes that they make available as modules (and optimizes then too). - training material for all user classes. - best practices for documentation. - templates for development.\nThere is a weekly online helpdesk, and even a podcast.\n\nWhat makes nf-core pipelines interesting for you?\nNf-core provides already developed pipelines for many different data sets. Likely, a pipelines exists that you can use on your data. The documentation of the pipelines follows nf-core guidelines and is extensive and informative - it is easy to understand what the pipeline does and how it works. All output is explained in detail, with links to more extensive documentation.\nOnce you have understood how to run a nf-core pipeline their consistency and standardization means you will know most about running a different one.\nUsing the nf-core launcher, will check your input, and automatically generate commands and configuration files.\nAnd this is on top of all nextflow functionality such as portability, reproducibility and the resume-at-fault option!",
+    "objectID": "Day1Session2_linux.html#connecting-to-a-server",
+    "href": "Day1Session2_linux.html#connecting-to-a-server",
+    "title": "A Brief Introduction to Linux",
+    "section": "Connecting to a Server",
+    "text": "Connecting to a Server\nThere are many different ways you can connect to a server with SSH. At SLUBI, we have a strong preference towards Visual Studio Code or its open-source alternative, VSCodium. It provides a graphical user interface where you can create, edit, and view files, and see the file system.\nTo be able to connect to a server, you need to install an extension called Remote-SSH from the extensions market place.\n\n\n\nExtensions from View\n\n\n\n\n\nExtensions from the shortcut\n\n\nNow we need to add a host to our list of known hosts. There are several ways of doing this, and all ways lead to establishing a connection.\n\nUnder the previously shown View option, navigate to the Command Palette. A dropdown menu at the top will start with a &gt;. Type Remote-SSH and select add new host. Here we will input our credentials. This will populate a file in a hidden folder, .ssh in your local home directories called known_hosts.\nYou can also write all of these lines manually. This way, you can also specify SSH keys that may be needed to log on to particular servers. We won’t be covering that in this course, though.\n\nAfter a host has been added, you can connect to it. You can do this either through the Command Palette, or through the small blue backwards and forwards arrows in the bottom left corner of VSCode. You will receive a list of known hosts that you can connect to. If you need to connect with a password, a password prompt will be shown.\nOnce connected, you can open the file manager on the left.\nFor privacy concerns, we will share the exact commands locally in the room.\n\n\n\n\n\n\nImportant\n\n\n\nRemeber to only open either your home directories or the folder for your projects with the file manager. If you try to open folders that are too large, you will cause VSCode to crash (and you may cause significant problems for your system administrator!)",
     "crumbs": [
       "Home",
       "Background knowledge with a bit of hands-on",
-      "Nextflow and nf-core"
+      "A Brief Introduction to Linux"
     ]
   },
   {
-    "objectID": "Day2Session2_nextflow_handson.html",
-    "href": "Day2Session2_nextflow_handson.html",
-    "title": "nfcore RNASeq Pipeline",
+    "objectID": "Day1Session2_linux.html#navigating-with-the-terminal",
+    "href": "Day1Session2_linux.html#navigating-with-the-terminal",
+    "title": "A Brief Introduction to Linux",
+    "section": "Navigating with the terminal",
+    "text": "Navigating with the terminal\nFor this part of the session, we will do some hands-on practice! For this, we will open a terminal. You can do this through the Command Palette by using the View: Toggle Terminal function, or clicking the box with a dark bottom half and an empty top half in the top right corner of VSCode.\n\n\n\n\n\n\nNote\n\n\n\n\n\nFor Windows Users If you are using a Windows operating system, you can install the free Home edition of MobaXterm when your access to this server is removed if you want to continue practicing your Linux skills.\nTo use MobaXterm as a Linux shell, click on New Session and select a bash shell. There will probably be a prompt that you have to installl an extension. Click on the link it will provide, or copy the extension it needs and search it on Google (or your preferred search engine) and install it. Then try starting a new session again.\n\n\n\nTo see where we currently are in the filesystem, we use the present working directory command. This will give us the absolute path of the directory that our terminal open in.\npwd\nTo see the files that are currently in the directory we use the list command.\nls\nTo make a directory, we use the make directory command, followed by the name we would like our directory to have. Here we will make a directory called sida_training.\nmkdir sida_training\n\n\n\n\n\n\nTip\n\n\n\n\n\nWhen we give files and folders names, we don’t use spaces or special characters. It makes it really difficult to access files. We can use different ways to name our files and folders 1. youcanbechaoticandusenothing 2. YouCanUseCapitalLetters 3. you_can_use_underscores 4. you-can-use-dashes The most important thing is to be consistent with what you use, and to use descriptive names that are not too long. Future you will thank past you!\n\n\n\nTo enter the sida_training directory, we will use the change directory command.\ncd sida_training\nWe can use the pwd command again just to make sure that we are indeed in the right folder.\nTo go back to the folder we were in previously, we can use a shortcut rather than the absolute path.\ncd ..\n\n\n\n\n\n\nTip\n\n\n\n\n\nThere are no limits to the amount of directories you can go back (provided they are in your filesystem). If you wanted to go up 3 directories, you’d use\ncd ../../..\n\n\n\nTo delete files and folder you use the remove command. If you want to remove a folder, you need a recursive flag.\nrm -r sida_training\nIf we had a file to look at, we could use the less command. In the interface, we press q to quit.\nless filename\nWith these Linux basics, you will certainly be able to follow our course. If you would like to learn more, Data Carpentry and Software Carpentry have excellent tutorials on using the terminal in more detail, and we can only recommend them!",
+    "crumbs": [
+      "Home",
+      "Background knowledge with a bit of hands-on",
+      "A Brief Introduction to Linux"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html",
+    "href": "Day3Session3_github.html",
+    "title": "Version control: git and Github",
     "section": "",
-    "text": "Now that you know about Linux, containers, pixi, and Nextflow, we get to start with the really cool part of our course! In this section, we will create a pixi environment containing nf-core and nextflow. Once we’ve done that, we will turn our attention to nf-core to set up the rnaseq pipeline. Finally, we will run the pipeline.",
+    "text": "Git is a version control software that is fully distributed - meaning that each project folder contains the full history of the project. These project folders are also called repositories and can be on several computers, or servers.\nGithub is a code hosting platform that is based on git. Here you can store, track and publish code (and code only, do NOT use github for data!). On Github you can collaborate with colleagues and work on projects together.\nLet’s have a closer look at how git works:",
     "crumbs": [
       "Home",
-      "Hands-on training",
-      "nfcore RNASeq Pipeline"
+      "Data management",
+      "Version control: git and Github"
     ]
   },
   {
-    "objectID": "Day2Session2_nextflow_handson.html#introduction",
-    "href": "Day2Session2_nextflow_handson.html#introduction",
-    "title": "nfcore RNASeq Pipeline",
+    "objectID": "Day3Session3_github.html#git",
+    "href": "Day3Session3_github.html#git",
+    "title": "Version control: git and Github",
+    "section": "git",
+    "text": "git\n\nGit has three main states that your files can reside in: modified, staged, and committed:\n\n\n\nModified means that you have changed the file but have not committed it to your database yet.\nStaged means that you have marked a modified file in its current version to go into your next commit snapshot.\nCommitted means that the data is safely stored in your local database.\n\n\n\nsource: git documentation\n\nThis leads to the three main sections of a Git project: the working directory, the staging area, and the Git directory (or repository).\n\n\n\nWorking directory, staging area, and Git directory\n\n\nAnd the basic commands of git:\n\n\n\nBasic git commands\n\n\n\n\n\n\n\n\nNote\n\n\n\nThese basic operations are all done on your local system. You have the entire history of the project on your local disk, and do not need an internet connection to work on your data with git. You can do all your commits on your local computer and later push them to a remote repostitory, like Github.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#use-git-with-github",
+    "href": "Day3Session3_github.html#use-git-with-github",
+    "title": "Version control: git and Github",
+    "section": "Use git with Github",
+    "text": "Use git with Github\nTo get started with GitHub in VS Code, you’ll need to install Git, create a GitHub account and install the GitHub Pull Requests and Issues extension.\n\n\n\n\n\n\nNote\n\n\n\nAs of March 2023, GitHub required all users who contribute code on GitHub.com to enable one or more forms of two-factor authentication (2FA). Here is the step by step how-to enable two factor authentication.\nHere is another summary, plus suggestions which software to use.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#create-a-new-repository-on-github",
+    "href": "Day3Session3_github.html#create-a-new-repository-on-github",
+    "title": "Version control: git and Github",
+    "section": "Create a new repository on Github",
+    "text": "Create a new repository on Github\nGo to www.github.com, and sign in if you haven’t done so yet. On your profile page klick on the tab Repositories (if you are not on your profile you can navigate there by clicking on the icon in the top right corner).\nThen create a new repository by clicking on the green button New:\n\n\n\nnew repository\n\n\n\nChoose a repository name - there will be a green checkmark if the name is available.\n(optional) Add a short description of the repository contents.\nChoose if the repository should be public or private.\nAdd a README (remember, good data management practices?)\n\nClick on the green button Create repository to create repository.\n\n\n\n\n\n\nNote\n\n\n\nA public repository is visible to anybody. People can also copy clone the repository and then change code in their copy. However, they cannot change the code in your repository unless you give them permission or make them collaborators.\nA private repository is only visible by you and people you gave permission to.\n\n\n\n\n\nempty git repository",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#add-files-to-repository-on-github",
+    "href": "Day3Session3_github.html#add-files-to-repository-on-github",
+    "title": "Version control: git and Github",
+    "section": "Add files to repository on Github",
+    "text": "Add files to repository on Github\nYou can add files to the repository by clicking on the button with the plus, +. You can either click Create new file and edit it on the Github page directly, or Upload files from your computer.\n\n\n\n\n\n\nNote\n\n\n\nWhenever you save a file on Github, it automatically creates a commit that will be part of the repository history.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#add-files-on-your-local-computer",
+    "href": "Day3Session3_github.html#add-files-on-your-local-computer",
+    "title": "Version control: git and Github",
+    "section": "Add files on your local computer",
+    "text": "Add files on your local computer\nTo change the content of the repository on your local computer you need to copy the repository content to your local computer. This is called cloning.\n\n\n\nInterface to clone a repository\n\n\n\nClick on the green Code button and select HTTPS on the Local tab.\nCopy the URL to the clipboard.\nOpen VScode and type `&gt; Git: Clone into the search bar.\nCopy in the URL you just copied from Github.\nFollow the prompts to select a location for the directory on your computer.\nOpen the repository with VScode.\n\nNow you can add files, edit and execute your code. Once you are satisfied with the changes you can stage, commit and push them.\n\n\n\n\n\n\nTip\n\n\n\nYou can now for example add a quarto homepage to your repository, so you have an interactive document to run and publish your analyses. Have a look at the quarto section, Creating a Project of this course to see how.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#stage-commit-and-push",
+    "href": "Day3Session3_github.html#stage-commit-and-push",
+    "title": "Version control: git and Github",
+    "section": "Stage, commit, and push",
+    "text": "Stage, commit, and push\nTo add your changes to the repository history you can either use the command line in the terminal of VScode, or the shortcut on the side panel on the left of the VScode window that looks like three circles that are connected by two wiggly lines:\n\n\n\nThe source control button in the sidebar\n\n\nHere is a little reminder of what we are trying to achieve:\n\n\n\nBasic git commands\n\n\n\nvia the command line\nIn the terminal of VScode, check the status of your project with git status.\n\n\n\ngit status example\n\n\nThere are a few files that are already tracked by git, but that have untracked changes, and a few files that are not tracked. (There is also one commit that is not yet pushed to the remote repository.) At the bottom it even says which commands to use to stage and commit changes.\nNow, I can stage the files with git add &lt;filename&gt;:\n\n\n\ngit add example\n\n\nNow we can see in green the changes that are to be committed. I can commit them with `git commit -m “&gt;commit message&gt;”:\n\n\n\ngit commit example\n\n\nThe commit is then incorporated into the repository, and briefly summarized in the command line. I can now use git push to push the changes to the remote repository on Github and publish them.\n\n\nvia VScode\nClicking on the git shortcut button in VScode opens a pane that shows which changes have been made.\n\n\n\nVScode status example\n\n\nBy clicking on the plus to the right of the file you can stage the file, and then commit them with the blue commit button and a commit message. You can also commit and push at the same time (by selecting that option in the drop down menu of the blue commit button).\n\n\n\nVScode staging example\n\n\n\n\n\n\n\n\nNote\n\n\n\nA commit message should always be informative. They will be the identifiers if you want to “go back in time” and revert to an earlier version of your repository.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day3Session3_github.html#using-git-collaboratively",
+    "href": "Day3Session3_github.html#using-git-collaboratively",
+    "title": "Version control: git and Github",
+    "section": "using git collaboratively",
+    "text": "using git collaboratively\nWe have now introduced how you can use git and github by yourself. However, it is a very poweful tool for working together with others. Unfortunately, getting into the details of that would exceed the time we have in this course.\nHere are some resources for you to look into for further reading and training:\nGetting started with git.\nThe git book.\nVersion control with git from the software carpentries.\nWorking with GitHub in VScode.",
+    "crumbs": [
+      "Home",
+      "Data management",
+      "Version control: git and Github"
+    ]
+  },
+  {
+    "objectID": "Day4Session2_use_containers.html",
+    "href": "Day4Session2_use_containers.html",
+    "title": "Using Containers",
     "section": "",
-    "text": "Now that you know about Linux, containers, pixi, and Nextflow, we get to start with the really cool part of our course! In this section, we will create a pixi environment containing nf-core and nextflow. Once we’ve done that, we will turn our attention to nf-core to set up the rnaseq pipeline. Finally, we will run the pipeline.",
+    "text": "The aim of this session is to provide you with support if you would like to try to download and run your own containers. If there are common points we missed in our introductory session, or simply common questions, we will add these here.",
     "crumbs": [
       "Home",
       "Hands-on training",
-      "nfcore RNASeq Pipeline"
+      "Using Containers"
     ]
   },
   {
-    "objectID": "Day2Session2_nextflow_handson.html#setting-up-your-pixi-environment",
-    "href": "Day2Session2_nextflow_handson.html#setting-up-your-pixi-environment",
-    "title": "nfcore RNASeq Pipeline",
-    "section": "Setting Up Your Pixi Environment",
-    "text": "Setting Up Your Pixi Environment\nIn our course directory execute these commands, one after the other.\nLet’s inititalise an environment for this. Again, please substitute your name in the name part of the commands.\npixi init name_nextflow -c conda-forge -c bioconda\nChange directory into the project you created, and just list the files there\ncd name_nextflow\nls\nAdd nf-core and Nextflow\npixi add nextflow nf-core\n\n\n\n\n\n\nNote\n\n\n\n\n\nWhile apptainer is sticky loaded on this server, it won’t always be the case for other servers. So, if you are running within a Linux environment (and not otherwise), you can add apptainer with the add command.\n\n\n\nAnd just check that everything worked, summon the help message from nf-core\npixi run nf-core --help",
-    "crumbs": [
-      "Home",
-      "Hands-on training",
-      "nfcore RNASeq Pipeline"
-    ]
-  },
-  {
-    "objectID": "Day2Session2_nextflow_handson.html#preparing-the-run",
-    "href": "Day2Session2_nextflow_handson.html#preparing-the-run",
-    "title": "nfcore RNASeq Pipeline",
-    "section": "Preparing The Run",
-    "text": "Preparing The Run\nFrom the nf-core homepage, we can search for pipelines. We are going to demo the rnaseq pipeline. You can see that there is a lot going on in this pipeline! We will chat more about these things in class rather than including screenshots of everything.\n\n\n\nrnaseq landing page\n\n\nUnder the Usage, you will find a lot of information that describes the pipeline, including input information, the samplesheet.csv (this one we will make together in class).\nUnder the Parameters tab you will find information on all of the things that we will set up in the next step.\nUnder the Output tab, you will find information on the expected output generated from the pipeline. This is useful to help you interpret what the pipeline produces.\nTo set up our own analysis, we will click on the launch version 3.20.0 button. (This was the version on the website at the time of writing this session. The version number may change). We are then redirected to a page where we can fill in all of our information about input files, as well as selecting or deselecting certain parts of the pipeline. We will share the things here that you need to input each time, and go through some finer details based on the discussion with you.\n\nSetting working and results directories\n\n\n\n\n\n\nImportant\n\n\n\nWe recommend that you use absolute paths rather than relative paths for setting up your runs.\n\n\nDuring the first part, you need to set a working and result directory. If you are using a server that has a profile established, you can put the name of the server there. If not, we will create our own configuration profile if we run into memory issues.\n\n\n\nSetting work and output directories\n\n\n\n\n\nSetting results and input CSV\n\n\nWe will compile the input CSV together in class. This is entirely unique to each analysis.\n\n\n\n\n\n\nTip\n\n\n\n\n\nTo list all fastq files with their absolute path, one per line use:\nfind . -maxdepth 1 -type f -name \"*.fastq.gz\" -exec realpath {} \\;\nYou can substitute the . that indicates it’s only looking in the directory you’re currently in to any other path on your file system.\n\n\n\n\nConfiguration profiles\nSince we are working on a server with a configuration profile established, but not available via nf-core, we have downloaded it and put it in the course folder. If you want to fetch it for yourself\nwget https://raw.githubusercontent.com/hpc2n/intro-course/master/exercises/NEXTFLOW/INTERACTIVE/hpc2n.config\nHere is the configuration profile on HPC2N from the above link. The most important things we need to pay attention to are the max_memory, max_cpus, and max_time settings. If you want to create your own profile, you can adjust these to suit your system requirements.\n// Config profile for HPC2N\nparams {\n  config_profile_description = 'Cluster profile for HPC2N'\n  config_profile_contact = 'Pedro Ojeda @pojeda'\n  config_profile_url = 'https://www.hpc2n.umu.se/'\n  project = null\n  clusterOptions = null\n  max_memory = 128.GB\n  max_cpus = 28\n  max_time = 168.h\n  email = 'pedroojeda2011@gmail.com'\n}\n\nsingularity {\n  enabled = true\n}\n\nprocess {\n  executor = 'slurm'\n  clusterOptions = { \"-A $params.project ${params.clusterOptions ?: ''}\" }\n}\n\n\n\n\n\n\nNote\n\n\n\nslurm is a job management tool installed on many servers to distribute resources evenly among users.\n\n\n\n\n\n\n\n\nNote\n\n\n\nIf you copy this config file to use for your own server, you need to remove the process section, unless you have a slurm job manager installed on your cluster. If you have slurm, you will defiinitely have a system administrator who can help you write this block to suit your system!\n\n\n\n\n\nSetting all other inputs that are required\nIn this section, you set variables that are related to your reference genome. If you are using something listed on iGenomes, you can input that name. If you are working with your own reference genome, or something not listed, you need to input the absolute path of the reference genomes you have downloaded.\n\n\n\nReference genome options\n\n\nDepending on your strategy, you might need to input a corresponding gff as well. It really depends on the kind of analysis you are hoping to perform.\n\n\nObtaining your JSON file\nOnce everything is filled in, click on Launch and you will be redirected to another page containing your JSON file that has information on your run. You can either run the analyses by copying the command at the top of the page (BUT DON’T PRESS ENTER JUST YET) or by copying the JSON file a bit lower on the screen and saving it as nf-params.json in your folder on HPC2N.\nYou then have to add one more row to the file, specifying the projects compute project, so the computation time can be debited from the correct account.\n    \"project\": \"account_name\"",
-    "crumbs": [
-      "Home",
-      "Hands-on training",
-      "nfcore RNASeq Pipeline"
-    ]
-  },
-  {
-    "objectID": "Day2Session2_nextflow_handson.html#starting-the-run",
-    "href": "Day2Session2_nextflow_handson.html#starting-the-run",
-    "title": "nfcore RNASeq Pipeline",
-    "section": "Starting The Run",
-    "text": "Starting The Run\n\nsubmit directly via pixi\nNow you can run the pipeline with the following command:\npixi run nextflow run nf-core/rnaseq -r 3.19.0 -resume -params-file nf-params.json -c hpc2n.config\nThere are several layers to this command:\nFirst we invoke Pixi and tell it to run the following commands.\nThen we say which program we want to run, namely Nextflow.\nThe following commands are Nextflow/ nf-core commands:\n\nwe want to run the nf-core/rnaseq pipeline, version 3.19.0\nwe want to use the parameter file called nf-params.json\nwe want to use the hpc configuration file called hpc2n.config\n\n\n\nsubmit via sbatch\nAlternatively, you can run nextflow via pixi using a batch script and slurm: copy the following text to file called name_submit_rnaseq.sh where name is your name.\n#!/bin/bash -l\n#SBATCH -A our_proj_allocation\n#SBATCH -n 5\n#SBATCH -t 24:00:00\n\n/your_home_directory/.pixi/bin/pixi run nextflow run nf-core/rnaseq -r 3.19.0 -params-file /your_path/nf-params.json\nAnd then submit it to slurm with\nsbatch name_submit_rnaseq.sh\nYou can check the progress of your job with squeue -u your_username\nAnd now we wait until the run is done!\n\n\n\n\n\n\nTip\n\n\n\nNextflow is notoriously bad at cleaning after itself. You can check previous runs with pixi run nextflow log. And then clean up with for example pixi run nextflow clean -f -before &lt;run_name&gt;. Here is an explanation of the command.",
-    "crumbs": [
-      "Home",
-      "Hands-on training",
-      "nfcore RNASeq Pipeline"
-    ]
-  },
-  {
-    "objectID": "Day4Session3_r_in_quarto.html",
-    "href": "Day4Session3_r_in_quarto.html",
-    "title": "Using R in Quarto",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SLUBI SIDA Course",
     "section": "",
-    "text": "As you’ve seen, Quarto is a really neat tool to integrate different programming languages, aggregate analyses, and write reports. One of the most commonly used languages in bioinformatics is R, and we wanted to show you some neat tips and tricks that we use often to make things a bit easier. Of course, please have a look at the R for Data Science book for more practical tips.\nWhat we are showing you here works just as well with R Markdown, so if you are already using that, or would prefer to work in the R GUI, please feel free to do so.",
+    "text": "We are pleased to have this course with you! Our main aim with this course is to share how we use bioinformatics tools in a reproducible and scalable way. We will showcase the use of environments, containers, and established pipelines so that you can run these analyses on any operating system, as well as on systems that are not high performance computing clusters.\nOur approach to this course is going to be more practical and outcome based than theory based. We would like to give you the practical experience and skills to implement these kinds of analyses at your home universities. Our timeplan is also fairly flexible so that we can spend time with you on things that are useful and important for you to take hard skills with you. We can always go into more detail of something if you would like to know more about something.\nThe website will remain active after the course so that you have access to the material, and we encourage you to share these resources with your students and other researchers that might benefit from this!\n\nProgram\n\n\nDay\nSession\n\n\n\n\nMonday\nIntroduction to Linux\n\n\n\nIntroduction to Environments\n\n\n\nIntroduction to nf-core and Nextflow\n\n\nTuesday\nIntroduction to Containers\n\n\n\nSetting up and running a Nextflow Pipeline (with us)\n\n\n\nSetting up and running a Nextflow Pipeline (by yourself)\n\n\nWednesday\nData Management and Reproducible Research\n\n\n\nIntroduction to Markdown and Quarto\n\n\n\nGitHub\n\n\n\nHow do Nextflow Pipelines Work?\n\n\nThursday\nNextflow Results\n\n\n\nUsing Containers Outside of Nextflow\n\n\n\nUsing R and Other Languages in Quarto\n\n\n\nVisualize your results in R\n\n\nFriday\nAI in Bioinformatics\n\n\n\nWhat are your needs? How can you implement this in your own institutions?\n\n\n\nFriday is an emptier day in case we run out of time for something, or if there is something that you would like to learn more about.\nEvery day will end with a feedback session, and we hope that you will tell us what you like, what isn’t working for you, and what you would like to see more of.",
     "crumbs": [
-      "Home",
-      "Hands-on training",
-      "Using R in Quarto"
-    ]
-  },
-  {
-    "objectID": "Day4Session3_r_in_quarto.html#introduction",
-    "href": "Day4Session3_r_in_quarto.html#introduction",
-    "title": "Using R in Quarto",
-    "section": "",
-    "text": "As you’ve seen, Quarto is a really neat tool to integrate different programming languages, aggregate analyses, and write reports. One of the most commonly used languages in bioinformatics is R, and we wanted to show you some neat tips and tricks that we use often to make things a bit easier. Of course, please have a look at the R for Data Science book for more practical tips.\nWhat we are showing you here works just as well with R Markdown, so if you are already using that, or would prefer to work in the R GUI, please feel free to do so.",
-    "crumbs": [
-      "Home",
-      "Hands-on training",
-      "Using R in Quarto"
-    ]
-  },
-  {
-    "objectID": "Day4Session3_r_in_quarto.html#code-in-r",
-    "href": "Day4Session3_r_in_quarto.html#code-in-r",
-    "title": "Using R in Quarto",
-    "section": "Code in R",
-    "text": "Code in R\nIn R, you have the option of working in the console, in an R script or in an R Markdown (among many options). Within the console, you execute code bit by bit. Within an R script you can execute code line-by-line, in sections, or as a whole. In R Markdown, you create a chunk that you can also execute line-by-line or as a whole block. In Quarto, you will use chunks as well.\nA chunk is a bit of code surrounded by backticks. A single backtick highlights things like this. A chunk is started with 3 backticks, filled with code, and closed with 3 backticks. You also indicate the language you will code in with curly brackets and the language you want to use.\n\n\n\n\n\n\nTip\n\n\n\nIf you add a fullstop in front of the language, your code is shown but it is not executed {r} would run an R chunk, but {.r} would not\n\n\n\nSuppressing warnings\nR produces a lot of warnings! Sometimes these warning are useful, but most of the time, they aren’t useful for us. If we look back at yesterday’s example of running R in Quarto:\n\npacman::p_load(tidyverse, palmerpenguins)\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, y = body_mass_g)\n) +\n  geom_point(mapping = aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nThere are 2 warnings about removing 2 rows. There are also some warnings about the libraries.\nTo remove these for a whole document, you can add this to the title section of your page to apply only to the page it is on (the title would be your title, this title is just this page’s title):\ntitle: \"Using R in Quarto\"\nwarning: false\n---\nYou can also silence warnings for particular blocks (because sometimes you might care about the warnings!) In that case, you would add this in the first line of your chunk:\n#| warning: false\n\npacman::p_load(tidyverse, palmerpenguins)\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, y = body_mass_g)\n) +\n  geom_point(mapping = aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\")",
-    "crumbs": [
-      "Home",
-      "Hands-on training",
-      "Using R in Quarto"
-    ]
-  },
-  {
-    "objectID": "Day4Session3_r_in_quarto.html#useful-packages-we-love",
-    "href": "Day4Session3_r_in_quarto.html#useful-packages-we-love",
-    "title": "Using R in Quarto",
-    "section": "Useful Packages We Love!",
-    "text": "Useful Packages We Love!\nThere are plenty of really cool packages out there, but the 2 that stand out to us to help with project management and organisation, and keep your environment easy to use are pacman and here\n\npacman\npacman is a package manager that checks whether you have a library installed before loading it with the p_load function that you can see in the chunks above. If you don’t have the package installed, it checks several repositories, installs it, and loads it. If you have it installed, it simply loads it. You can install particular versions with it, install GitHub packages, unload particular packages, as well as temporarily installing packages. This has made life with R a lot easier, especially if you are supporting users/students across multiple versions of R!\n\n\nhere\nhere is a smoother way of setting working directories in R. It sets the working directory relative to a file that is pointed to with the here::i_am(\"file\") command. This is incredibly useful when you are sharing projects and scripts between different people. As long as you are sharing the whole folder and don’t change the architecture (like renaming files and folders), the script will work the same on each system- no more manually changing the setwd() command!",
-    "crumbs": [
-      "Home",
-      "Hands-on training",
-      "Using R in Quarto"
+      "Home"
     ]
   },
   {
@@ -240,63 +274,123 @@
     ]
   },
   {
-    "objectID": "Day1Session2_linux.html",
-    "href": "Day1Session2_linux.html",
-    "title": "A Brief Introduction to Linux",
+    "objectID": "Day3Session2_quarto.html",
+    "href": "Day3Session2_quarto.html",
+    "title": "Introduction to Markdown and Quarto",
     "section": "",
-    "text": "Unix-like operating systems are built under the model of free and open-source development and distribution. They often come with a graphical user interface (GUI) and can be run from the command line (CLI) or terminal. The CLI is a text-based interface that works exactly the same way as you would use your mouse, but you use words. It can be intimidating at first, but once you have mastered the basics, it’s really not different than using your mouse!\nIt is important to know how to use the terminal as all servers, and most bioinformatics tools do not have a GUI and rely on the use of the terminal.\n\n\n\n\n\n\nWarning\n\n\n\nMacOS and Linux, and Windows have significant differences in their syntax. Where we do things locally, we will point out some of the differences, but for the most part, we will provide Windows users with a local Linux platform so that this course can run as smoothly as possible\n\n\nFor this course, we do not expect you to be masters of Linux, but we will need some knowledge of how to find files, and some other basic Linux commands.",
+    "text": "Markdown is a lightweight markup language for text editing. All of the documents you have seen in this course have been formatted with markdown. The platform this course website has been built on is called Quarto and implements markdown. In this section, we’ll look at some of the post commonly used markdown syntax, using Quarto to create lab notebooks, presentations, automate analyses, and host websites like this one.\nRecently, a lot of open-source books like R for Data Science and Python for Data Science have been created with Markdown using Quarto. The code for these books have also been publicly released.\n\n\n\n\n\n\nImportant\n\n\n\nPlease bookmark these books for your students! They are excellent resources!",
     "crumbs": [
       "Home",
-      "Background knowledge with a bit of hands-on",
-      "A Brief Introduction to Linux"
+      "Data management",
+      "Introduction to Markdown and Quarto"
     ]
   },
   {
-    "objectID": "Day1Session2_linux.html#introduction",
-    "href": "Day1Session2_linux.html#introduction",
-    "title": "A Brief Introduction to Linux",
+    "objectID": "Day3Session2_quarto.html#introduction",
+    "href": "Day3Session2_quarto.html#introduction",
+    "title": "Introduction to Markdown and Quarto",
     "section": "",
-    "text": "Unix-like operating systems are built under the model of free and open-source development and distribution. They often come with a graphical user interface (GUI) and can be run from the command line (CLI) or terminal. The CLI is a text-based interface that works exactly the same way as you would use your mouse, but you use words. It can be intimidating at first, but once you have mastered the basics, it’s really not different than using your mouse!\nIt is important to know how to use the terminal as all servers, and most bioinformatics tools do not have a GUI and rely on the use of the terminal.\n\n\n\n\n\n\nWarning\n\n\n\nMacOS and Linux, and Windows have significant differences in their syntax. Where we do things locally, we will point out some of the differences, but for the most part, we will provide Windows users with a local Linux platform so that this course can run as smoothly as possible\n\n\nFor this course, we do not expect you to be masters of Linux, but we will need some knowledge of how to find files, and some other basic Linux commands.",
+    "text": "Markdown is a lightweight markup language for text editing. All of the documents you have seen in this course have been formatted with markdown. The platform this course website has been built on is called Quarto and implements markdown. In this section, we’ll look at some of the post commonly used markdown syntax, using Quarto to create lab notebooks, presentations, automate analyses, and host websites like this one.\nRecently, a lot of open-source books like R for Data Science and Python for Data Science have been created with Markdown using Quarto. The code for these books have also been publicly released.\n\n\n\n\n\n\nImportant\n\n\n\nPlease bookmark these books for your students! They are excellent resources!",
     "crumbs": [
       "Home",
-      "Background knowledge with a bit of hands-on",
-      "A Brief Introduction to Linux"
+      "Data management",
+      "Introduction to Markdown and Quarto"
     ]
   },
   {
-    "objectID": "Day1Session2_linux.html#filesystem-architecture",
-    "href": "Day1Session2_linux.html#filesystem-architecture",
-    "title": "A Brief Introduction to Linux",
-    "section": "Filesystem Architecture",
-    "text": "Filesystem Architecture\nLinux uses a hierarchical filesystem, similar to Windows and Mac. In this figure from TecAdmin, there is a representation of this.\n\n\n\nFilesystem\n\n\nWe can see here that the root or / folder is at the top of the hierarchy, with all other folders, like home/ and var/ inside of it.\n\n\n\n\n\n\nNote\n\n\n\n\n\nWe use / at the end of a folder name to show that it is a folder.\n\n\n\nThere are two different ways for us to know where our file is within the operating system. The first is the absolute path and the second is the relative path. The absolute path gives us information that is true anywhere on your operating system. Whether your terminal is open in /usr/bin/something/ or /var/tmp/, a file will always be located at /usr/Documents/sequence.fasta as it is the true or absolute location. The relative path, as the name suggests, is relative to where you currently are on the file tree. If your terminal is open in /usr/Documents/paper/figures/, the file from before, sequence.fasta will be two folders up from where you are. If you were in /var/bin/something/ it would three folder up, one to the side, and two folders down.\n\n\n\n\n\n\nTip\n\n\n\n\n\nIt is often good practice to use absolute paths when you set pipelines up to run- this way, your programs know where to go looking for the files they’re supposed to work on",
+    "objectID": "Day3Session2_quarto.html#markdown-syntax",
+    "href": "Day3Session2_quarto.html#markdown-syntax",
+    "title": "Introduction to Markdown and Quarto",
+    "section": "Markdown Syntax",
+    "text": "Markdown Syntax\nThere are plenty of really great cheatsheets like this one from Markdown Guide as well as this one. We’ll go through some of these details with you live rather than copying and pasting really good tutorials here.",
     "crumbs": [
       "Home",
-      "Background knowledge with a bit of hands-on",
-      "A Brief Introduction to Linux"
+      "Data management",
+      "Introduction to Markdown and Quarto"
     ]
   },
   {
-    "objectID": "Day1Session2_linux.html#connecting-to-a-server",
-    "href": "Day1Session2_linux.html#connecting-to-a-server",
-    "title": "A Brief Introduction to Linux",
-    "section": "Connecting to a Server",
-    "text": "Connecting to a Server\nThere are many different ways you can connect to a server with SSH. At SLUBI, we have a strong preference towards Visual Studio Code or its open-source alternative, VSCodium. It provides a graphical user interface where you can create, edit, and view files, and see the file system.\nTo be able to connect to a server, you need to install an extension called Remote-SSH from the extensions market place.\n\n\n\nExtensions from View\n\n\n\n\n\nExtensions from the shortcut\n\n\nNow we need to add a host to our list of known hosts. There are several ways of doing this, and all ways lead to establishing a connection.\n\nUnder the previously shown View option, navigate to the Command Palette. A dropdown menu at the top will start with a &gt;. Type Remote-SSH and select add new host. Here we will input our credentials. This will populate a file in a hidden folder, .ssh in your local home directories called known_hosts.\nYou can also write all of these lines manually. This way, you can also specify SSH keys that may be needed to log on to particular servers. We won’t be covering that in this course, though.\n\nAfter a host has been added, you can connect to it. You can do this either through the Command Palette, or through the small blue backwards and forwards arrows in the bottom left corner of VSCode. You will receive a list of known hosts that you can connect to. If you need to connect with a password, a password prompt will be shown.\nOnce connected, you can open the file manager on the left.\nFor privacy concerns, we will share the exact commands locally in the room.\n\n\n\n\n\n\nImportant\n\n\n\nRemeber to only open either your home directories or the folder for your projects with the file manager. If you try to open folders that are too large, you will cause VSCode to crash (and you may cause significant problems for your system administrator!)",
+    "objectID": "Day3Session2_quarto.html#using-markdown",
+    "href": "Day3Session2_quarto.html#using-markdown",
+    "title": "Introduction to Markdown and Quarto",
+    "section": "Using Markdown",
+    "text": "Using Markdown\nThere are many different platforms that use Markdown syntax in text editing. At SLUBI, we have a strong preference towards Visual Studio Code or its open-source alternative, VSCodium. To use all of the features, you need to install the Markdown extension.\nTo access to Extensions, either navigate with shortcuts (these are operating system depdenent and can be set by users, so we won’t go into that, but feel free to explore), from the View dropdown menu, or from the Extensions tab on the left.\n\n\n\nExtensions from View\n\n\n\n\n\nExtensions from the shortcut\n\n\nIn the search bar, you can search for general Markdown viewers and install them. For this course, we will use Quarto. Install that extension. Please also note the verified tick.\n\n\n\nQuarto extension to install\n\n\nThe Markdown All in One extension is also an interesting case to look at. It has a lot of downloads despite not being verified by an organisation. In general, be wary when installing extensions. Opt for ones that are installed often, as this one is. If possible, try to use verified extensions. In the age of information security we live in, it is becoming more important to use trusted content than whatever you find on the internet.",
     "crumbs": [
       "Home",
-      "Background knowledge with a bit of hands-on",
-      "A Brief Introduction to Linux"
+      "Data management",
+      "Introduction to Markdown and Quarto"
     ]
   },
   {
-    "objectID": "Day1Session2_linux.html#navigating-with-the-terminal",
-    "href": "Day1Session2_linux.html#navigating-with-the-terminal",
-    "title": "A Brief Introduction to Linux",
-    "section": "Navigating with the terminal",
-    "text": "Navigating with the terminal\nFor this part of the session, we will do some hands-on practice! For this, we will open a terminal. You can do this through the Command Palette by using the View: Toggle Terminal function, or clicking the box with a dark bottom half and an empty top half in the top right corner of VSCode.\n\n\n\n\n\n\nNote\n\n\n\n\n\nFor Windows Users If you are using a Windows operating system, you can install the free Home edition of MobaXterm when your access to this server is removed if you want to continue practicing your Linux skills.\nTo use MobaXterm as a Linux shell, click on New Session and select a bash shell. There will probably be a prompt that you have to installl an extension. Click on the link it will provide, or copy the extension it needs and search it on Google (or your preferred search engine) and install it. Then try starting a new session again.\n\n\n\nTo see where we currently are in the filesystem, we use the present working directory command. This will give us the absolute path of the directory that our terminal open in.\npwd\nTo see the files that are currently in the directory we use the list command.\nls\nTo make a directory, we use the make directory command, followed by the name we would like our directory to have. Here we will make a directory called sida_training.\nmkdir sida_training\n\n\n\n\n\n\nTip\n\n\n\n\n\nWhen we give files and folders names, we don’t use spaces or special characters. It makes it really difficult to access files. We can use different ways to name our files and folders 1. youcanbechaoticandusenothing 2. YouCanUseCapitalLetters 3. you_can_use_underscores 4. you-can-use-dashes The most important thing is to be consistent with what you use, and to use descriptive names that are not too long. Future you will thank past you!\n\n\n\nTo enter the sida_training directory, we will use the change directory command.\ncd sida_training\nWe can use the pwd command again just to make sure that we are indeed in the right folder.\nTo go back to the folder we were in previously, we can use a shortcut rather than the absolute path.\ncd ..\n\n\n\n\n\n\nTip\n\n\n\n\n\nThere are no limits to the amount of directories you can go back (provided they are in your filesystem). If you wanted to go up 3 directories, you’d use\ncd ../../..\n\n\n\nTo delete files and folder you use the remove command. If you want to remove a folder, you need a recursive flag.\nrm -r sida_training\nIf we had a file to look at, we could use the less command. In the interface, we press q to quit.\nless filename\nWith these Linux basics, you will certainly be able to follow our course. If you would like to learn more, Data Carpentry and Software Carpentry have excellent tutorials on using the terminal in more detail, and we can only recommend them!",
+    "objectID": "Day3Session2_quarto.html#quarto",
+    "href": "Day3Session2_quarto.html#quarto",
+    "title": "Introduction to Markdown and Quarto",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto is an open-source technical and scientific reporting and publishing system.\n\n\n\nQuarto landing page\n\n\n\nInstalling Quarto on your Machine\nWe have already installed the extension that allows us to use a bunch of really cool features in VSCode with Quarto, but we need to have the backend installed on our machines as well. To install the program, you will click on the Get Started link on the homepage, download the program that’s suited to your operating system, and install it. The Guide link here also takes you to really easy tutorials on how to set up a variety of other uses of Quarto that we simply don’t have time for in this course.\n\n\n\n\n\n\nImportant\n\n\n\nAll instructions for creating, editing, previewing, and rendering projects will be shown in VSCode and it will not be specified over and over\n\n\n\n\nCreating a Project\nUnder the previously shown View option, navigate to the Command Palette. A dropdown menu at the top will start with a &gt;. Type quarto and a list of functions will be shown. The order will be different based on what you’ve used and what you’ve used most recently.\n\n\n\nQuarto functions\n\n\nWe will Create a project and create a Website for the purpose of this course.\n\n\n\nCreating a Project\n\n\n\nStructure of a Project\nAll Quarto projects have a YAML file with information about the project called _quarto.yml as well as an index.qmd file. The landing page of your website is the index.qmd file, while the _quarto.yml file contains all of the visual aspects of your website. We’ll spend a bit of time looking at the design of our course website so that you can see how it looks behind the scenes. Hopefully, with a website you know as well as you do by now, this will make things a lot more tangible!\n\n\n\n\n\n\nNote\n\n\n\n\n\nFun fact: YAML stands for “yet another markup language”\n\n\n\n\n\n\nAdding Files and Figures\nOften, we don’t just need a landing page like the index.qmd file, but we want different pages, as we have here. You can add blank documents with the .qmd extenstion. It is important for each file to have a title section so that it can be displayed properly and linked with your other pages. Update the _quarto.yml file to include this page in your table of contents or navigation bar (depending on what you opted to use), or simply link to the file with a hyperlink as we have done on our landing page\n\n\n\n\n\n\nTip\n\n\n\nRemeber to give your files a good name with no spaces in them. Also remember to add the .qmd extension\n\n\nTo add external figures to your document as we have done here with screenshots, you can simply link to the figure by its relative path, as described here.\n\n\n\n\n\n\nTip\n\n\n\nIt is good practice to have your images in a folder inside of your Quarto project in case Future You forgets that a figure is linked to a document and you move the folder containing all of your photos, for example. It also makes it much easier to put everything into a repository on GitHub to launch your site\n\n\n\n\nAdding Analyses\nQuarto is really good at implementing other programming languages within it. You can use R within it seamlessly. There is support for a large number of other programming languages within Quarto, but this course is only going to showcase the use of R.\n\n\n\n\n\n\nImportant\n\n\n\nYou will have to install the R and R syntax extensions for this to work in VSCode. When you execute the R chunk for the first time VScode will prompt you and point you towards what you need to install.\n\n\n\npacman::p_load(tidyverse, palmerpenguins)\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, y = body_mass_g)\n) +\n  geom_point(mapping = aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nIf you have analyses that you have to repeat across several projects, these documents can be shared to create uniformity among your produced results, and your students do not need to reinvent the wheel. With several pages being supported in a single Quarto project, you also reduce the potential messiness that is introduced whenever you onboard a new student.\n\n\nViewing the Project\n\nPreviewing\nAs you go along, you might be interested in seeing what your pages look like. In the terminal, type\nquarto preview\nor simply click the preview button in VSCode and a side by side preview will open where you can click through your indexed pages.\n\n\n\nVSCode Preview function\n\n\n\n\nDifferent Views\nFrom the Command Palette, you can select whether you would like to view your document in source mode or in visual mode. The difference is mostly that you can interact with the document in the way it will be rendered in visual mode. For some people, visual mode is a lot more intuative, and there is no right or wrong way to interact with your documents.\n\n\n\nPublishing and Sharing the Project\nWith Quarto, you can render to HTML, Word, and PDF formats. To render individual files into PDF, add the information from this Quarto guide into the header of your document.\n---\ntitle: \"My document\"\nformat:\n  pdf:\n    toc: true\n    number-sections: true\n    colorlinks: true\n---\nYou will have to install a recent distribution of TeX for this via your terminal\nquarto install tinytex\nFor this course, we are simply going to render our documents into HTML format. In the next section, we will cover how to host Quarto pages on GitHub.",
     "crumbs": [
       "Home",
-      "Background knowledge with a bit of hands-on",
-      "A Brief Introduction to Linux"
+      "Data management",
+      "Introduction to Markdown and Quarto"
+    ]
+  },
+  {
+    "objectID": "Day3Session4_nfcore_main.html",
+    "href": "Day3Session4_nfcore_main.html",
+    "title": "Examining main.nf",
+    "section": "",
+    "text": "In this session, we will go through the main.nf file that actually executes the whole pipeline of the rnaseq pipeline we ran on Tuesday. We hope that this session will make the whole process less of a “black box” and more approachable.\nYou can find the main.nf file on GitHub\nOne of us will act as a scribe during the session, and record our most important discussion points here for you to look at later.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "Examining main.nf"
+    ]
+  },
+  {
+    "objectID": "Day4Session3_r_in_quarto.html",
+    "href": "Day4Session3_r_in_quarto.html",
+    "title": "Using R in Quarto",
+    "section": "",
+    "text": "As you’ve seen, Quarto is a really neat tool to integrate different programming languages, aggregate analyses, and write reports. One of the most commonly used languages in bioinformatics is R, and we wanted to show you some neat tips and tricks that we use often to make things a bit easier. Of course, please have a look at the R for Data Science book for more practical tips.\nWhat we are showing you here works just as well with R Markdown, so if you are already using that, or would prefer to work in the R GUI, please feel free to do so.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "Using R in Quarto"
+    ]
+  },
+  {
+    "objectID": "Day4Session3_r_in_quarto.html#introduction",
+    "href": "Day4Session3_r_in_quarto.html#introduction",
+    "title": "Using R in Quarto",
+    "section": "",
+    "text": "As you’ve seen, Quarto is a really neat tool to integrate different programming languages, aggregate analyses, and write reports. One of the most commonly used languages in bioinformatics is R, and we wanted to show you some neat tips and tricks that we use often to make things a bit easier. Of course, please have a look at the R for Data Science book for more practical tips.\nWhat we are showing you here works just as well with R Markdown, so if you are already using that, or would prefer to work in the R GUI, please feel free to do so.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "Using R in Quarto"
+    ]
+  },
+  {
+    "objectID": "Day4Session3_r_in_quarto.html#code-in-r",
+    "href": "Day4Session3_r_in_quarto.html#code-in-r",
+    "title": "Using R in Quarto",
+    "section": "Code in R",
+    "text": "Code in R\nIn R, you have the option of working in the console, in an R script or in an R Markdown (among many options). Within the console, you execute code bit by bit. Within an R script you can execute code line-by-line, in sections, or as a whole. In R Markdown, you create a chunk that you can also execute line-by-line or as a whole block. In Quarto, you will use chunks as well.\nA chunk is a bit of code surrounded by backticks. A single backtick highlights things like this. A chunk is started with 3 backticks, filled with code, and closed with 3 backticks. You also indicate the language you will code in with curly brackets and the language you want to use.\n\n\n\n\n\n\nTip\n\n\n\nIf you add a fullstop in front of the language, your code is shown but it is not executed {r} would run an R chunk, but {.r} would not\n\n\n\nSuppressing warnings\nR produces a lot of warnings! Sometimes these warning are useful, but most of the time, they aren’t useful for us. If we look back at yesterday’s example of running R in Quarto:\n\npacman::p_load(tidyverse, palmerpenguins)\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, y = body_mass_g)\n) +\n  geom_point(mapping = aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nThere are 2 warnings about removing 2 rows. There are also some warnings about the libraries.\nTo remove these for a whole document, you can add this to the title section of your page to apply only to the page it is on (the title would be your title, this title is just this page’s title):\ntitle: \"Using R in Quarto\"\nwarning: false\n---\nYou can also silence warnings for particular blocks (because sometimes you might care about the warnings!) In that case, you would add this in the first line of your chunk:\n#| warning: false\n\npacman::p_load(tidyverse, palmerpenguins)\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, y = body_mass_g)\n) +\n  geom_point(mapping = aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\")",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "Using R in Quarto"
+    ]
+  },
+  {
+    "objectID": "Day4Session3_r_in_quarto.html#useful-packages-we-love",
+    "href": "Day4Session3_r_in_quarto.html#useful-packages-we-love",
+    "title": "Using R in Quarto",
+    "section": "Useful Packages We Love!",
+    "text": "Useful Packages We Love!\nThere are plenty of really cool packages out there, but the 2 that stand out to us to help with project management and organisation, and keep your environment easy to use are pacman and here\n\npacman\npacman is a package manager that checks whether you have a library installed before loading it with the p_load function that you can see in the chunks above. If you don’t have the package installed, it checks several repositories, installs it, and loads it. If you have it installed, it simply loads it. You can install particular versions with it, install GitHub packages, unload particular packages, as well as temporarily installing packages. This has made life with R a lot easier, especially if you are supporting users/students across multiple versions of R!\n\n\nhere\nhere is a smoother way of setting working directories in R. It sets the working directory relative to a file that is pointed to with the here::i_am(\"file\") command. This is incredibly useful when you are sharing projects and scripts between different people. As long as you are sharing the whole folder and don’t change the architecture (like renaming files and folders), the script will work the same on each system- no more manually changing the setwd() command!",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "Using R in Quarto"
     ]
   },
   {
@@ -360,118 +454,51 @@
     ]
   },
   {
-    "objectID": "Day3Session2_quarto.html",
-    "href": "Day3Session2_quarto.html",
-    "title": "Introduction to Markdown and Quarto",
+    "objectID": "Day1Session1_nfcore.html",
+    "href": "Day1Session1_nfcore.html",
+    "title": "Nextflow and nf-core",
     "section": "",
-    "text": "Markdown is a lightweight markup language for text editing. All of the documents you have seen in this course have been formatted with markdown. The platform this course website has been built on is called Quarto and implements markdown. In this section, we’ll look at some of the post commonly used markdown syntax, using Quarto to create lab notebooks, presentations, automate analyses, and host websites like this one.\nRecently, a lot of open-source books like R for Data Science and Python for Data Science have been created with Markdown using Quarto. The code for these books have also been publicly released.\n\n\n\n\n\n\nImportant\n\n\n\nPlease bookmark these books for your students! They are excellent resources!",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Introduction to Markdown and Quarto"
-    ]
-  },
-  {
-    "objectID": "Day3Session2_quarto.html#introduction",
-    "href": "Day3Session2_quarto.html#introduction",
-    "title": "Introduction to Markdown and Quarto",
-    "section": "",
-    "text": "Markdown is a lightweight markup language for text editing. All of the documents you have seen in this course have been formatted with markdown. The platform this course website has been built on is called Quarto and implements markdown. In this section, we’ll look at some of the post commonly used markdown syntax, using Quarto to create lab notebooks, presentations, automate analyses, and host websites like this one.\nRecently, a lot of open-source books like R for Data Science and Python for Data Science have been created with Markdown using Quarto. The code for these books have also been publicly released.\n\n\n\n\n\n\nImportant\n\n\n\nPlease bookmark these books for your students! They are excellent resources!",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Introduction to Markdown and Quarto"
-    ]
-  },
-  {
-    "objectID": "Day3Session2_quarto.html#markdown-syntax",
-    "href": "Day3Session2_quarto.html#markdown-syntax",
-    "title": "Introduction to Markdown and Quarto",
-    "section": "Markdown Syntax",
-    "text": "Markdown Syntax\nThere are plenty of really great cheatsheets like this one from Markdown Guide as well as this one. We’ll go through some of these details with you live rather than copying and pasting really good tutorials here.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Introduction to Markdown and Quarto"
-    ]
-  },
-  {
-    "objectID": "Day3Session2_quarto.html#using-markdown",
-    "href": "Day3Session2_quarto.html#using-markdown",
-    "title": "Introduction to Markdown and Quarto",
-    "section": "Using Markdown",
-    "text": "Using Markdown\nThere are many different platforms that use Markdown syntax in text editing. At SLUBI, we have a strong preference towards Visual Studio Code or its open-source alternative, VSCodium. To use all of the features, you need to install the Markdown extension.\nTo access to Extensions, either navigate with shortcuts (these are operating system depdenent and can be set by users, so we won’t go into that, but feel free to explore), from the View dropdown menu, or from the Extensions tab on the left.\n\n\n\nExtensions from View\n\n\n\n\n\nExtensions from the shortcut\n\n\nIn the search bar, you can search for general Markdown viewers and install them. For this course, we will use Quarto. Install that extension. Please also note the verified tick.\n\n\n\nQuarto extension to install\n\n\nThe Markdown All in One extension is also an interesting case to look at. It has a lot of downloads despite not being verified by an organisation. In general, be wary when installing extensions. Opt for ones that are installed often, as this one is. If possible, try to use verified extensions. In the age of information security we live in, it is becoming more important to use trusted content than whatever you find on the internet.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Introduction to Markdown and Quarto"
-    ]
-  },
-  {
-    "objectID": "Day3Session2_quarto.html#quarto",
-    "href": "Day3Session2_quarto.html#quarto",
-    "title": "Introduction to Markdown and Quarto",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto is an open-source technical and scientific reporting and publishing system.\n\n\n\nQuarto landing page\n\n\n\nInstalling Quarto on your Machine\nWe have already installed the extension that allows us to use a bunch of really cool features in VSCode with Quarto, but we need to have the backend installed on our machines as well. To install the program, you will click on the Get Started link on the homepage, download the program that’s suited to your operating system, and install it. The Guide link here also takes you to really easy tutorials on how to set up a variety of other uses of Quarto that we simply don’t have time for in this course.\n\n\n\n\n\n\nImportant\n\n\n\nAll instructions for creating, editing, previewing, and rendering projects will be shown in VSCode and it will not be specified over and over\n\n\n\n\nCreating a Project\nUnder the previously shown View option, navigate to the Command Palette. A dropdown menu at the top will start with a &gt;. Type quarto and a list of functions will be shown. The order will be different based on what you’ve used and what you’ve used most recently.\n\n\n\nQuarto functions\n\n\nWe will Create a project and create a Website for the purpose of this course.\n\n\n\nCreating a Project\n\n\n\nStructure of a Project\nAll Quarto projects have a YAML file with information about the project called _quarto.yml as well as an index.qmd file. The landing page of your website is the index.qmd file, while the _quarto.yml file contains all of the visual aspects of your website. We’ll spend a bit of time looking at the design of our course website so that you can see how it looks behind the scenes. Hopefully, with a website you know as well as you do by now, this will make things a lot more tangible!\n\n\n\n\n\n\nNote\n\n\n\n\n\nFun fact: YAML stands for “yet another markup language”\n\n\n\n\n\n\nAdding Files and Figures\nOften, we don’t just need a landing page like the index.qmd file, but we want different pages, as we have here. You can add blank documents with the .qmd extenstion. It is important for each file to have a title section so that it can be displayed properly and linked with your other pages. Update the _quarto.yml file to include this page in your table of contents or navigation bar (depending on what you opted to use), or simply link to the file with a hyperlink as we have done on our landing page\n\n\n\n\n\n\nTip\n\n\n\nRemeber to give your files a good name with no spaces in them. Also remember to add the .qmd extension\n\n\nTo add external figures to your document as we have done here with screenshots, you can simply link to the figure by its relative path, as described here.\n\n\n\n\n\n\nTip\n\n\n\nIt is good practice to have your images in a folder inside of your Quarto project in case Future You forgets that a figure is linked to a document and you move the folder containing all of your photos, for example. It also makes it much easier to put everything into a repository on GitHub to launch your site\n\n\n\n\nAdding Analyses\nQuarto is really good at implementing other programming languages within it. You can use R within it seamlessly. There is support for a large number of other programming languages within Quarto, but this course is only going to showcase the use of R.\n\n\n\n\n\n\nImportant\n\n\n\nYou will have to install the R and R syntax extensions for this to work in VSCode. When you execute the R chunk for the first time VScode will prompt you and point you towards what you need to install.\n\n\n\npacman::p_load(tidyverse, palmerpenguins)\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, y = body_mass_g)\n) +\n  geom_point(mapping = aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nIf you have analyses that you have to repeat across several projects, these documents can be shared to create uniformity among your produced results, and your students do not need to reinvent the wheel. With several pages being supported in a single Quarto project, you also reduce the potential messiness that is introduced whenever you onboard a new student.\n\n\nViewing the Project\n\nPreviewing\nAs you go along, you might be interested in seeing what your pages look like. In the terminal, type\nquarto preview\nor simply click the preview button in VSCode and a side by side preview will open where you can click through your indexed pages.\n\n\n\nVSCode Preview function\n\n\n\n\nDifferent Views\nFrom the Command Palette, you can select whether you would like to view your document in source mode or in visual mode. The difference is mostly that you can interact with the document in the way it will be rendered in visual mode. For some people, visual mode is a lot more intuative, and there is no right or wrong way to interact with your documents.\n\n\n\nPublishing and Sharing the Project\nWith Quarto, you can render to HTML, Word, and PDF formats. To render individual files into PDF, add the information from this Quarto guide into the header of your document.\n---\ntitle: \"My document\"\nformat:\n  pdf:\n    toc: true\n    number-sections: true\n    colorlinks: true\n---\nYou will have to install a recent distribution of TeX for this via your terminal\nquarto install tinytex\nFor this course, we are simply going to render our documents into HTML format. In the next section, we will cover how to host Quarto pages on GitHub.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Introduction to Markdown and Quarto"
-    ]
-  },
-  {
-    "objectID": "Day2Session1_containers.html",
-    "href": "Day2Session1_containers.html",
-    "title": "Containers",
-    "section": "",
-    "text": "In an ideal world I would be able to write a piece of software, or a develop some code to analyse data on my computer, and then send someone else this software or code and they could run it as well, getting the same results.\nIn reality, I would very likely run into at least one of the following problems:\n\nIt is not uncommon for people within the same team to use different operating systems (whether MacOS, Windows, or different flavours of Unix builds). Even if everyone is using a MacOS, there are still different versions that impact the way people are able to work with their machines.\nAlmost every piece of software has some sort of dependency - other software - it needs to run. Some programs might “just” need a bash shell or basic python, while others need a variety of compilers and additional libraries to function. Often, these dependencies require further dependencies to be installed. It is also not uncommon for dependencies for Program 1 to clash with the dependencies for Program 2, requiring the user to uninstall dependencies to be able to install others.\nIn bioinformatics, tools are very often not maintained after the student that wrote the software graduated, the PI moved to a different university, or the funding simply ran out. This leads to a lot of really good software not really being supported by newer operating systems, usually due to dependencies not being easily available or, as before, clashing with newer versions. This makes installing a tool one of the biggest hurdles to overcome in bioinformatics.\nYou often cannot install different versions of the same program on one computer due to conflicting names. This is particularly problematic when you want to rerun an analysis for a publication where you need to use the same software all the way through.\n\nAny of these points might lead to you not being able to run my code, or it running but giving different results. They make bioinformatics less reproducible as tools and code cannot be moved easily betweem systems (for example if you upgrade your computer or want to share your pipeline with a colleague). Fortunately, most of these problems can be overcome with containers.",
+    "text": "When developing your code in bioinformatics, you will likely use different tool for different parts of your analyses. Traditionally, you would have about one script per tool, all of which you deploy by hand, one after the other. Together, this is called a workflowor pipeline.\nManual deployment of pipelines can be tedious, especially if you have analyses with many steps, or many samples of different sizes that might need a varying amount of computational power. Luckily for you, other bioinformaticians and software developers have developed something to make your life much easier:",
     "crumbs": [
       "Home",
       "Background knowledge with a bit of hands-on",
-      "Containers"
+      "Nextflow and nf-core"
     ]
   },
   {
-    "objectID": "Day2Session1_containers.html#reproducibility-in-bioinformatics",
-    "href": "Day2Session1_containers.html#reproducibility-in-bioinformatics",
-    "title": "Containers",
-    "section": "",
-    "text": "In an ideal world I would be able to write a piece of software, or a develop some code to analyse data on my computer, and then send someone else this software or code and they could run it as well, getting the same results.\nIn reality, I would very likely run into at least one of the following problems:\n\nIt is not uncommon for people within the same team to use different operating systems (whether MacOS, Windows, or different flavours of Unix builds). Even if everyone is using a MacOS, there are still different versions that impact the way people are able to work with their machines.\nAlmost every piece of software has some sort of dependency - other software - it needs to run. Some programs might “just” need a bash shell or basic python, while others need a variety of compilers and additional libraries to function. Often, these dependencies require further dependencies to be installed. It is also not uncommon for dependencies for Program 1 to clash with the dependencies for Program 2, requiring the user to uninstall dependencies to be able to install others.\nIn bioinformatics, tools are very often not maintained after the student that wrote the software graduated, the PI moved to a different university, or the funding simply ran out. This leads to a lot of really good software not really being supported by newer operating systems, usually due to dependencies not being easily available or, as before, clashing with newer versions. This makes installing a tool one of the biggest hurdles to overcome in bioinformatics.\nYou often cannot install different versions of the same program on one computer due to conflicting names. This is particularly problematic when you want to rerun an analysis for a publication where you need to use the same software all the way through.\n\nAny of these points might lead to you not being able to run my code, or it running but giving different results. They make bioinformatics less reproducible as tools and code cannot be moved easily betweem systems (for example if you upgrade your computer or want to share your pipeline with a colleague). Fortunately, most of these problems can be overcome with containers.",
+    "objectID": "Day1Session1_nfcore.html#workflow-managers",
+    "href": "Day1Session1_nfcore.html#workflow-managers",
+    "title": "Nextflow and nf-core",
+    "section": "Workflow managers",
+    "text": "Workflow managers\n\nWorkflow managers provide a framework for the creation, execution, and monitoring of pipeline. &lt;…&gt; They simplify pipeline development, optimize resource usage, handle software installation and versions, and run on different compute platforms, enabling workflow portability and sharing. Wratten et al. (2021) Nature Methods\n\nWith workflow managers you can develop an automated pipeline from your scripts that can then be run on a variety of systems. Once it is developed, execute a single command to start the pipeline. The manager then coordinates the deployment of the scripts in the appropriate sequence, monitors the jobs, handles the file transfers between scripts, gathers the output, and handles re-execution of failed jobs for you. Workflow managed pipelines can run containers, which eliminates software installation and version conflicts.\nThat means that by design the pipelines are:\n\nportable\nmore time efficient (no more downtime between pipeline steps)\nmore resource efficient (mostly, but this might vary depending how skilled a developer you yourself are)\neasier to install (especially when combined with containers, or environment managers)\nmore reproducible\n\nThere are in principle two different flavors of workflow managers: snakemake, and nextflow. In this course we will be introducing you to nexflow.",
     "crumbs": [
       "Home",
       "Background knowledge with a bit of hands-on",
-      "Containers"
+      "Nextflow and nf-core"
     ]
   },
   {
-    "objectID": "Day2Session1_containers.html#containers",
-    "href": "Day2Session1_containers.html#containers",
-    "title": "Containers",
-    "section": "Containers",
-    "text": "Containers\n\nWhat are containers?\nContainers are stand-alone pieces of software that require a container management tool to run. They are build and exchanged as container images that specify the contents of the container, such as the operating system, all dependencies, and software in an isolated environment. The container management tool then takes the images and build the container. These management tools can be run on all operating systems, and since the container has the operating system within it, it will run the same in all environments. Container images are easily portable and immutable, so they are stable over time.\n\n\nRunning Containers\nThere are several programs that can be used to build and run containers. Docker, Appptainer, and Podman are the most commonly used platforms to date. They all have their pros and cons. If you are using a Windows machine that only you are using, then Docker is likely the least complex tool to install. On multi-user systems like a server, Apptainer is the best tool for the job. For this tutorial and the rest of the course, we will use Apptainer commands. There are small syntax changes between bash and powershell commands, but they are very similar.\n\n\nDownloading Container Images\nThere are several repositories for people to publish container images that they have specified. Dockerhub and Seqera are two commonly used platforms for downloading container images. You are able to use container images from dockerhub on Apptainer without any problems.\n\ndockerhub Tutorial\nOn the dockerhub landing page, you have a search bar, and some login options. You do not need to create an account to access the containers on dockerhub.\n\n\n\ndockerhub landing page\n\n\nFor these tutorials, we’ll search VCFtools, a commonly used software for VCF manipulation and querying. The results of the search give us several different containers with the same name.\n\n\n\nRegistry search\n\n\nYou can see who made the container image, how many times it has been downloaded (or pulled), when it was updated (here updated means different versions of the image being uploaded), and how many people have starred it. It is usually a good rule of thumb to use the most popular images from users that have uploaded a lot of container images. The biocontainers and pegi3s profiles have builds for a lot of tools, and they are built really well!\nIf we click on the vcftools from biocontainers we get to a typical dockerhub image landing page:\n\n\n\nVCFtools page\n\n\nThere is information on the frequency of the container image being pulled, as well as a pull command to download the image. This command is for docker, so we need to modify it for Apptainer.\napptainer pull vcftools_0.1.16-1.sif docker://biocontainers/vcftools:v0.1.16-1-deb_cv1\nThis command has several parts to it:\n\napptainer calls on the Apptainer software to run\npull tells Apptainer which function to use. In this case, we want it to go fetch something from a repository\nvcftools_0.1.16-1.sif is the name of the container image on our local machine. We could call it I_Love_Dogs but that is not very informative at all. Your collaborator won’t know what it means, and you certainly won’t know what it means in 6 months from now! It is also good practice to put the version number in your image name in case you want to have several versions at the same time, and you need to tell them apart.\ndocker:// is the registry you are pulling from. There are several different registries, but we are only going to show 2 during this course. (You will see another one in the Seqera tutorial)\nbiocontainers/vcftools is the profile/repository and container you are pulling\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nFile format extensions like .txt and .sif are really only important for us. However, it is good practice to append your files with appropriate extensions to ensure that you follow good data management practices\n\n\n\nIf you are interested in a different version than the current version, there are other versions under the tags tab:\n\n\n\nContainer versions\n\n\nIf you wanted to download another version of the container, you simply copy the command shown on the right side, and alter the syntax, for example\napptainer pull vcftools0.1.14.sif docker://biocontainers/vcftools:v0.1.14_cv2\n\n\nSeqera Tutorial\nThe Seqera landing page is a bit different from the dockerhub landing page, and it works a bit differently from dockerhub. Dockerhub hosts container images that users have uploaded, while Seqera makes container images as you request them. They use bioconda, conda-forge, and pypi libraries to build their containers images with Wave. The advantage is that you can include several different softwares in your container image at once. The disadvantage is that you are limited to software hosted on the aforementioned repositories. Usually this isn’t a problem, but sometimes you want to use something that isn’t hosted there.\n\n\n\nSeqera containers landing page\n\n\nWhen you pull an image from Seqera and want to run it with Apptainer, you need to remember to change the container setting from Docker to Singularity, the older name of Apptainer.\n\n\n\nSelecting Singularity\n\n\nSince Seqera builds containers on-demand, sometimes you have to wait for the container to finish compiling. You can see that it is still preparing the container image from the fetching container comment. Don’t try to pull it when it is still building!\n\n\n\nWaiting to build\n\n\nWhen the container image is ready, you can copy the text and pull the image to your system:\n\n\n\nReady to download\n\n\napptainer pull vcftools_0.1.17.sif oras://community.wave.seqera.io/library/vcftools:0.1.17--b541aa8d9f9213f9\nHere we use oras:// instead of docker:// as we are pulling from the oras registry. We are also pulling a different version from Seqera, so the name of the container is different.\n\n\n\nRunning Containers\nOnce you have the container image on your local machine, you want to be able to use it. Apptainer can be used to build the container from the image. Then you can either enter the container and run as if you had the exact same operating system as the person who built it, or you can run the software inside the container from outside of the container.\nThere are 2 different ways to use a container: run and exec. The apptainer run command launches the container and first runs the %runscript for the container if one is defined, and then runs your command (we will cover %runscript in the Building Containers section). The apptainer exec command will not run the %runscript even if one is defined. It is a small, fiddly detail that might be applicable if you use other people’s containers. After calling Apptainer and the run or exec commands, you can use your software as you usually would\napptainer exec vcftools_0.1.17.sif vcftools --version\nThis command runs your vcftools_0.1.17.sif container from the image, calls on the program vcftools that is within the container, and shows you the version. If you had installed VCFtools locally, you would have just used\nvcftools --version\n\n\n\n\n\n\nImportant\n\n\n\nPlease remember that VCFtools is just an example. If you want to run any other tool everything after apptainer run or apptainer exec has to be substituted by the name of the specific container image and the run commands for that particular tool!\n\n\n\n\nBuilding Containers\nIf the software you would like to use is not packaged into a container by anyone else, you might want to build it yourself. For this, we are just going to show a very simple example. Building containers from scratch is a computationally intensive task. You build containers from a definition file with the extension .def\nHere we are going to build a container with a cow telling us the date. Save this in a file called lolcow.def.\nBootstrap: docker\nFrom: ubuntu:20.04\n\n%post\n    apt-get -y update\n    apt-get -y install cowsay lolcat fortune\n\n%environment\n    export LC_ALL=C\n    export PATH=/usr/games:$PATH\n\n%runscript\n    date | cowsay | lolcat    \nThere are several components to this definition file.\n\nYou can set the operating system you want in the container, in this case Ubuntu 20.04.\n%post section is where you update the OS from its base state, install dependencies and so on.\n%environment is where you export paths and modify the environment.\n%runscript is the script that will run when you use apptainer run container.sif. If you don’t include a runscript, then nothing will happen when you try to run it without any commands. You could build this container without anything in the %runscript section, and use apptainer run container.sif date | cowsay | lolcat to get the same output.\n\napptainer build lolcow.sif lolcow.def\nYou’ll get a lot of output on the status of the build, ending in\nINFO:    Adding environment to container\nINFO:    Adding runscript\nINFO:    Creating SIF file...\nINFO:    Build complete: lolcow.sif\nWe can now run our new container with\napptainer run lolcow.sif\n\n\n\nBoring cow\n\n\n\n\n\n\n\n\nNote\n\n\n\nTry removing the %runscript, build it again, and see what happens.\n\n\nBootstrap: docker\nFrom: ubuntu:20.04\n\n%post\n    apt-get -y update\n    apt-get -y install cowsay lolcat fortune\n\n%environment\n    export LC_ALL=C\n    export PATH=/usr/games:$PATH\n\n%runscript\n    fortune | cowsay | lolcat    \nIf we use the same definition file as before, but substitute date for fortune in the runscript and build the container, we now get a philosophical cow with a dark sense of humour:\n\n\n\nFun cow\n\n\n\n\n\nInspirational cow\n\n\nTo show the difference between the run and exec commands, we can use the same container with fortune in the runscript and run:\napptainer run lolcow.sif bash -c \"date|cowsay\"\nand\napptainer exec lolcow.sif bash -c \"date|cowsay\"\nThe run command gives us a philosophical cow while exec gives us our boring cow again.",
+    "objectID": "Day1Session1_nfcore.html#nextflow",
+    "href": "Day1Session1_nfcore.html#nextflow",
+    "title": "Nextflow and nf-core",
+    "section": "Nextflow",
+    "text": "Nextflow\nIn nextflow, your scripts are turned into processes, connected by channels that contain the data - input, output etc. The order of the processes, and their interaction with each other, is specfied in the workflow scope.\n\n\n\nsource: Software carpentries\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn this course, we will not write our own processes, or pipeline. However, if you are interested, there are a lot of very good training materials available online.\n\n\nThe executable part of the processes, the so called script, can be written in any language, so in theory you could always choose the language that is best suited for the job (in practice you might be limited to the languages you know). However, the modularity of the processes allows for easy re-use of existing scripts and processes.\nWhen moving the pipeline from one system to another, the script stays the same and does not change, the same containers are used. The only thing that changes are the parameters that pertain to the environment and available resources. In other words, with nextflow, the functional logic, the processes, are separated from the executive (how the workflow runs). This makes the nextflow pipelines highly interoperable and portable. They can be run on various platforms, such as HPC clusters, local computers, cloud systems etc..\nThe pipelines can be integrated with version control tools, such as git or bitbucket, and containers technologies, such as apptainer or docker. This makes the pipeline very reproducible.\nThe nextflow pipelines are extremely scalable, can be developed on a few samples and easily be run on hundreds or thousands of samples. When possible, processes are run in parallel automatically.\nNexflow performs automatic checks on the processes and their in- and output. It can automatically resume execution at a point of failure without having to re-compute successfully completed parts.\nNextflow is open source.\nHere is a more visual summary of some of the points above:\n\n\n\nsource: Maxime U Garcia, Seqera labs\n\n\nOne reason why we are using, and promoting, nexflow is the community project, nf-core",
     "crumbs": [
       "Home",
       "Background knowledge with a bit of hands-on",
-      "Containers"
+      "Nextflow and nf-core"
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This course is a hosted by the Swedish Agricultural University’s Bioinformatics Infrastructure (SLUBI) team. In this course we hope to give you information on how to use reproducible bioinformatics pipelines, report results in a streamlined manner, and implement the system in your own research groups.\nThis course is funded by SIDA and is hosted in Alnarp, Sweden on the 25th-29th August 2025"
-  },
-  {
-    "objectID": "Day4Session2_use_containers.html",
-    "href": "Day4Session2_use_containers.html",
-    "title": "Using Containers",
-    "section": "",
-    "text": "The aim of this session is to provide you with support if you would like to try to download and run your own containers. If there are common points we missed in our introductory session, or simply common questions, we will add these here.",
+    "objectID": "Day1Session1_nfcore.html#nf-core",
+    "href": "Day1Session1_nfcore.html#nf-core",
+    "title": "Nextflow and nf-core",
+    "section": "nf-core",
+    "text": "nf-core\n\n\n\nsource: nf-core\n\n\nNf-core is a very active community around nextflow. Volunteers develop nextflow pipelines around a variety of bioinformatic data.\nHere are some flagship pipelines that have been developed by the nf-core community (we will have a look at the entire list on the nf-core homepage in a bit):\n\n\n\nsource: nf-core\n\n\nAll nf-core pipelines are open source and the source code is available on github. The pipelines are developed by volunteers, who can have a very varied background.\n\n\n\n\n\n\nNote\n\n\n\nWhile nf-core is fantastic, please be aware that their pipelines are developed and maintained (or not maintained) by the community. You should not use the pipelines as a black box, but as a tool you need to understand. The responsibility for the end results is still yours, so you need to see if your data is suited for the analysis (good enough quality?), and if the analysis is suitable for your data!\n\n\nHowever, nf-core does not only develop pipelines.\nThe community also develops: - processes that they make available as modules (and optimizes then too). - training material for all user classes. - best practices for documentation. - templates for development.\nThere is a weekly online helpdesk, and even a podcast.\n\nWhat makes nf-core pipelines interesting for you?\nNf-core provides already developed pipelines for many different data sets. Likely, a pipelines exists that you can use on your data. The documentation of the pipelines follows nf-core guidelines and is extensive and informative - it is easy to understand what the pipeline does and how it works. All output is explained in detail, with links to more extensive documentation.\nOnce you have understood how to run a nf-core pipeline their consistency and standardization means you will know most about running a different one.\nUsing the nf-core launcher, will check your input, and automatically generate commands and configuration files.\nAnd this is on top of all nextflow functionality such as portability, reproducibility and the resume-at-fault option!",
     "crumbs": [
       "Home",
-      "Hands-on training",
-      "Using Containers"
+      "Background knowledge with a bit of hands-on",
+      "Nextflow and nf-core"
     ]
   },
   {
@@ -679,145 +706,718 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "SLUBI SIDA Course",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "We are pleased to have this course with you! Our main aim with this course is to share how we use bioinformatics tools in a reproducible and scalable way. We will showcase the use of environments, containers, and established pipelines so that you can run these analyses on any operating system, as well as on systems that are not high performance computing clusters.\nOur approach to this course is going to be more practical and outcome based than theory based. We would like to give you the practical experience and skills to implement these kinds of analyses at your home universities. Our timeplan is also fairly flexible so that we can spend time with you on things that are useful and important for you to take hard skills with you. We can always go into more detail of something if you would like to know more about something.\nThe website will remain active after the course so that you have access to the material, and we encourage you to share these resources with your students and other researchers that might benefit from this!\n\nProgram\n\n\nDay\nSession\n\n\n\n\nMonday\nIntroduction to Linux\n\n\n\nIntroduction to Environments\n\n\n\nIntroduction to nf-core and Nextflow\n\n\nTuesday\nIntroduction to Containers\n\n\n\nSetting up and running a Nextflow Pipeline (with us)\n\n\n\nSetting up and running a Nextflow Pipeline (by yourself)\n\n\nWednesday\nData Management and Reproducible Research\n\n\n\nIntroduction to Markdown and Quarto\n\n\n\nGitHub\n\n\n\nHow do Nextflow Pipelines Work?\n\n\nThursday\nNextflow Results\n\n\n\nUsing Containers Outside of Nextflow\n\n\n\nUsing R and Other Languages in Quarto\n\n\nFriday\nAI in Bioinformatics\n\n\n\nWhat are your needs? How can you implement this in your own institutions?\n\n\n\nFriday is an emptier day in case we run out of time for something, or if there is something that you would like to learn more about.\nEvery day will end with a feedback session, and we hope that you will tell us what you like, what isn’t working for you, and what you would like to see more of.",
+    "text": "This course is a hosted by the Swedish Agricultural University’s Bioinformatics Infrastructure (SLUBI) team. In this course we hope to give you information on how to use reproducible bioinformatics pipelines, report results in a streamlined manner, and implement the system in your own research groups.\nThis course is funded by SIDA and is hosted in Alnarp, Sweden on the 25th-29th August 2025"
+  },
+  {
+    "objectID": "Day2Session1_containers.html",
+    "href": "Day2Session1_containers.html",
+    "title": "Containers",
+    "section": "",
+    "text": "In an ideal world I would be able to write a piece of software, or a develop some code to analyse data on my computer, and then send someone else this software or code and they could run it as well, getting the same results.\nIn reality, I would very likely run into at least one of the following problems:\n\nIt is not uncommon for people within the same team to use different operating systems (whether MacOS, Windows, or different flavours of Unix builds). Even if everyone is using a MacOS, there are still different versions that impact the way people are able to work with their machines.\nAlmost every piece of software has some sort of dependency - other software - it needs to run. Some programs might “just” need a bash shell or basic python, while others need a variety of compilers and additional libraries to function. Often, these dependencies require further dependencies to be installed. It is also not uncommon for dependencies for Program 1 to clash with the dependencies for Program 2, requiring the user to uninstall dependencies to be able to install others.\nIn bioinformatics, tools are very often not maintained after the student that wrote the software graduated, the PI moved to a different university, or the funding simply ran out. This leads to a lot of really good software not really being supported by newer operating systems, usually due to dependencies not being easily available or, as before, clashing with newer versions. This makes installing a tool one of the biggest hurdles to overcome in bioinformatics.\nYou often cannot install different versions of the same program on one computer due to conflicting names. This is particularly problematic when you want to rerun an analysis for a publication where you need to use the same software all the way through.\n\nAny of these points might lead to you not being able to run my code, or it running but giving different results. They make bioinformatics less reproducible as tools and code cannot be moved easily betweem systems (for example if you upgrade your computer or want to share your pipeline with a colleague). Fortunately, most of these problems can be overcome with containers.",
     "crumbs": [
-      "Home"
+      "Home",
+      "Background knowledge with a bit of hands-on",
+      "Containers"
     ]
   },
   {
-    "objectID": "Day2Session3_nextfow_own_choice.html",
-    "href": "Day2Session3_nextfow_own_choice.html",
-    "title": "Setting up a different nfcore pipeline",
+    "objectID": "Day2Session1_containers.html#reproducibility-in-bioinformatics",
+    "href": "Day2Session1_containers.html#reproducibility-in-bioinformatics",
+    "title": "Containers",
     "section": "",
-    "text": "For this section, we would like you to test out a different pipeline from nf-core that might be appropriate for your research. We are here to support you in this session.",
+    "text": "In an ideal world I would be able to write a piece of software, or a develop some code to analyse data on my computer, and then send someone else this software or code and they could run it as well, getting the same results.\nIn reality, I would very likely run into at least one of the following problems:\n\nIt is not uncommon for people within the same team to use different operating systems (whether MacOS, Windows, or different flavours of Unix builds). Even if everyone is using a MacOS, there are still different versions that impact the way people are able to work with their machines.\nAlmost every piece of software has some sort of dependency - other software - it needs to run. Some programs might “just” need a bash shell or basic python, while others need a variety of compilers and additional libraries to function. Often, these dependencies require further dependencies to be installed. It is also not uncommon for dependencies for Program 1 to clash with the dependencies for Program 2, requiring the user to uninstall dependencies to be able to install others.\nIn bioinformatics, tools are very often not maintained after the student that wrote the software graduated, the PI moved to a different university, or the funding simply ran out. This leads to a lot of really good software not really being supported by newer operating systems, usually due to dependencies not being easily available or, as before, clashing with newer versions. This makes installing a tool one of the biggest hurdles to overcome in bioinformatics.\nYou often cannot install different versions of the same program on one computer due to conflicting names. This is particularly problematic when you want to rerun an analysis for a publication where you need to use the same software all the way through.\n\nAny of these points might lead to you not being able to run my code, or it running but giving different results. They make bioinformatics less reproducible as tools and code cannot be moved easily betweem systems (for example if you upgrade your computer or want to share your pipeline with a colleague). Fortunately, most of these problems can be overcome with containers.",
+    "crumbs": [
+      "Home",
+      "Background knowledge with a bit of hands-on",
+      "Containers"
+    ]
+  },
+  {
+    "objectID": "Day2Session1_containers.html#containers",
+    "href": "Day2Session1_containers.html#containers",
+    "title": "Containers",
+    "section": "Containers",
+    "text": "Containers\n\nWhat are containers?\nContainers are stand-alone pieces of software that require a container management tool to run. They are build and exchanged as container images that specify the contents of the container, such as the operating system, all dependencies, and software in an isolated environment. The container management tool then takes the images and build the container. These management tools can be run on all operating systems, and since the container has the operating system within it, it will run the same in all environments. Container images are easily portable and immutable, so they are stable over time.\n\n\nRunning Containers\nThere are several programs that can be used to build and run containers. Docker, Appptainer, and Podman are the most commonly used platforms to date. They all have their pros and cons. If you are using a Windows machine that only you are using, then Docker is likely the least complex tool to install. On multi-user systems like a server, Apptainer is the best tool for the job. For this tutorial and the rest of the course, we will use Apptainer commands. There are small syntax changes between bash and powershell commands, but they are very similar.\n\n\nDownloading Container Images\nThere are several repositories for people to publish container images that they have specified. Dockerhub and Seqera are two commonly used platforms for downloading container images. You are able to use container images from dockerhub on Apptainer without any problems.\n\ndockerhub Tutorial\nOn the dockerhub landing page, you have a search bar, and some login options. You do not need to create an account to access the containers on dockerhub.\n\n\n\ndockerhub landing page\n\n\nFor these tutorials, we’ll search VCFtools, a commonly used software for VCF manipulation and querying. The results of the search give us several different containers with the same name.\n\n\n\nRegistry search\n\n\nYou can see who made the container image, how many times it has been downloaded (or pulled), when it was updated (here updated means different versions of the image being uploaded), and how many people have starred it. It is usually a good rule of thumb to use the most popular images from users that have uploaded a lot of container images. The biocontainers and pegi3s profiles have builds for a lot of tools, and they are built really well!\nIf we click on the vcftools from biocontainers we get to a typical dockerhub image landing page:\n\n\n\nVCFtools page\n\n\nThere is information on the frequency of the container image being pulled, as well as a pull command to download the image. This command is for docker, so we need to modify it for Apptainer.\napptainer pull vcftools_0.1.16-1.sif docker://biocontainers/vcftools:v0.1.16-1-deb_cv1\nThis command has several parts to it:\n\napptainer calls on the Apptainer software to run\npull tells Apptainer which function to use. In this case, we want it to go fetch something from a repository\nvcftools_0.1.16-1.sif is the name of the container image on our local machine. We could call it I_Love_Dogs but that is not very informative at all. Your collaborator won’t know what it means, and you certainly won’t know what it means in 6 months from now! It is also good practice to put the version number in your image name in case you want to have several versions at the same time, and you need to tell them apart.\ndocker:// is the registry you are pulling from. There are several different registries, but we are only going to show 2 during this course. (You will see another one in the Seqera tutorial)\nbiocontainers/vcftools is the profile/repository and container you are pulling\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nFile format extensions like .txt and .sif are really only important for us. However, it is good practice to append your files with appropriate extensions to ensure that you follow good data management practices\n\n\n\nIf you are interested in a different version than the current version, there are other versions under the tags tab:\n\n\n\nContainer versions\n\n\nIf you wanted to download another version of the container, you simply copy the command shown on the right side, and alter the syntax, for example\napptainer pull vcftools0.1.14.sif docker://biocontainers/vcftools:v0.1.14_cv2\n\n\nSeqera Tutorial\nThe Seqera landing page is a bit different from the dockerhub landing page, and it works a bit differently from dockerhub. Dockerhub hosts container images that users have uploaded, while Seqera makes container images as you request them. They use bioconda, conda-forge, and pypi libraries to build their containers images with Wave. The advantage is that you can include several different softwares in your container image at once. The disadvantage is that you are limited to software hosted on the aforementioned repositories. Usually this isn’t a problem, but sometimes you want to use something that isn’t hosted there.\n\n\n\nSeqera containers landing page\n\n\nWhen you pull an image from Seqera and want to run it with Apptainer, you need to remember to change the container setting from Docker to Singularity, the older name of Apptainer.\n\n\n\nSelecting Singularity\n\n\nSince Seqera builds containers on-demand, sometimes you have to wait for the container to finish compiling. You can see that it is still preparing the container image from the fetching container comment. Don’t try to pull it when it is still building!\n\n\n\nWaiting to build\n\n\nWhen the container image is ready, you can copy the text and pull the image to your system:\n\n\n\nReady to download\n\n\napptainer pull vcftools_0.1.17.sif oras://community.wave.seqera.io/library/vcftools:0.1.17--b541aa8d9f9213f9\nHere we use oras:// instead of docker:// as we are pulling from the oras registry. We are also pulling a different version from Seqera, so the name of the container is different.\n\n\n\nRunning Containers\nOnce you have the container image on your local machine, you want to be able to use it. Apptainer can be used to build the container from the image. Then you can either enter the container and run as if you had the exact same operating system as the person who built it, or you can run the software inside the container from outside of the container.\nThere are 2 different ways to use a container: run and exec. The apptainer run command launches the container and first runs the %runscript for the container if one is defined, and then runs your command (we will cover %runscript in the Building Containers section). The apptainer exec command will not run the %runscript even if one is defined. It is a small, fiddly detail that might be applicable if you use other people’s containers. After calling Apptainer and the run or exec commands, you can use your software as you usually would\napptainer exec vcftools_0.1.17.sif vcftools --version\nThis command runs your vcftools_0.1.17.sif container from the image, calls on the program vcftools that is within the container, and shows you the version. If you had installed VCFtools locally, you would have just used\nvcftools --version\n\n\n\n\n\n\nImportant\n\n\n\nPlease remember that VCFtools is just an example. If you want to run any other tool everything after apptainer run or apptainer exec has to be substituted by the name of the specific container image and the run commands for that particular tool!\n\n\n\n\nBuilding Containers\nIf the software you would like to use is not packaged into a container by anyone else, you might want to build it yourself. For this, we are just going to show a very simple example. Building containers from scratch is a computationally intensive task. You build containers from a definition file with the extension .def\nHere we are going to build a container with a cow telling us the date. Save this in a file called lolcow.def.\nBootstrap: docker\nFrom: ubuntu:20.04\n\n%post\n    apt-get -y update\n    apt-get -y install cowsay lolcat fortune\n\n%environment\n    export LC_ALL=C\n    export PATH=/usr/games:$PATH\n\n%runscript\n    date | cowsay | lolcat    \nThere are several components to this definition file.\n\nYou can set the operating system you want in the container, in this case Ubuntu 20.04.\n%post section is where you update the OS from its base state, install dependencies and so on.\n%environment is where you export paths and modify the environment.\n%runscript is the script that will run when you use apptainer run container.sif. If you don’t include a runscript, then nothing will happen when you try to run it without any commands. You could build this container without anything in the %runscript section, and use apptainer run container.sif date | cowsay | lolcat to get the same output.\n\napptainer build lolcow.sif lolcow.def\nYou’ll get a lot of output on the status of the build, ending in\nINFO:    Adding environment to container\nINFO:    Adding runscript\nINFO:    Creating SIF file...\nINFO:    Build complete: lolcow.sif\nWe can now run our new container with\napptainer run lolcow.sif\n\n\n\nBoring cow\n\n\n\n\n\n\n\n\nNote\n\n\n\nTry removing the %runscript, build it again, and see what happens.\n\n\nBootstrap: docker\nFrom: ubuntu:20.04\n\n%post\n    apt-get -y update\n    apt-get -y install cowsay lolcat fortune\n\n%environment\n    export LC_ALL=C\n    export PATH=/usr/games:$PATH\n\n%runscript\n    fortune | cowsay | lolcat    \nIf we use the same definition file as before, but substitute date for fortune in the runscript and build the container, we now get a philosophical cow with a dark sense of humour:\n\n\n\nFun cow\n\n\n\n\n\nInspirational cow\n\n\nTo show the difference between the run and exec commands, we can use the same container with fortune in the runscript and run:\napptainer run lolcow.sif bash -c \"date|cowsay\"\nand\napptainer exec lolcow.sif bash -c \"date|cowsay\"\nThe run command gives us a philosophical cow while exec gives us our boring cow again.",
+    "crumbs": [
+      "Home",
+      "Background knowledge with a bit of hands-on",
+      "Containers"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#graphs",
+    "href": "Day4Session4_ggplot.html#graphs",
+    "title": "ggplot2 in R",
+    "section": "Graphs",
+    "text": "Graphs\n\nEssential part of data analyses\n\n\n\nData with same summary statistics can look very different when plotted out.\n\n\n\n\n\n\n\nAnscombe’s quartet, Datasaurus\n\nSummary statistics do not always reflect how the data looks like.\n\nAnscombe’s quartet comprises four data sets that have nearly identical simple descriptive statistics, yet have very different distributions and appear very different when graphed.\n\nA more modern example dataset is datasaurus dozen. A set of 13 xy datasets that have nearly identical summary statistics but look very different when plotted out. One of the plots is in fact a dinosaur.",
     "crumbs": [
       "Home",
       "Hands-on training",
-      "Setting up a different nfcore pipeline"
+      "`ggplot2` in `R`"
     ]
   },
   {
-    "objectID": "Day2Session3_nextfow_own_choice.html#things-to-think-about",
-    "href": "Day2Session3_nextfow_own_choice.html#things-to-think-about",
-    "title": "Setting up a different nfcore pipeline",
-    "section": "Things to think about",
-    "text": "Things to think about\n\nIs the pipeline maintained?\nWhat do you need as input?\nWhat are some of the constraints you might face during the setup?\n\n\n\n\n\n\n\nNote\n\n\n\nTo test the settings of a pipeline it is advisable to run the pipeline on only a few, reduced samples to save on computation time.\nOnce you are sure that the pipeline is set up correctly you can then run on the full data set.",
+    "objectID": "Day4Session4_ggplot.html#base-graphics-vs-ggplot2",
+    "href": "Day4Session4_ggplot.html#base-graphics-vs-ggplot2",
+    "title": "ggplot2 in R",
+    "section": "Base Graphics vs ggplot2",
+    "text": "Base Graphics vs ggplot2\n\n\n\nhist(penguins$flipper_length_mm)\n\n\n\n\n\n\n\n\n\n\nggplot(penguins,aes(flipper_length_mm))+\n  geom_histogram(bins = 13)\n\n\n\n\n\n\n\n\n\n\nFor simple graphs, the base plot seems to take minimal coding effort compared to a ggplot graph.",
     "crumbs": [
       "Home",
       "Hands-on training",
-      "Setting up a different nfcore pipeline"
+      "`ggplot2` in `R`"
     ]
   },
   {
-    "objectID": "Day3Session3_github.html",
-    "href": "Day3Session3_github.html",
-    "title": "Version control: git and Github",
-    "section": "",
-    "text": "Git is a version control software that is fully distributed - meaning that each project folder contains the full history of the project. These project folders are also called repositories and can be on several computers, or servers.\nGithub is a code hosting platform that is based on git. Here you can store, track and publish code (and code only, do NOT use github for data!). On Github you can collaborate with colleagues and work on projects together.\nLet’s have a closer look at how git works:",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Version control: git and Github"
-    ]
-  },
-  {
-    "objectID": "Day3Session3_github.html#git",
-    "href": "Day3Session3_github.html#git",
-    "title": "Version control: git and Github",
-    "section": "git",
-    "text": "git\n\nGit has three main states that your files can reside in: modified, staged, and committed:\n\n\n\nModified means that you have changed the file but have not committed it to your database yet.\nStaged means that you have marked a modified file in its current version to go into your next commit snapshot.\nCommitted means that the data is safely stored in your local database.\n\n\n\nsource: git documentation\n\nThis leads to the three main sections of a Git project: the working directory, the staging area, and the Git directory (or repository).\n\n\n\nWorking directory, staging area, and Git directory\n\n\nAnd the basic commands of git:\n\n\n\nBasic git commands\n\n\n\n\n\n\n\n\nNote\n\n\n\nThese basic operations are all done on your local system. You have the entire history of the project on your local disk, and do not need an internet connection to work on your data with git. You can do all your commits on your local computer and later push them to a remote repostitory, like Github.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Version control: git and Github"
-    ]
-  },
-  {
-    "objectID": "Day3Session3_github.html#use-git-with-github",
-    "href": "Day3Session3_github.html#use-git-with-github",
-    "title": "Version control: git and Github",
-    "section": "Use git with Github",
-    "text": "Use git with Github\nTo get started with GitHub in VS Code, you’ll need to install Git, create a GitHub account and install the GitHub Pull Requests and Issues extension.\n\n\n\n\n\n\nNote\n\n\n\nAs of March 2023, GitHub required all users who contribute code on GitHub.com to enable one or more forms of two-factor authentication (2FA). Here is the step by step how-to enable two factor authentication.\nHere is another summary, plus suggestions which software to use.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Version control: git and Github"
-    ]
-  },
-  {
-    "objectID": "Day3Session3_github.html#create-a-new-repository-on-github",
-    "href": "Day3Session3_github.html#create-a-new-repository-on-github",
-    "title": "Version control: git and Github",
-    "section": "Create a new repository on Github",
-    "text": "Create a new repository on Github\nGo to www.github.com, and sign in if you haven’t done so yet. On your profile page klick on the tab Repositories (if you are not on your profile you can navigate there by clicking on the icon in the top right corner).\nThen create a new repository by clicking on the green button New:\n\n\n\nnew repository\n\n\n\nChoose a repository name - there will be a green checkmark if the name is available.\n(optional) Add a short description of the repository contents.\nChoose if the repository should be public or private.\nAdd a README (remember, good data management practices?)\n\nClick on the green button Create repository to create repository.\n\n\n\n\n\n\nNote\n\n\n\nA public repository is visible to anybody. People can also copy clone the repository and then change code in their copy. However, they cannot change the code in your repository unless you give them permission or make them collaborators.\nA private repository is only visible by you and people you gave permission to.\n\n\n\n\n\nempty git repository",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Version control: git and Github"
-    ]
-  },
-  {
-    "objectID": "Day3Session3_github.html#add-files-to-repository-on-github",
-    "href": "Day3Session3_github.html#add-files-to-repository-on-github",
-    "title": "Version control: git and Github",
-    "section": "Add files to repository on Github",
-    "text": "Add files to repository on Github\nYou can add files to the repository by clicking on the button with the plus, +. You can either click Create new file and edit it on the Github page directly, or Upload files from your computer.\n\n\n\n\n\n\nNote\n\n\n\nWhenever you save a file on Github, it automatically creates a commit that will be part of the repository history.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Version control: git and Github"
-    ]
-  },
-  {
-    "objectID": "Day3Session3_github.html#add-files-on-your-local-computer",
-    "href": "Day3Session3_github.html#add-files-on-your-local-computer",
-    "title": "Version control: git and Github",
-    "section": "Add files on your local computer",
-    "text": "Add files on your local computer\nTo change the content of the repository on your local computer you need to copy the repository content to your local computer. This is called cloning.\n\n\n\nInterface to clone a repository\n\n\n\nClick on the green Code button and select HTTPS on the Local tab.\nCopy the URL to the clipboard.\nOpen VScode and type `&gt; Git: Clone into the search bar.\nCopy in the URL you just copied from Github.\nFollow the prompts to select a location for the directory on your computer.\nOpen the repository with VScode.\n\nNow you can add files, edit and execute your code. Once you are satisfied with the changes you can stage, commit and push them.\n\n\n\n\n\n\nTip\n\n\n\nYou can now for example add a quarto homepage to your repository, so you have an interactive document to run and publish your analyses. Have a look at the quarto section, Creating a Project of this course to see how.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Version control: git and Github"
-    ]
-  },
-  {
-    "objectID": "Day3Session3_github.html#stage-commit-and-push",
-    "href": "Day3Session3_github.html#stage-commit-and-push",
-    "title": "Version control: git and Github",
-    "section": "Stage, commit, and push",
-    "text": "Stage, commit, and push\nTo add your changes to the repository history you can either use the command line in the terminal of VScode, or the shortcut on the side panel on the left of the VScode window that looks like three circles that are connected by two wiggly lines:\n\n\n\nThe source control button in the sidebar\n\n\nHere is a little reminder of what we are trying to achieve:\n\n\n\nBasic git commands\n\n\n\nvia the command line\nIn the terminal of VScode, check the status of your project with git status.\n\n\n\ngit status example\n\n\nThere are a few files that are already tracked by git, but that have untracked changes, and a few files that are not tracked. (There is also one commit that is not yet pushed to the remote repository.) At the bottom it even says which commands to use to stage and commit changes.\nNow, I can stage the files with git add &lt;filename&gt;:\n\n\n\ngit add example\n\n\nNow we can see in green the changes that are to be committed. I can commit them with `git commit -m “&gt;commit message&gt;”:\n\n\n\ngit commit example\n\n\nThe commit is then incorporated into the repository, and briefly summarized in the command line. I can now use git push to push the changes to the remote repository on Github and publish them.\n\n\nvia VScode\nClicking on the git shortcut button in VScode opens a pane that shows which changes have been made.\n\n\n\nVScode status example\n\n\nBy clicking on the plus to the right of the file you can stage the file, and then commit them with the blue commit button and a commit message. You can also commit and push at the same time (by selecting that option in the drop down menu of the blue commit button).\n\n\n\nVScode staging example\n\n\n\n\n\n\n\n\nNote\n\n\n\nA commit message should always be informative. They will be the identifiers if you want to “go back in time” and revert to an earlier version of your repository.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Version control: git and Github"
-    ]
-  },
-  {
-    "objectID": "Day3Session3_github.html#using-git-collaboratively",
-    "href": "Day3Session3_github.html#using-git-collaboratively",
-    "title": "Version control: git and Github",
-    "section": "using git collaboratively",
-    "text": "using git collaboratively\nWe have now introduced how you can use git and github by yourself. However, it is a very poweful tool for working together with others. Unfortunately, getting into the details of that would exceed the time we have in this course.\nHere are some resources for you to look into for further reading and training:\nGetting started with git.\nThe git book.\nVersion control with git from the software carpentries.\nWorking with GitHub in VScode.",
-    "crumbs": [
-      "Home",
-      "Data management",
-      "Version control: git and Github"
-    ]
-  },
-  {
-    "objectID": "Day3Session4_nfcore_main.html",
-    "href": "Day3Session4_nfcore_main.html",
-    "title": "Examining main.nf",
-    "section": "",
-    "text": "In this session, we will go through the main.nf file that actually executes the whole pipeline of the rnaseq pipeline we ran on Tuesday. We hope that this session will make the whole process less of a “black box” and more approachable.\nYou can find the main.nf file on GitHub\nOne of us will act as a scribe during the session, and record our most important discussion points here for you to look at later.",
+    "objectID": "Day4Session4_ggplot.html#base-graphics-vs-ggplot2-1",
+    "href": "Day4Session4_ggplot.html#base-graphics-vs-ggplot2-1",
+    "title": "ggplot2 in R",
+    "section": "Base Graphics vs ggplot2",
+    "text": "Base Graphics vs ggplot2\n\n\n\nbasic r plot\n\n\nplot(penguins$flipper_length_mm,penguins$body_mass_g,\n     col=c(\"red\",\"green\",\"blue\")[penguins$species],\n     pch=c(0,1,2)[penguins$species])\nlegend(x=172,y=6300,\n       legend=c(\"Adelie\",\"Chinstrap\",\"Gentoo\"),\n       pch=c(0,1,2),col=c(\"red\",\"green\",\"blue\"))\n\n\n\n\n\n\n\n\n\n\nggplot\n\n\nggplot(penguins, aes(flipper_length_mm,body_mass_g, \n  color=species)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\nFor anything beyond extremely basic plots, base plotting quickly become complex. More importantly, base plots do not have consistency in it’s functions or plotting strategy.",
     "crumbs": [
       "Home",
       "Hands-on training",
-      "Examining main.nf"
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#why-ggplot2",
+    "href": "Day4Session4_ggplot.html#why-ggplot2",
+    "title": "ggplot2 in R",
+    "section": "Why ggplot2?",
+    "text": "Why ggplot2?\n\n\n\n\nConsistent code\nFlexible (Add/remove components)\nAutomatic legends, colors etc\nSave plot objects\nThemes for reusing styles\nNumerous add-ons/extensions\nNearly complete structured graphing solution\nAdapted to other programming languages\n\nGadfly in Julia, gramm in MatLab, GGPlot in Perl, Vega in Javascript, PlotNine, ggpy, lets-plot in Python.\n\n\n\nggplot2 has a consistent logic and more structured code for plotting. There is bit of a learning curve, but once the code syntax and the logic is clear, it becomes easy to plot a huge variety of graphs.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#grammar-of-graphics",
+    "href": "Day4Session4_ggplot.html#grammar-of-graphics",
+    "title": "ggplot2 in R",
+    "section": "Grammar Of Graphics",
+    "text": "Grammar Of Graphics\n\n\n\n\n\n\nLeland Wilkinson’s The Grammar of Graphics\nCreated by Hadley Wickham in 2005\nData: Input data. Table, csv, xlsx\nAesthetic: Mapping or visual characteristics of the geometry. Size, Color, Shape etc\nGeometries: A geometry representing data. Points, Lines etc\nFacets: Split plot into subplot\nStatistics: Statistical transformations. Counts, Means etc\nCoordinates: Numeric system to determine position of geometry. Cartesian, Polar etc\nScale: How visual characteristics are converted to display values\nTheme: controls points of display. Font size, background colour\n\n\n\nTraditional graphing tools generally have independent set of rules for different kinds of graphs and also labelled differently such as barplots, scatterplots, boxplots etc. Each graph has it’s own function and plotting strategy.\nLeland Wilkinson’s The Grammar of Graphics introduces this idea that any kind of graph can be created by following a set of rules and put forward a framework that enables this.\nGrammar of graphics (GOG) tries to unify all graphs under a common umbrella. GOG brings the idea that graphs are made up of discrete elements (data, aesthetics, geometry, statistics, coordinates, facets, themes etc) which can be mixed and matched to create any plot. This creates a consistent underlying framework to graphing.\nggplot (Grammar of graphics) was built in R by Hadley Wickham in 2005 as an implementation of Leland Wilkinson’s book Grammar of Graphics.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#building-a-graph-syntax",
+    "href": "Day4Session4_ggplot.html#building-a-graph-syntax",
+    "title": "ggplot2 in R",
+    "section": "Building A Graph: • Syntax",
+    "text": "Building A Graph: • Syntax",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#building-a-graph",
+    "href": "Day4Session4_ggplot.html#building-a-graph",
+    "title": "ggplot2 in R",
+    "section": "Building A Graph",
+    "text": "Building A Graph\n\nrequire(ggplot2)        # load ggplot2\nrequire(palmerpenguins) # load penguins data pack\n\ndata(\"penguins\")        # load penguins data",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#building-a-graph-1",
+    "href": "Day4Session4_ggplot.html#building-a-graph-1",
+    "title": "ggplot2 in R",
+    "section": "Building A Graph",
+    "text": "Building A Graph\n\n\n\nggplot(data = penguins)",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#building-a-graph-2",
+    "href": "Day4Session4_ggplot.html#building-a-graph-2",
+    "title": "ggplot2 in R",
+    "section": "Building A Graph",
+    "text": "Building A Graph\n\n\n\nggplot(data = penguins,\nmapping = aes(x = flipper_length_mm, \n              y = body_mass_g))",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#building-a-graph-3",
+    "href": "Day4Session4_ggplot.html#building-a-graph-3",
+    "title": "ggplot2 in R",
+    "section": "Building A Graph",
+    "text": "Building A Graph\n\n\n\nggplot(data = penguins,\nmapping = aes(x = flipper_length_mm, \n              y = body_mass_g)) + \ngeom_point()",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#building-a-graph-4",
+    "href": "Day4Session4_ggplot.html#building-a-graph-4",
+    "title": "ggplot2 in R",
+    "section": "Building A Graph",
+    "text": "Building A Graph\n\n\n\nggplot(data = penguins,\nmapping = aes(x = flipper_length_mm, \n              y = body_mass_g, \n              colour = species)) +\ngeom_point()",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#building-a-graph-5",
+    "href": "Day4Session4_ggplot.html#building-a-graph-5",
+    "title": "ggplot2 in R",
+    "section": "Building A Graph",
+    "text": "Building A Graph\n\n\n\nggplot(data = penguins,\nmapping = aes(x = flipper_length_mm, \n              y = body_mass_g, \n              colour = species)) +\ngeom_point()\n\nOr\n\nggplot(data = penguins) +\ngeom_point(mapping = aes(x = flipper_length_mm, \n                         y = body_mass_g, \n                         colour = species))",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#building-a-graph-6",
+    "href": "Day4Session4_ggplot.html#building-a-graph-6",
+    "title": "ggplot2 in R",
+    "section": "Building A Graph",
+    "text": "Building A Graph\n\n\n\nggplot(data = penguins,\nmapping = aes(x = flipper_length_mm, \n              y = body_mass_g, \n              colour = species)) +\ngeom_point()\n\nOr\n\nggplot(data = penguins) +\ngeom_point(mapping = aes(x = flipper_length_mm, \n                         y = body_mass_g, \n                         colour = species))",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#data-penguins",
+    "href": "Day4Session4_ggplot.html#data-penguins",
+    "title": "ggplot2 in R",
+    "section": "Data • penguins",
+    "text": "Data • penguins\n\nInput data is always an R data.frame object\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n2007\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n2007\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n2007\n\n\n\n\n\n\nstr(penguins)\n\ntibble [344 × 8] (S3: tbl_df/tbl/data.frame)\n $ species          : Factor w/ 3 levels \"Adelie\",\"Chinstrap\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ island           : Factor w/ 3 levels \"Biscoe\",\"Dream\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...\n $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...\n $ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...\n $ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...\n $ sex              : Factor w/ 2 levels \"female\",\"male\": 2 1 1 NA 1 2 1 2 NA NA ...\n $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...\n\n\n\nIt’s a good idea to use str() to check the input dataframe to make sure that numbers are actually numbers and not characters, for example. Verify that factors are correctly assigned.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#data-diamonds",
+    "href": "Day4Session4_ggplot.html#data-diamonds",
+    "title": "ggplot2 in R",
+    "section": "Data • diamonds",
+    "text": "Data • diamonds\n\n\n\n\n\n\ncarat\ncut\ncolor\nclarity\ndepth\ntable\nprice\nx\ny\nz\n\n\n\n\n0.23\nIdeal\nE\nSI2\n61.5\n55\n326\n3.95\n3.98\n2.43\n\n\n0.21\nPremium\nE\nSI1\n59.8\n61\n326\n3.89\n3.84\n2.31\n\n\n0.23\nGood\nE\nVS1\n56.9\n65\n327\n4.05\n4.07\n2.31\n\n\n0.29\nPremium\nI\nVS2\n62.4\n58\n334\n4.20\n4.23\n2.63\n\n\n0.31\nGood\nJ\nSI2\n63.3\n58\n335\n4.34\n4.35\n2.75\n\n\n0.24\nVery Good\nJ\nVVS2\n62.8\n57\n336\n3.94\n3.96\n2.48\n\n\n\n\n\n\n\n\ntibble [53,940 × 10] (S3: tbl_df/tbl/data.frame)\n $ carat  : num [1:53940] 0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...\n $ cut    : Ord.factor w/ 5 levels \"Fair\"&lt;\"Good\"&lt;..: 5 4 2 4 2 3 3 3 1 3 ...\n $ color  : Ord.factor w/ 7 levels \"D\"&lt;\"E\"&lt;\"F\"&lt;\"G\"&lt;..: 2 2 2 6 7 7 6 5 2 5 ...\n $ clarity: Ord.factor w/ 8 levels \"I1\"&lt;\"SI2\"&lt;\"SI1\"&lt;..: 2 3 5 4 2 6 7 3 4 5 ...\n $ depth  : num [1:53940] 61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...\n $ table  : num [1:53940] 55 61 65 58 58 57 57 55 61 61 ...\n $ price  : int [1:53940] 326 326 327 334 335 336 336 337 337 338 ...\n $ x      : num [1:53940] 3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...\n $ y      : num [1:53940] 3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...\n $ z      : num [1:53940] 2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ...\n\n\n\nR data.frame is a tabular format with rows and columns just like a spreadsheet.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#data-format",
+    "href": "Day4Session4_ggplot.html#data-format",
+    "title": "ggplot2 in R",
+    "section": "Data • format",
+    "text": "Data • format\n\nTransforming data into ‘long’ or ‘wide’ formats\n\n\n\n\n\nWide\n\nhead(penguins, n=4)\n\n# A tibble: 4 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\nLong\n\n\n  species    island  sex year         variables  value\n1  Adelie Torgersen male 2007    bill_length_mm   39.1\n2  Adelie Torgersen male 2007     bill_depth_mm   18.7\n3  Adelie Torgersen male 2007 flipper_length_mm  181.0\n4  Adelie Torgersen male 2007       body_mass_g 3750.0\n\n\n\n\nThe data must be cleaned up and prepared for plotting. The data must be ‘tidy’. Columns must be variables and rows must be observations. The data can then be in wide or long format depending on the variables to be plotted.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#geoms-types",
+    "href": "Day4Session4_ggplot.html#geoms-types",
+    "title": "ggplot2 in R",
+    "section": "Geoms • types",
+    "text": "Geoms • types\n\n\n\n\n\np &lt;- ggplot(data = penguins)\n\n# scatterplot\np + geom_point(aes(x=flipper_length_mm,y=body_mass_g))\n\n# barplot\np + geom_bar(aes(x=species))\n\n# boxplot\np + geom_boxplot(aes(x=species,y=body_mass_g))\n\n# search\nhelp.search(\"^geom_\",package=\"ggplot2\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeoms are the geometric components of a graph such as points, lines etc used to represent data. The same data can be visually represented in different geoms. For example, points or bars. Mandatory input requirements change depending on geoms.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#stats",
+    "href": "Day4Session4_ggplot.html#stats",
+    "title": "ggplot2 in R",
+    "section": "Stats",
+    "text": "Stats\n\nStats compute new variables from input data.\nGeoms have default stats.\nPlots can be built with stats.\n\n\n\n\n\nx &lt;- ggplot(data = penguins) + \n  geom_bar(aes(x=flipper_length_mm),stat=\"bin\")\n\ny &lt;- ggplot(data = penguins) + \n  geom_bar(aes(x=species),stat=\"count\")\n\nwrap_plots(x,y,nrow=1)\n\n\n\n\n\n\n\n\n\n\nx &lt;- ggplot(data = penguins) + \n  stat_bin(aes(x=flipper_length_mm),geom=\"bar\")\n\ny &lt;- ggplot(data = penguins) + \n  stat_count(aes(x=species),geom=\"bar\")\n\nwrap_plots(x,y,nrow=1)\n\n\n\n\n\n\n\n\n\n\n\nNormally the data is plotted directly from input as it is.\nSome plots require the data to be computed or transformed. Eg. boxplot, histograms, smoothing, predictions, regression etc.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#stats-1",
+    "href": "Day4Session4_ggplot.html#stats-1",
+    "title": "ggplot2 in R",
+    "section": "Stats",
+    "text": "Stats\n\nStats have default geoms.\n\n\n\n\n\n\n\nplot\nstat\ngeom\n\n\n\n\nhistogram\nbin\nbar\n\n\nsmooth\nsmooth\nline\n\n\nboxplot\nboxplot\nboxplot\n\n\ndensity\ndensity\nline\n\n\nfreqpoly\nfreqpoly\nline\n\n\n\n\n\n\nUse args(geom_bar) to check arguments.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#position",
+    "href": "Day4Session4_ggplot.html#position",
+    "title": "ggplot2 in R",
+    "section": "Position",
+    "text": "Position\n\np &lt;- ggplot(penguins,aes(x=year,y=body_mass_g,fill=species))\n\n\n\n\np + geom_bar(stat=\"identity\",\n             position=\"stack\")\n\n\n\n\n\n\n\n\n\n\np + geom_bar(stat=\"identity\",\n             position=\"dodge\")\n\n\n\n\n\n\n\n\n\n\np + geom_bar(stat=\"identity\",\n             position=\"fill\")",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#aesthetics",
+    "href": "Day4Session4_ggplot.html#aesthetics",
+    "title": "ggplot2 in R",
+    "section": "Aesthetics",
+    "text": "Aesthetics\n\n\n\nAesthetic mapping\n\n\nggplot(data = penguins)+\n  geom_point(aes(x=flipper_length_mm,\n                 y=body_mass_g,\n                 size=bill_length_mm,\n                 alpha=bill_depth_mm,\n                 shape=species,\n                 color=species))\n\n\n\n\n\n\n\n\n\n\nAesthetic parameter\n\n\nggplot(data = penguins)+\n  geom_point(aes(x=flipper_length_mm,\n                 y=body_mass_g),\n                 size=2,\n                 alpha=0.8,\n                 shape=15,\n                 color=\"steelblue\")\n\n\n\n\n\n\n\n\n\n\nAesthetics are used to assign values to geometries. For example, a set of points can be a fixed size or can be different colors or sizes denoting a variable.\nThis would be an incorrect way to do it.\nggplot(penguins)+\ngeom_point(aes(x=flipper_length_mm,y=body_mass_g,size=2)",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#aesthetics-1",
+    "href": "Day4Session4_ggplot.html#aesthetics-1",
+    "title": "ggplot2 in R",
+    "section": "Aesthetics",
+    "text": "Aesthetics\n\nx1 &lt;- ggplot(penguins) +\n  geom_point(aes(x=flipper_length_mm,  y=body_mass_g))+\n  stat_smooth(aes(x=flipper_length_mm, y=body_mass_g))\n\nx2 &lt;- ggplot(penguins, aes(x=flipper_length_mm, y=body_mass_g))+\n  geom_point() + \n  geom_smooth()\n\nwrap_plots(x1,x2,nrow=1,ncol=2)\n\n\n\nIf the same aesthetics are used in multiple geoms, they can be moved to ggplot().",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#multiple-geoms",
+    "href": "Day4Session4_ggplot.html#multiple-geoms",
+    "title": "ggplot2 in R",
+    "section": "Multiple Geoms",
+    "text": "Multiple Geoms\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g))+\n      geom_point()\n\n\n\n\n\n\np\n\n\n\nMultiple geoms can be plotted one after the other. The order in which items are specified in the command dictates the plotting order on the actual plot.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#multiple-geoms-1",
+    "href": "Day4Session4_ggplot.html#multiple-geoms-1",
+    "title": "ggplot2 in R",
+    "section": "Multiple Geoms",
+    "text": "Multiple Geoms\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g))+\n      geom_point()+\n      geom_line()\n\n\n\n\n\np\n\n\n\nMultiple geoms can be plotted one after the other. The order in which items are specified in the command dictates the plotting order on the actual plot.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#multiple-geoms-2",
+    "href": "Day4Session4_ggplot.html#multiple-geoms-2",
+    "title": "ggplot2 in R",
+    "section": "Multiple Geoms",
+    "text": "Multiple Geoms\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g))+\n      geom_point()+\n      geom_line()+\n      geom_smooth()\n\n\n\n\np\n\n\n\nMultiple geoms can be plotted one after the other. The order in which items are specified in the command dictates the plotting order on the actual plot.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#multiple-geoms-3",
+    "href": "Day4Session4_ggplot.html#multiple-geoms-3",
+    "title": "ggplot2 in R",
+    "section": "Multiple Geoms",
+    "text": "Multiple Geoms\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g))+\n      geom_point()+\n      geom_line()+\n      geom_smooth()+\n      geom_rug()\n\n\n\np\n\n\n\nMultiple geoms can be plotted one after the other. The order in which items are specified in the command dictates the plotting order on the actual plot.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#multiple-geoms-4",
+    "href": "Day4Session4_ggplot.html#multiple-geoms-4",
+    "title": "ggplot2 in R",
+    "section": "Multiple Geoms",
+    "text": "Multiple Geoms\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g))+\n      geom_point()+\n      geom_line()+\n      geom_smooth()+\n      geom_rug()+\n      geom_step()\n\n\np\n\n\n\nMultiple geoms can be plotted one after the other. The order in which items are specified in the command dictates the plotting order on the actual plot.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#multiple-geoms-5",
+    "href": "Day4Session4_ggplot.html#multiple-geoms-5",
+    "title": "ggplot2 in R",
+    "section": "Multiple Geoms",
+    "text": "Multiple Geoms\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g))+\n      geom_point()+\n      geom_line()+\n      geom_smooth()+\n      geom_rug()+\n      geom_step()+\n      geom_text(data=subset(penguins,penguins$species==\"Adelie\"),\n                aes(label=species))\np\n\n\n\nMultiple geoms can be plotted one after the other. The order in which items are specified in the command dictates the plotting order on the actual plot.\nIn this case, the points appear over the lines.\nggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g))+\n      geom_point()+\n      geom_line()+\nwhile here the lines appear above the points.\nggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g))+\n      geom_line()+\n      geom_point()+\nEach geom takes input from ggplot() inputs. If extra input is required to a geom, it can be specified additionally inside aes().\ndata can be changed if needed for specific geoms.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#section",
+    "href": "Day4Session4_ggplot.html#section",
+    "title": "ggplot2 in R",
+    "section": "",
+    "text": "Just because you can doesn’t mean you should!",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#scales-discrete-colors",
+    "href": "Day4Session4_ggplot.html#scales-discrete-colors",
+    "title": "ggplot2 in R",
+    "section": "Scales • Discrete Colors",
+    "text": "Scales • Discrete Colors\n\nscales: position, color, fill, size, shape, alpha, linetype\nsyntax: scale_&lt;aesthetic&gt;_&lt;type&gt;\n\n\n\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g, color=species)) +\n       geom_point()\np\n\n\n\n\n\n\n\n\n\n\np + scale_color_manual(\n     name=\"Manual\",\n     values=c(\"#5BC0EB\",\"#FDE74C\",\"#9BC53D\"))\n\n\n\n\n\n\n\n\n\n\nScales are used to control the aesthetics. For example the aesthetic color is mapped to a variable x. The palette of colors used, the mapping of which color to which value, the upper and lower limit of the data and colors etc is controlled by scales.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#scales-continuous-colors",
+    "href": "Day4Session4_ggplot.html#scales-continuous-colors",
+    "title": "ggplot2 in R",
+    "section": "Scales • Continuous Colors",
+    "text": "Scales • Continuous Colors\n\nIn RStudio, type scale_, then press TAB\n\n\n\n\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g, \n                         color=bill_length_mm, shape = species)) +\n       geom_point()\n\np\n\n\n\n\n\n\n\n\n\n\np +\nscale_color_gradient(name=\"Bill Len\",\n  breaks=range(penguins$bill_length_mm, na.rm=T),\n  labels=c(\"Min\",\"Max\"),\n  low=\"blue\",high=\"red\")\n\n\n\n\n\n\n\n\n\n\nContinuous colours can be changed using scale_color_gradient() for two colour gradient. Any number of breaks and colours can be specified using scale_color_gradientn().",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#scales-shape",
+    "href": "Day4Session4_ggplot.html#scales-shape",
+    "title": "ggplot2 in R",
+    "section": "Scales • Shape",
+    "text": "Scales • Shape\n\n\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g, \n                         color=species, shape = species)) +\n       geom_point()\np\n\n\n\n\n\n\n\n\n\n\np +\nscale_color_manual(name=\"New\",\n   values=c(\"blue\",\"green\",\"red\"))+\nscale_shape_manual(name=\"Bla\",values=c(0,1,2))\n\n\n\n\n\n\n\n\n\n\nShape scale can be adjusted using scale_shape_manual(). Multiple mappings for the same variable groups legends.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#scales-axes",
+    "href": "Day4Session4_ggplot.html#scales-axes",
+    "title": "ggplot2 in R",
+    "section": "Scales • Axes",
+    "text": "Scales • Axes\n\nscales: x, y\nsyntax: scale_&lt;axis&gt;_&lt;type&gt;\narguments: name, limits, breaks, labels\n\n\n\n\n\np &lt;- ggplot(penguins,aes(x=flipper_length_mm,y=body_mass_g)) +\n       geom_point()\np\n\n\n\n\n\n\n\n\n\n\np + scale_x_continuous(name=\"Flipper Length\",\n        breaks=seq(170,230),limits=c(206,230))\n\n\n\n\n\n\n\n\n\n\nThe x and y axes are also controlled by scales. The axis break points, the break point text and limits are controlled through scales.\nWhen setting limits using scale_, the data outside the limits are dropped. Limits can also be set using lims(x=c(3,5)) or xlim(c(3,5)). When mapping, coord_map() or coord_cartesian() is recommended for setting limits.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#facets-facet_wrap",
+    "href": "Day4Session4_ggplot.html#facets-facet_wrap",
+    "title": "ggplot2 in R",
+    "section": "Facets • facet_wrap",
+    "text": "Facets • facet_wrap\n\nSplit to subplots based on variable(s),\nFaceting in one dimension\n\n\n\n\n\np &lt;- ggplot(penguins)+\n      geom_point(aes(x=flipper_length_mm,\n                     y=body_mass_g,\n                     color=species))\np\n\n\n\n\n\n\n\n\n\n\np + facet_wrap(~species)\n\n\n\n\n\n\n\n\n\np + facet_wrap(~species,nrow=3)\n\n\n\n\n\n\n\n\n\n\nfacet_wrap is used to split a plot into subplots based on the categories in one or more variables.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#facets-facet_grid",
+    "href": "Day4Session4_ggplot.html#facets-facet_grid",
+    "title": "ggplot2 in R",
+    "section": "Facets • facet_grid",
+    "text": "Facets • facet_grid\n\nFaceting in two dimensions\n\n\n\n\n\np &lt;- ggplot(data = penguins, aes(x=flipper_length_mm,\n                                 y=body_mass_g))+\n                                 geom_point()\np + facet_grid(~island+year)\n\n\n\n\n\n\n\n\n\n\np + facet_grid(island~year)\n\n\n\n\n\n\n\n\n\n\nfacet_grid is also used to split a plot into subplots based on the categories in one or more variables. facet_grid can be used to create a matrix-like grid of two variables.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#coordinate-systems",
+    "href": "Day4Session4_ggplot.html#coordinate-systems",
+    "title": "ggplot2 in R",
+    "section": "Coordinate Systems",
+    "text": "Coordinate Systems\n\n\ncoord_cartesian(xlim=c(2,8)) for zooming in\ncoord_map for controlling limits on maps\ncoord_polar for polar cordinates\n\n\n\n\n\np &lt;- ggplot(penguins,aes(x=\"\",y=bill_length_mm,\n            fill=species))+\n  geom_bar(stat=\"identity\")\np\n\n\n\n\n\n\n\n\n\n\np + coord_polar(\"y\", start = 0)\n\n\n\n\n\n\n\n\n\n\nThe coordinate system defines the surface used to represent numbers. Most plots use the cartesian coordinate sytem. Pie charts for example, is a polar coordinate projection of a cartesian barplot. Maps for example can have numerous coordinate systems called map projections. For example; UTM coordinates.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#theming",
+    "href": "Day4Session4_ggplot.html#theming",
+    "title": "ggplot2 in R",
+    "section": "Theming",
+    "text": "Theming\n\nModify non-data plot elements/appearance\nAxis labels, panel colors, legend appearance etc\nSave a particular appearance for reuse\n?theme\n\n\n\n\n\nggplot(penguins, aes(x=bill_length_mm)) +\n    geom_histogram() +\n    facet_wrap(~species, ncol = 1) +\n    theme_grey()\n\n\n\n\n\n\n\n\n\n\nggplot(penguins, aes(x=bill_length_mm)) +\n    geom_histogram() +\n    facet_wrap(~species, ncol = 1) +\n    theme_bw()\n\n\n\n\n\n\n\n\n\n\nThemes allow to modify all non-data related components of the plot. This is the visual appearance of the plot. Examples include the axes line thickness, the background color or font family.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#theme-legend",
+    "href": "Day4Session4_ggplot.html#theme-legend",
+    "title": "ggplot2 in R",
+    "section": "Theme • Legend",
+    "text": "Theme • Legend\n\np &lt;- ggplot(penguins)+\n      geom_point(aes(x=flipper_length_mm, \n                     y=body_mass_g, \n                     color=species))\n\n\n\n\nat top\n\n\np + theme(legend.position=\"top\")\n\n\n\n\n\n\n\n\n\n\nat bottom\n\n\np + theme(legend.position=\"bottom\")",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#theme-text",
+    "href": "Day4Session4_ggplot.html#theme-text",
+    "title": "ggplot2 in R",
+    "section": "Theme • Text",
+    "text": "Theme • Text\n\n\n\np &lt;- ggplot(penguins, \n            aes(x = flipper_length_mm,\n                y = body_mass_g, \n                alpha = bill_length_mm,\n                shape = island)) + \n            geom_point() +  \n            facet_grid(island~year) + \n            labs(title=\"Title\", \n            subtitle=\"subtitle\")\np",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#theme-text-1",
+    "href": "Day4Session4_ggplot.html#theme-text-1",
+    "title": "ggplot2 in R",
+    "section": "Theme • Text",
+    "text": "Theme • Text\nelement_text(family=NULL,face=NULL,color=NULL,size=NULL,hjust=NULL,\n             vjust=NULL, angle=NULL,lineheight=NULL,margin = NULL)\n\np &lt;- p + theme(\n    axis.title=element_text(color=\"#e41a1c\"),\n    axis.text=element_text(color=\"#377eb8\"),\n    plot.title=element_text(color=\"#4daf4a\"),\n    plot.subtitle=element_text(color=\"#984ea3\"),\n    legend.text=element_text(color=\"#ff7f00\"),\n    legend.title=element_text(color=\"#ffff33\"),\n    strip.text=element_text(color=\"#a65628\")\n)",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#theme-rect",
+    "href": "Day4Session4_ggplot.html#theme-rect",
+    "title": "ggplot2 in R",
+    "section": "Theme • Rect",
+    "text": "Theme • Rect\nelement_rect(fill=NULL,color=NULL,size=NULL,linetype=NULL)\n\np &lt;- p + theme(\n    plot.background=element_rect(fill=\"#b3e2cd\"),\n    panel.background=element_rect(fill=\"#fdcdac\"),\n    panel.border=element_rect(fill=NA,color=\"#cbd5e8\",size=3),\n    legend.background=element_rect(fill=\"#f4cae4\"),\n    legend.box.background=element_rect(fill=\"#e6f5c9\"),\n    strip.background=element_rect(fill=\"#fff2ae\")\n)",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#theme-reuse",
+    "href": "Day4Session4_ggplot.html#theme-reuse",
+    "title": "ggplot2 in R",
+    "section": "Theme • Reuse",
+    "text": "Theme • Reuse\n\n\n\nnewtheme &lt;- theme_bw() + theme(\n  axis.ticks=element_blank(), panel.background=element_rect(fill=\"white\"),\n  panel.grid.minor=element_blank(), panel.grid.major.x=element_blank(),\n  panel.grid.major.y=element_line(size=0.3,color=\"grey90\"), panel.border=element_blank(),\n  legend.position=\"top\", legend.justification=\"right\"\n)\n\n\n\np\n\n\n\n\n\n\n\n\n\n\np + newtheme",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#professional-themes",
+    "href": "Day4Session4_ggplot.html#professional-themes",
+    "title": "ggplot2 in R",
+    "section": "Professional themes",
+    "text": "Professional themes\n\n\nHow BBC works with R graphics",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#saving-plots",
+    "href": "Day4Session4_ggplot.html#saving-plots",
+    "title": "ggplot2 in R",
+    "section": "Saving plots",
+    "text": "Saving plots\n\np &lt;- ggplot(penguins,aes(x=bill_length_mm,y=flipper_length_mm,color=species)) + \n  geom_point()\np\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2 package offers a convenient function\n\n\nggsave(\"plot.png\",p,height=5,width=7,units=\"cm\",dpi=200)\n# Note that default units in png is pixels while in ggsave it’s inches\n\n\n\n\nggplot2 plots can be saved just like base plots\n\n\npng(\"plot.png\",height=5,width=7,units=\"cm\",res=200)\nprint(p)\ndev.off()",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#combining-plots",
+    "href": "Day4Session4_ggplot.html#combining-plots",
+    "title": "ggplot2 in R",
+    "section": "Combining Plots",
+    "text": "Combining Plots\n\np &lt;- ggplot(penguins, aes(x=flipper_length_mm, y=body_mass_g,color=species)) + geom_point()\nq &lt;- ggplot(penguins, aes(x=year, y=body_mass_g, fill=species)) + geom_bar(stat=\"identity\")\n\n\n\npatchwork::wrap_plots(p,q)\n\n\n\n\n\n\n\n\n\nCombining two or more ggplot2 plots is often required and several packages exist to help with this situation. Some functions allow plots to be placed adjacently, also allowing varying heights or widths of each plot. Some functions allow one plot to be plotted on another plot like a subset plot. Here are alternative options.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#combining-plots-1",
+    "href": "Day4Session4_ggplot.html#combining-plots-1",
+    "title": "ggplot2 in R",
+    "section": "Combining Plots",
+    "text": "Combining Plots\n\np &lt;- ggplot(penguins, aes(x=flipper_length_mm, y=body_mass_g,color=species)) + geom_point()\nq &lt;- ggplot(penguins, aes(x=year, y=body_mass_g, fill=species)) + geom_bar(stat=\"identity\")\n\n\npatchwork::wrap_plots(p,q) + \n  plot_annotation(tag_levels = 'a')\n\n\npatchwork documentation.\n\nCombining two or more ggplot2 plots is often required and several packages exist to help with this situation. Some functions allow plots to be placed adjacently, also allowing varying heights or widths of each plot. Some functions allow one plot to be plotted on another plot like a subset plot. Here are alternative options.\n\ngridExtra::grid.arrange(p,q,ncol=2)\nggpubr::ggarrange(p,q,ncol=2,\n  widths=c(1.5,1),common.legend=T)\ncowplot::plot_grid()",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#interactive",
+    "href": "Day4Session4_ggplot.html#interactive",
+    "title": "ggplot2 in R",
+    "section": "Interactive",
+    "text": "Interactive\n\nConvert ggplot2 object to interactive HTML\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMost interactive plotting libraries are not as complete as ggplot2. Therefore, some packages explore ways of converting ggplot2 objects into interactive graphics",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#extensions",
+    "href": "Day4Session4_ggplot.html#extensions",
+    "title": "ggplot2 in R",
+    "section": "Extensions",
+    "text": "Extensions\n\npatchwork: Combining plots\nggrepel: Text labels including overlap control\nggforce: Circles, splines, hulls, voronoi etc\nggpmisc: Miscellaneaous features\nggthemes: Set of extra themes\n\nggthemr: More themes\n\nggsci: Color palettes for scales\n\nggmap: Dedicated to mapping\n\nggraph: Network graphs\n\nggiraph: Converting ggplot2 to interactive graphics\n\nA collection of ggplot extension packages: https://exts.ggplot2.tidyverse.org/.\nCurated list of ggplot2 links: https://github.com/erikgahner/awesome-ggplot2.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#help",
+    "href": "Day4Session4_ggplot.html#help",
+    "title": "ggplot2 in R",
+    "section": "Help",
+    "text": "Help\n\n\n\nggplot2 book\n\n\nThe R cookbook\n\n\n\n\nggplot2 official reference\n\nRStudio cheatsheet\n\nr-statistics ggplot2 cheatsheet\n\nStackOverflow\n\nBlogs, R-Bloggers, Cedric Scherer etc.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session4_ggplot.html#section-1",
+    "href": "Day4Session4_ggplot.html#section-1",
+    "title": "ggplot2 in R",
+    "section": "",
+    "text": "Thank you! Questions?\n\n\n\n\nAcknowledgements:\n• SLUBI • 3Bs • Slides adapted from RaukR • GPL-3 License",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "`ggplot2` in `R`"
+    ]
+  },
+  {
+    "objectID": "Day4Session1_results.html",
+    "href": "Day4Session1_results.html",
+    "title": "RNASeq Results",
+    "section": "",
+    "text": "In this session, we will have a look at some of the results that were produced with the nf core pipelines we ran. It’s all good and well running analyses, but you need to be able to do something with the output.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "RNASeq Results"
+    ]
+  },
+  {
+    "objectID": "Day2Session2_nextflow_handson.html",
+    "href": "Day2Session2_nextflow_handson.html",
+    "title": "nfcore RNASeq Pipeline",
+    "section": "",
+    "text": "Now that you know about Linux, containers, pixi, and Nextflow, we get to start with the really cool part of our course! In this section, we will create a pixi environment containing nf-core and nextflow. Once we’ve done that, we will turn our attention to nf-core to set up the rnaseq pipeline. Finally, we will run the pipeline.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "nfcore RNASeq Pipeline"
+    ]
+  },
+  {
+    "objectID": "Day2Session2_nextflow_handson.html#introduction",
+    "href": "Day2Session2_nextflow_handson.html#introduction",
+    "title": "nfcore RNASeq Pipeline",
+    "section": "",
+    "text": "Now that you know about Linux, containers, pixi, and Nextflow, we get to start with the really cool part of our course! In this section, we will create a pixi environment containing nf-core and nextflow. Once we’ve done that, we will turn our attention to nf-core to set up the rnaseq pipeline. Finally, we will run the pipeline.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "nfcore RNASeq Pipeline"
+    ]
+  },
+  {
+    "objectID": "Day2Session2_nextflow_handson.html#setting-up-your-pixi-environment",
+    "href": "Day2Session2_nextflow_handson.html#setting-up-your-pixi-environment",
+    "title": "nfcore RNASeq Pipeline",
+    "section": "Setting Up Your Pixi Environment",
+    "text": "Setting Up Your Pixi Environment\nIn our course directory execute these commands, one after the other.\nLet’s inititalise an environment for this. Again, please substitute your name in the name part of the commands.\npixi init name_nextflow -c conda-forge -c bioconda\nChange directory into the project you created, and just list the files there\ncd name_nextflow\nls\nAdd nf-core and Nextflow\npixi add nextflow nf-core\n\n\n\n\n\n\nNote\n\n\n\n\n\nWhile apptainer is sticky loaded on this server, it won’t always be the case for other servers. So, if you are running within a Linux environment (and not otherwise), you can add apptainer with the add command.\n\n\n\nAnd just check that everything worked, summon the help message from nf-core\npixi run nf-core --help",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "nfcore RNASeq Pipeline"
+    ]
+  },
+  {
+    "objectID": "Day2Session2_nextflow_handson.html#preparing-the-run",
+    "href": "Day2Session2_nextflow_handson.html#preparing-the-run",
+    "title": "nfcore RNASeq Pipeline",
+    "section": "Preparing The Run",
+    "text": "Preparing The Run\nFrom the nf-core homepage, we can search for pipelines. We are going to demo the rnaseq pipeline. You can see that there is a lot going on in this pipeline! We will chat more about these things in class rather than including screenshots of everything.\n\n\n\nrnaseq landing page\n\n\nUnder the Usage, you will find a lot of information that describes the pipeline, including input information, the samplesheet.csv (this one we will make together in class).\nUnder the Parameters tab you will find information on all of the things that we will set up in the next step.\nUnder the Output tab, you will find information on the expected output generated from the pipeline. This is useful to help you interpret what the pipeline produces.\nTo set up our own analysis, we will click on the launch version 3.20.0 button. (This was the version on the website at the time of writing this session. The version number may change). We are then redirected to a page where we can fill in all of our information about input files, as well as selecting or deselecting certain parts of the pipeline. We will share the things here that you need to input each time, and go through some finer details based on the discussion with you.\n\nSetting working and results directories\n\n\n\n\n\n\nImportant\n\n\n\nWe recommend that you use absolute paths rather than relative paths for setting up your runs.\n\n\nDuring the first part, you need to set a working and result directory. If you are using a server that has a profile established, you can put the name of the server there. If not, we will create our own configuration profile if we run into memory issues.\n\n\n\nSetting work and output directories\n\n\n\n\n\nSetting results and input CSV\n\n\nWe will compile the input CSV together in class. This is entirely unique to each analysis.\n\n\n\n\n\n\nTip\n\n\n\n\n\nTo list all fastq files with their absolute path, one per line use:\nfind . -maxdepth 1 -type f -name \"*.fastq.gz\" -exec realpath {} \\;\nYou can substitute the . that indicates it’s only looking in the directory you’re currently in to any other path on your file system.\n\n\n\n\nConfiguration profiles\nSince we are working on a server with a configuration profile established, but not available via nf-core, we have downloaded it and put it in the course folder. If you want to fetch it for yourself\nwget https://raw.githubusercontent.com/hpc2n/intro-course/master/exercises/NEXTFLOW/INTERACTIVE/hpc2n.config\nHere is the configuration profile on HPC2N from the above link. The most important things we need to pay attention to are the max_memory, max_cpus, and max_time settings. If you want to create your own profile, you can adjust these to suit your system requirements.\n// Config profile for HPC2N\nparams {\n  config_profile_description = 'Cluster profile for HPC2N'\n  config_profile_contact = 'Pedro Ojeda @pojeda'\n  config_profile_url = 'https://www.hpc2n.umu.se/'\n  project = null\n  clusterOptions = null\n  max_memory = 128.GB\n  max_cpus = 28\n  max_time = 168.h\n  email = 'pedroojeda2011@gmail.com'\n}\n\nsingularity {\n  enabled = true\n}\n\nprocess {\n  executor = 'slurm'\n  clusterOptions = { \"-A $params.project ${params.clusterOptions ?: ''}\" }\n}\n\n\n\n\n\n\nNote\n\n\n\nslurm is a job management tool installed on many servers to distribute resources evenly among users.\n\n\n\n\n\n\n\n\nNote\n\n\n\nIf you copy this config file to use for your own server, you need to remove the process section, unless you have a slurm job manager installed on your cluster. If you have slurm, you will defiinitely have a system administrator who can help you write this block to suit your system!\n\n\n\n\n\nSetting all other inputs that are required\nIn this section, you set variables that are related to your reference genome. If you are using something listed on iGenomes, you can input that name. If you are working with your own reference genome, or something not listed, you need to input the absolute path of the reference genomes you have downloaded.\n\n\n\nReference genome options\n\n\nDepending on your strategy, you might need to input a corresponding gff as well. It really depends on the kind of analysis you are hoping to perform.\n\n\nObtaining your JSON file\nOnce everything is filled in, click on Launch and you will be redirected to another page containing your JSON file that has information on your run. You can either run the analyses by copying the command at the top of the page (BUT DON’T PRESS ENTER JUST YET) or by copying the JSON file a bit lower on the screen and saving it as nf-params.json in your folder on HPC2N.\nYou then have to add one more row to the file, specifying the projects compute project, so the computation time can be debited from the correct account.\n    \"project\": \"account_name\"",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "nfcore RNASeq Pipeline"
+    ]
+  },
+  {
+    "objectID": "Day2Session2_nextflow_handson.html#starting-the-run",
+    "href": "Day2Session2_nextflow_handson.html#starting-the-run",
+    "title": "nfcore RNASeq Pipeline",
+    "section": "Starting The Run",
+    "text": "Starting The Run\n\nsubmit directly via pixi\nNow you can run the pipeline with the following command:\npixi run nextflow run nf-core/rnaseq -r 3.19.0 -resume -params-file nf-params.json -c hpc2n.config\nThere are several layers to this command:\nFirst we invoke Pixi and tell it to run the following commands.\nThen we say which program we want to run, namely Nextflow.\nThe following commands are Nextflow/ nf-core commands:\n\nwe want to run the nf-core/rnaseq pipeline, version 3.19.0\nwe want to use the parameter file called nf-params.json\nwe want to use the hpc configuration file called hpc2n.config\n\n\n\nsubmit via sbatch\nAlternatively, you can run nextflow via pixi using a batch script and slurm: copy the following text to file called name_submit_rnaseq.sh where name is your name.\n#!/bin/bash -l\n#SBATCH -A our_proj_allocation\n#SBATCH -n 5\n#SBATCH -t 24:00:00\n\n/your_home_directory/.pixi/bin/pixi run nextflow run nf-core/rnaseq -r 3.19.0 -params-file /your_path/nf-params.json\nAnd then submit it to slurm with\nsbatch name_submit_rnaseq.sh\nYou can check the progress of your job with squeue -u your_username\nAnd now we wait until the run is done!\n\n\n\n\n\n\nTip\n\n\n\nNextflow is notoriously bad at cleaning after itself. You can check previous runs with pixi run nextflow log. And then clean up with for example pixi run nextflow clean -f -before &lt;run_name&gt;. Here is an explanation of the command.",
+    "crumbs": [
+      "Home",
+      "Hands-on training",
+      "nfcore RNASeq Pipeline"
     ]
   }
 ]

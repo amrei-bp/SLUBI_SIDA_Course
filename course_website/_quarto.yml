@@ -35,6 +35,7 @@ website:
           - Day4Session1_results.qmd
           - Day4Session2_use_containers.qmd
           - Day4Session3_r_in_quarto.qmd
+          - Day4Session4_ggplot.qmd
       - section: "Data management"
         contents: 
           - Day3Session1_data_management.qmd

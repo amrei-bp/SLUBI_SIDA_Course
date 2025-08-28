@@ -514,7 +514,9 @@ Note
 <section id="submit-directly-via-pixi" class="level3">
 <h3 class="anchored" data-anchor-id="submit-directly-via-pixi">submit directly via pixi</h3>
 <p>Now you can run the pipeline with the following command:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> run nextflow run nf-core/rnaseq <span class="at">-r</span> 3.19.0 <span class="at">-resume</span> <span class="at">-params-file</span> nf-params.json <span class="at">-c</span> hpc2n.config</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> run nextflow run nf-core/rnaseq <span class="at">-r</span> 3.19.0 <span class="at">-resume</span> <span class="at">-params-file</span> nf-params.json <span class="at">-c</span> /proj/nobackup/slubi_sida/nextflow_input/hpc2n.config</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the config file is within your project directory you can start the run with:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> run nextflow run nf-core/rnaseq <span class="at">-r</span> 3.19.0 <span class="at">-resume</span> <span class="at">-params-file</span> nf-params.json <span class="at">-c</span> hpc2n.config</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>There are several layers to this command:</p>
 <p>First we invoke <code>Pixi</code> and tell it to <code>run</code> the following commands.</p>
 <p>Then we say which program we want to run, namely <code>Nextflow</code>.</p>
@@ -528,14 +530,14 @@ Note
 <section id="submit-via-sbatch" class="level3">
 <h3 class="anchored" data-anchor-id="submit-via-sbatch">submit via sbatch</h3>
 <p>Alternatively, you can run nextflow via pixi using a batch script and slurm: copy the following text to file called <code>name_submit_rnaseq.sh</code> where <code>name</code> is your name.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -l</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -A our_proj_allocation</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -n 5</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -t 24:00:00</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">/your_home_directory/.pixi/bin/pixi</span> run nextflow run nf-core/rnaseq <span class="at">-r</span> 3.19.0 <span class="at">-params-file</span> /your_path/nf-params.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -l</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -A our_proj_allocation</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -n 5</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -t 24:00:00</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ex">/your_home_directory/.pixi/bin/pixi</span> run nextflow run nf-core/rnaseq <span class="at">-r</span> 3.19.0 <span class="at">-params-file</span> /your_path/nf-params.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And then submit it to slurm with</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> name_submit_rnaseq.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> name_submit_rnaseq.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can check the progress of your job with <code>squeue -u your_username</code></p>
 <p>And now we wait until the run is done!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
